@@ -29,14 +29,24 @@ namespace Senior_App
         /// </summary>
         private void InitializeComponent()
         {
+            this.buttonMostrarConsultarDatos = new System.Windows.Forms.Button();
             this.buttonMostrarLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.jesusBailando = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonMostrarConsultarDatos = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.jesusBailando)).BeginInit();
             this.SuspendLayout();
+            // 
+            // buttonMostrarConsultarDatos
+            // 
+            this.buttonMostrarConsultarDatos.Location = new System.Drawing.Point(906, 167);
+            this.buttonMostrarConsultarDatos.Name = "buttonMostrarConsultarDatos";
+            this.buttonMostrarConsultarDatos.Size = new System.Drawing.Size(193, 39);
+            this.buttonMostrarConsultarDatos.TabIndex = 0;
+            this.buttonMostrarConsultarDatos.Text = "Consultar datos";
+            this.buttonMostrarConsultarDatos.UseVisualStyleBackColor = true;
+            this.buttonMostrarConsultarDatos.Click += new System.EventHandler(this.buttonConsultarDatos_Click);
             // 
             // buttonMostrarLogin
             // 
@@ -85,29 +95,17 @@ namespace Senior_App
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // buttonMostrarConsultarDatos
-            // 
-            this.buttonMostrarConsultarDatos.Depth = 0;
-            this.buttonMostrarConsultarDatos.Location = new System.Drawing.Point(906, 185);
-            this.buttonMostrarConsultarDatos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonMostrarConsultarDatos.Name = "buttonMostrarConsultarDatos";
-            this.buttonMostrarConsultarDatos.Primary = true;
-            this.buttonMostrarConsultarDatos.Size = new System.Drawing.Size(193, 39);
-            this.buttonMostrarConsultarDatos.TabIndex = 7;
-            this.buttonMostrarConsultarDatos.Text = "Consultar datos";
-            this.buttonMostrarConsultarDatos.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 640);
-            this.Controls.Add(this.buttonMostrarConsultarDatos);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.jesusBailando);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonMostrarLogin);
+            this.Controls.Add(this.buttonMostrarConsultarDatos);
             this.Name = "Form1";
             this.Text = "Senior-App Main Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -117,12 +115,13 @@ namespace Senior_App
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonMostrarConsultarDatos;
         private System.Windows.Forms.Button buttonMostrarLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox jesusBailando;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonExit;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonMostrarConsultarDatos;
     }
 }
 
