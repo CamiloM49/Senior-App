@@ -388,7 +388,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IntegracionEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SeniorAppDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="apoderado" EntityType="Self.apoderado" />
           <EntitySet Name="comunas" EntityType="Self.comunas" />
           <EntitySet Name="last_location" EntityType="Self.last_location" />
@@ -426,7 +426,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IntegracionModelStoreContainer" CdmEntityContainer="IntegracionEntities4">
+        <EntityContainerMapping StorageEntityContainer="IntegracionModelStoreContainer" CdmEntityContainer="SeniorAppDB">
           <EntitySetMapping Name="apoderado">
             <EntityTypeMapping TypeName="IntegracionModel.apoderado">
               <MappingFragment StoreEntitySet="apoderado">
