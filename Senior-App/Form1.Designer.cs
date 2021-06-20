@@ -29,13 +29,100 @@ namespace Senior_App
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.buttonMostrarLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.jesusBailando = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonMostrarConsultarDatos = new MaterialSkin.Controls.MaterialRaisedButton();
+            ((System.ComponentModel.ISupportInitialize)(this.jesusBailando)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // buttonMostrarLogin
+            // 
+            this.buttonMostrarLogin.Location = new System.Drawing.Point(906, 247);
+            this.buttonMostrarLogin.Name = "buttonMostrarLogin";
+            this.buttonMostrarLogin.Size = new System.Drawing.Size(193, 39);
+            this.buttonMostrarLogin.TabIndex = 2;
+            this.buttonMostrarLogin.Text = "Login ADM";
+            this.buttonMostrarLogin.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(452, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 47);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Senior-App";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // jesusBailando
+            // 
+            this.jesusBailando.Location = new System.Drawing.Point(906, 428);
+            this.jesusBailando.Name = "jesusBailando";
+            this.jesusBailando.Size = new System.Drawing.Size(193, 200);
+            this.jesusBailando.TabIndex = 4;
+            this.jesusBailando.TabStop = false;
+            this.jesusBailando.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Location = new System.Drawing.Point(12, 59);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(888, 569);
+            this.panel1.TabIndex = 5;
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(906, 328);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(193, 39);
+            this.buttonExit.TabIndex = 6;
+            this.buttonExit.Text = "Salir";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonMostrarConsultarDatos
+            // 
+            this.buttonMostrarConsultarDatos.Depth = 0;
+            this.buttonMostrarConsultarDatos.Location = new System.Drawing.Point(906, 185);
+            this.buttonMostrarConsultarDatos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.buttonMostrarConsultarDatos.Name = "buttonMostrarConsultarDatos";
+            this.buttonMostrarConsultarDatos.Primary = true;
+            this.buttonMostrarConsultarDatos.Size = new System.Drawing.Size(193, 39);
+            this.buttonMostrarConsultarDatos.TabIndex = 7;
+            this.buttonMostrarConsultarDatos.Text = "Consultar datos";
+            this.buttonMostrarConsultarDatos.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1111, 640);
+            this.Controls.Add(this.buttonMostrarConsultarDatos);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.jesusBailando);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonMostrarLogin);
+            this.Name = "Form1";
+            this.Text = "Senior-App Main Menu";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.jesusBailando)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+        private System.Windows.Forms.Button buttonMostrarLogin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox jesusBailando;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonExit;
+        private MaterialSkin.Controls.MaterialRaisedButton buttonMostrarConsultarDatos;
     }
 }
 
