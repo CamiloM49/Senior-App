@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84c87af02a1b4205805930c698728733" Name="Diagram1">
+        <EntityTypeShape EntityType="IntegracionModel.apoderado" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.comunas" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.last_location" Width="1.5" PointX="12" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.portador" Width="1.5" PointX="9.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.provincias" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.regiones" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.registro_perdida" Width="1.5" PointX="12" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="IntegracionModel.FK_apoderado_comunas" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_portador_apoderado" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.Fk_comunas_provincias" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_last_location_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_registro_perdida_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.Fk_provincias_regiones" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
