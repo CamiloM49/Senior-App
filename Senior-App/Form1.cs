@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using QRCoder;
 using ZXing;
 using ZXing.Presentation;
 
@@ -105,6 +106,7 @@ namespace Senior_App
             {
                 captureDevice.Stop();
             }
+            
                 
         }
 
@@ -132,6 +134,14 @@ namespace Senior_App
             {
                 materialRaisedButton2.IsAccessible = false; 
             }
+        }
+
+        private void buttonGenerarQR_Click(object sender, EventArgs e)
+        {
+            QRCodeGenerator qr = new QRCodeGenerator();
+            QRCodeData data = qr.CreateQrCode(txtQRGenerar.Text, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+            picboxGenerador.Image = code.GetGraphic(5);
         }
     }
 }
