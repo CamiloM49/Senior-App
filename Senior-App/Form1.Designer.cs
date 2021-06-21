@@ -72,10 +72,10 @@ namespace Senior_App
             this.metroTabControl1.Controls.Add(this.metroGenera);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 54);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
-            this.metroTabControl1.Size = new System.Drawing.Size(842, 574);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(842, 577);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.TabIndex = 5;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -95,7 +95,7 @@ namespace Senior_App
             this.metroLogin.HorizontalScrollbarSize = 10;
             this.metroLogin.Location = new System.Drawing.Point(4, 37);
             this.metroLogin.Name = "metroLogin";
-            this.metroLogin.Size = new System.Drawing.Size(834, 533);
+            this.metroLogin.Size = new System.Drawing.Size(834, 536);
             this.metroLogin.TabIndex = 0;
             this.metroLogin.Text = "Login";
             this.metroLogin.VerticalScrollbarBarColor = true;
@@ -145,6 +145,7 @@ namespace Senior_App
             this.materialRaisedButton1.Text = "INGRESAR";
             this.materialRaisedButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // metroTextBox2
             // 

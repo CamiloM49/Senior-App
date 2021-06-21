@@ -143,5 +143,10 @@ namespace Senior_App
             QRCode code = new QRCode(data);
             picboxGenerador.Image = code.GetGraphic(5);
         }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
