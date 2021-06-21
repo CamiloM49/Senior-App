@@ -32,6 +32,7 @@ namespace SeniorAppDB
         public int comuna_id { get; set; }
     
         public virtual comunas comunas { get; set; }
+        public virtual cuenta cuenta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<portador> portador { get; set; }
     }

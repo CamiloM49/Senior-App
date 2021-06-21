@@ -13,10 +13,10 @@ namespace SeniorAppDB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class IntegracionEntities4 : DbContext
+    public partial class SeniorAppDB : DbContext
     {
-        public IntegracionEntities4()
-            : base("name=IntegracionEntities4")
+        public SeniorAppDB()
+            : base("name=SeniorAppDB")
         {
         }
     
@@ -27,6 +27,7 @@ namespace SeniorAppDB
     
         public virtual DbSet<apoderado> apoderado { get; set; }
         public virtual DbSet<comunas> comunas { get; set; }
+        public virtual DbSet<cuenta> cuenta { get; set; }
         public virtual DbSet<last_location> last_location { get; set; }
         public virtual DbSet<portador> portador { get; set; }
         public virtual DbSet<provincias> provincias { get; set; }

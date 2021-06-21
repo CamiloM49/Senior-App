@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SeniorAppDTO
+namespace SeniorAppNegocio
 {
-    public class Class1
+    public class TokenNegocio
     {
+
     }
 }

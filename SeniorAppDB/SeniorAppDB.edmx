@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="IntegracionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SeniorAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
@@ -28,6 +28,16 @@
           <Property Name="comuna_nombre" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="provincia_id" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="id_apoderado" />
+          </Key>
+          <Property Name="id_apoderado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mail" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="passwd" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
         <EntityType Name="last_location">
           <Key>
             <PropertyRef Name="id_perdida" />
@@ -42,15 +52,6 @@
           <Property Name="auth_ip" Type="nvarchar" MaxLength="255" />
           <Property Name="alerta_activa" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
-        <EntityType Name="login">
-          <Property Name="id_apoderado" Type="int" />
-          <Property Name="user" Type="nvarchar" MaxLength="50" />
-          <Property Name="mail" Type="nvarchar" MaxLength="120" />
-          <Property Name="telefono" Type="nvarchar" MaxLength="15" />
-          <Property Name="contraseña" Type="nvarchar" MaxLength="255" />
-        </EntityType>-->
         <EntityType Name="portador">
           <Key>
             <PropertyRef Name="id_portador" />
@@ -116,6 +117,18 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_apoderado_cuenta">
+          <End Role="cuenta" Type="Self.cuenta" Multiplicity="1" />
+          <End Role="apoderado" Type="Self.apoderado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id_apoderado" />
+            </Principal>
+            <Dependent Role="apoderado">
+              <PropertyRef Name="id_apoderado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Fk_comunas_provincias">
           <End Role="provincias" Type="Self.provincias" Multiplicity="1" />
           <End Role="comunas" Type="Self.comunas" Multiplicity="*" />
@@ -176,9 +189,10 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IntegracionModelStoreContainer">
+        <EntityContainer Name="SeniorAppDBModelStoreContainer">
           <EntitySet Name="apoderado" EntityType="Self.apoderado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comunas" EntityType="Self.comunas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cuenta" EntityType="Self.cuenta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="last_location" EntityType="Self.last_location" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="portador" EntityType="Self.portador" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="provincias" EntityType="Self.provincias" Schema="dbo" store:Type="Tables" />
@@ -186,6 +200,10 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
           <EntitySet Name="registro_perdida" EntityType="Self.registro_perdida" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_apoderado_comunas" Association="Self.FK_apoderado_comunas">
             <End Role="comunas" EntitySet="comunas" />
+            <End Role="apoderado" EntitySet="apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_apoderado_cuenta" Association="Self.FK_apoderado_cuenta">
+            <End Role="cuenta" EntitySet="cuenta" />
             <End Role="apoderado" EntitySet="apoderado" />
           </AssociationSet>
           <AssociationSet Name="Fk_comunas_provincias" Association="Self.Fk_comunas_provincias">
@@ -213,7 +231,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="IntegracionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SeniorAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
@@ -229,6 +247,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
           <Property Name="membresia" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="comuna_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="comunas" Relationship="Self.FK_apoderado_comunas" FromRole="apoderado" ToRole="comunas" />
+          <NavigationProperty Name="cuenta" Relationship="Self.FK_apoderado_cuenta" FromRole="apoderado" ToRole="cuenta" />
           <NavigationProperty Name="portador" Relationship="Self.FK_portador_apoderado" FromRole="apoderado" ToRole="portador" />
         </EntityType>
         <EntityType Name="comunas">
@@ -240,6 +259,17 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
           <Property Name="provincia_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="apoderado" Relationship="Self.FK_apoderado_comunas" FromRole="comunas" ToRole="apoderado" />
           <NavigationProperty Name="provincias" Relationship="Self.Fk_comunas_provincias" FromRole="comunas" ToRole="provincias" />
+        </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="id_apoderado" />
+          </Key>
+          <Property Name="id_apoderado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwd" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="apoderado" Relationship="Self.FK_apoderado_cuenta" FromRole="cuenta" ToRole="apoderado" />
         </EntityType>
         <EntityType Name="last_location">
           <Key>
@@ -328,6 +358,18 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_apoderado_cuenta">
+          <End Role="cuenta" Type="Self.cuenta" Multiplicity="1" />
+          <End Role="apoderado" Type="Self.apoderado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id_apoderado" />
+            </Principal>
+            <Dependent Role="apoderado">
+              <PropertyRef Name="id_apoderado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_portador_apoderado">
           <End Role="apoderado" Type="Self.apoderado" Multiplicity="1" />
           <End Role="portador" Type="Self.portador" Multiplicity="*" />
@@ -388,9 +430,10 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="IntegracionEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SeniorAppDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="apoderado" EntityType="Self.apoderado" />
           <EntitySet Name="comunas" EntityType="Self.comunas" />
+          <EntitySet Name="cuenta" EntityType="Self.cuenta" />
           <EntitySet Name="last_location" EntityType="Self.last_location" />
           <EntitySet Name="portador" EntityType="Self.portador" />
           <EntitySet Name="provincias" EntityType="Self.provincias" />
@@ -398,6 +441,10 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
           <EntitySet Name="registro_perdida" EntityType="Self.registro_perdida" />
           <AssociationSet Name="FK_apoderado_comunas" Association="Self.FK_apoderado_comunas">
             <End Role="comunas" EntitySet="comunas" />
+            <End Role="apoderado" EntitySet="apoderado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_apoderado_cuenta" Association="Self.FK_apoderado_cuenta">
+            <End Role="cuenta" EntitySet="cuenta" />
             <End Role="apoderado" EntitySet="apoderado" />
           </AssociationSet>
           <AssociationSet Name="FK_portador_apoderado" Association="Self.FK_portador_apoderado">
@@ -426,9 +473,9 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IntegracionModelStoreContainer" CdmEntityContainer="IntegracionEntities4">
+        <EntityContainerMapping StorageEntityContainer="SeniorAppDBModelStoreContainer" CdmEntityContainer="SeniorAppDB">
           <EntitySetMapping Name="apoderado">
-            <EntityTypeMapping TypeName="IntegracionModel.apoderado">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.apoderado">
               <MappingFragment StoreEntitySet="apoderado">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -444,7 +491,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="comunas">
-            <EntityTypeMapping TypeName="IntegracionModel.comunas">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.comunas">
               <MappingFragment StoreEntitySet="comunas">
                 <ScalarProperty Name="comuna_id" ColumnName="comuna_id" />
                 <ScalarProperty Name="comuna_nombre" ColumnName="comuna_nombre" />
@@ -452,8 +499,19 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="cuenta">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.cuenta">
+              <MappingFragment StoreEntitySet="cuenta">
+                <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="passwd" ColumnName="passwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="last_location">
-            <EntityTypeMapping TypeName="IntegracionModel.last_location">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.last_location">
               <MappingFragment StoreEntitySet="last_location">
                 <ScalarProperty Name="id_perdida" ColumnName="id_perdida" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
@@ -468,7 +526,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="portador">
-            <EntityTypeMapping TypeName="IntegracionModel.portador">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.portador">
               <MappingFragment StoreEntitySet="portador">
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -490,7 +548,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="provincias">
-            <EntityTypeMapping TypeName="IntegracionModel.provincias">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.provincias">
               <MappingFragment StoreEntitySet="provincias">
                 <ScalarProperty Name="provincia_id" ColumnName="provincia_id" />
                 <ScalarProperty Name="provincia_nombre" ColumnName="provincia_nombre" />
@@ -499,7 +557,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="regiones">
-            <EntityTypeMapping TypeName="IntegracionModel.regiones">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.regiones">
               <MappingFragment StoreEntitySet="regiones">
                 <ScalarProperty Name="region_id" ColumnName="region_id" />
                 <ScalarProperty Name="region_nombre" ColumnName="region_nombre" />
@@ -508,7 +566,7 @@ advertencia 6013: La tabla o vista 'Integracion.dbo.login' no tiene definida una
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="registro_perdida">
-            <EntityTypeMapping TypeName="IntegracionModel.registro_perdida">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.registro_perdida">
               <MappingFragment StoreEntitySet="registro_perdida">
                 <ScalarProperty Name="id_registro" ColumnName="id_registro" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
