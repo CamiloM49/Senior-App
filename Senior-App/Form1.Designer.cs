@@ -350,8 +350,7 @@ namespace Senior_App
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(268, 261);
             this.webBrowser1.TabIndex = 35;
-            this.webBrowser1.Url = new System.Uri("https://cmv.interior.gob.cl/validador?idw=CE4583ED3018C32F4707012A244CF7AA1D99926" +
-        "2142FB137F16F299E1E2A79D1", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://localhost:44393/api/Token", System.UriKind.Absolute);
             // 
             // Form1
             // 
