@@ -31,5 +31,12 @@ namespace Senior_App
         {
 
         }
+
+        private void textBoxUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -7,21 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using ZXing;
+using ZXing.Presentation;
 
 namespace Senior_App
 {
     public partial class Form1 : Form
     {
-        
+
 
         public Form1()
         {
             InitializeComponent();
-            //var Activo = new active();
             
 
 
+
         }
+
+        FilterInfoCollection FilterInfoCollection;
+        VideoCaptureDevice captureDevice;
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -35,20 +44,11 @@ namespace Senior_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            jesusBailando.Image = Image.FromFile(@"C:\Users\NOTE-200\Downloads\Senior-App media\tenor.gif");
-            jesusBailando.SizeMode = PictureBoxSizeMode.StretchImage; 
+            FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo filterInfo in FilterInfoCollection)
+                cboCamara.Items.Add(filterInfo.Name);
+            cboCamara.SelectedIndex = 0; 
         }
-
-        private void buttonConsultarDatos_Click(object sender, EventArgs e)
-        {
-            Form2 fmr = new Form2() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            fmr.FormBorderStyle = (FormBorderStyle.None);
-            this.panel1.Controls.Add(fmr);
-            fmr.Show(); 
-
-
-        }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Realmente quieres salir de la aplicación?", "Salir", MessageBoxButtons.YesNo);
@@ -58,22 +58,80 @@ namespace Senior_App
             }
             else
             {
-                
+
             }
-            
+
 
         }
 
-        private void buttonMostrarLogin_Click(object sender, EventArgs e)
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            captureDevice = new VideoCaptureDevice(FilterInfoCollection[cboCamara.SelectedIndex].MonikerString);
+            captureDevice.NewFrame += CaptureDevide_NewFrame;
+            captureDevice.Start();
+            timer1.Start(); 
+
+        }
+
+        private void CaptureDevide_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             
-            login lgn = new login() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            lgn.FormBorderStyle = (FormBorderStyle.None);
-            this.panel1.Controls.Add(lgn);
-            lgn.Show();
+            pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (captureDevice.IsRunning)
+            {
+                captureDevice.Stop();
+            }
+                
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(pictureBox2.Image!= null)
+            {
 
 
+                ZXing.BarcodeReader barcodeReader = new ZXing.BarcodeReader();
+                Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image); 
+                if(result != null)
+                {
+                    txtQR.Text = result.ToString();
+                    timer1.Stop();
+                    if (captureDevice.IsRunning)
+                        captureDevice.Stop();
+                }
             }
         }
 
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            if (txtQR.TextLength >= 4)
+            {
+                materialRaisedButton2.IsAccessible = false; 
+            }
+        }
+    }
 }

@@ -161,6 +161,7 @@ namespace Senior_App
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(198, 20);
             this.textBoxUser.TabIndex = 4;
+            this.textBoxUser.TextChanged += new System.EventHandler(this.textBoxUser_TextChanged);
             // 
             // materialSingleLineTextField2
             // 
