@@ -56,6 +56,7 @@ namespace Senior_App
             this.buttonMostrarLogin.TabIndex = 2;
             this.buttonMostrarLogin.Text = "Login ADM";
             this.buttonMostrarLogin.UseVisualStyleBackColor = true;
+            this.buttonMostrarLogin.Click += new System.EventHandler(this.buttonMostrarLogin_Click);
             // 
             // label1
             // 
