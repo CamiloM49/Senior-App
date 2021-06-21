@@ -13,10 +13,10 @@ namespace SeniorAppDB
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SeniorAppDB : DbContext
+    public partial class SeniorAppmodel : DbContext
     {
-        public SeniorAppDB()
-            : base("name=SeniorAppDB")
+        public SeniorAppmodel()
+            : base("name=SeniorAppmodel")
         {
         }
     
