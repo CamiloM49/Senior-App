@@ -12,6 +12,8 @@ using AForge.Video.DirectShow;
 using QRCoder;
 using ZXing;
 using ZXing.Presentation;
+using SeniorAppDB;
+using SeniorAppNegocio;
 
 
 
@@ -47,6 +49,8 @@ namespace Senior_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'integracionDataSet.cuenta' Puede moverla o quitarla según sea necesario.
+            this.cuentaTableAdapter.Fill(this.integracionDataSet.cuenta);
             FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in FilterInfoCollection)
                 cboCamara.Items.Add(filterInfo.Name);
@@ -148,10 +152,24 @@ namespace Senior_App
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            string sPass = SeniorAppNegocio.LoginNegocio.GetSHA256(metroTextBox2.Text.Trim());
+            using (SeniorAppDB.SeniorAppDB db1 = new SeniorAppDB.SeniorAppDB())
+            {
+                var lst = from d in db1.cuenta
+                          where d.mail == txtCorreo.Text
+                          && d.passwd == metroTextBox2.Text
+                          select d;
+                if (lst.Count() > 0)
+                { MessageBox.Show("Usuario"); }
+                else
+                {
+                    MessageBox.Show("El usuario no existev");
+                }
+                txtExito.Text = sPass + " " + txtCorreo.Text;
+            }
+            
 
 
-
-            MessageBox.Show("a");
         }
     }
 }

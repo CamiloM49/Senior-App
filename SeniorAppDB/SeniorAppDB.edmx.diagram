@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c300500bd5d24ee091170fb06177de13" Name="Diagram1">
-        <EntityTypeShape EntityType="SeniorAppDBModel.apoderado" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.comunas" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.cuenta" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.last_location" Width="1.5" PointX="12" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.portador" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.provincias" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.regiones" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.registro_perdida" Width="1.5" PointX="12" PointY="5" IsExpanded="true" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_apoderado_comunas" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_apoderado_cuenta" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_portador_apoderado" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.Fk_comunas_provincias" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_last_location_portador" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_registro_perdida_portador" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.Fk_provincias_regiones" ManuallyRouted="false" />
+      <Diagram DiagramId="8a95129f92894bfcacc829c47d3730c2" Name="Diagram1">
+        <EntityTypeShape EntityType="SeniorAppDB2.apoderado" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.comunas" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.cuenta" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.last_location" Width="1.5" PointX="12" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.portador" Width="1.5" PointX="9.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.provincias" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.regiones" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SeniorAppDB2.registro_perdida" Width="1.5" PointX="12" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="SeniorAppDB2.FK_apoderado_comunas" ManuallyRouted="false" />
+        <AssociationConnector Association="SeniorAppDB2.FK_apoderado_cuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="SeniorAppDB2.FK_portador_apoderado" ManuallyRouted="false" />
+        <AssociationConnector Association="SeniorAppDB2.Fk_comunas_provincias" ManuallyRouted="false" />
+        <AssociationConnector Association="SeniorAppDB2.FK_last_location_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="SeniorAppDB2.FK_registro_perdida_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="SeniorAppDB2.Fk_provincias_regiones" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

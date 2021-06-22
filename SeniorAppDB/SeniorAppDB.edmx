@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SeniorAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SeniorAppDB2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
@@ -36,7 +36,7 @@
           <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="mail" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="passwd" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="passwd" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="last_location">
           <Key>
@@ -189,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SeniorAppDBModelStoreContainer">
+        <EntityContainer Name="SeniorAppDB2StoreContainer">
           <EntitySet Name="apoderado" EntityType="Self.apoderado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comunas" EntityType="Self.comunas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cuenta" EntityType="Self.cuenta" Schema="dbo" store:Type="Tables" />
@@ -231,7 +231,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SeniorAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SeniorAppDB2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
@@ -268,7 +268,7 @@
           <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="passwd" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="apoderado" Relationship="Self.FK_apoderado_cuenta" FromRole="cuenta" ToRole="apoderado" />
         </EntityType>
         <EntityType Name="last_location">
@@ -473,9 +473,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SeniorAppDBModelStoreContainer" CdmEntityContainer="SeniorAppDB">
+        <EntityContainerMapping StorageEntityContainer="SeniorAppDB2StoreContainer" CdmEntityContainer="SeniorAppDB">
           <EntitySetMapping Name="apoderado">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.apoderado">
+            <EntityTypeMapping TypeName="SeniorAppDB2.apoderado">
               <MappingFragment StoreEntitySet="apoderado">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -491,7 +491,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="comunas">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.comunas">
+            <EntityTypeMapping TypeName="SeniorAppDB2.comunas">
               <MappingFragment StoreEntitySet="comunas">
                 <ScalarProperty Name="comuna_id" ColumnName="comuna_id" />
                 <ScalarProperty Name="comuna_nombre" ColumnName="comuna_nombre" />
@@ -500,7 +500,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cuenta">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.cuenta">
+            <EntityTypeMapping TypeName="SeniorAppDB2.cuenta">
               <MappingFragment StoreEntitySet="cuenta">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
@@ -511,7 +511,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="last_location">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.last_location">
+            <EntityTypeMapping TypeName="SeniorAppDB2.last_location">
               <MappingFragment StoreEntitySet="last_location">
                 <ScalarProperty Name="id_perdida" ColumnName="id_perdida" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
@@ -526,7 +526,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="portador">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.portador">
+            <EntityTypeMapping TypeName="SeniorAppDB2.portador">
               <MappingFragment StoreEntitySet="portador">
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -548,7 +548,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="provincias">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.provincias">
+            <EntityTypeMapping TypeName="SeniorAppDB2.provincias">
               <MappingFragment StoreEntitySet="provincias">
                 <ScalarProperty Name="provincia_id" ColumnName="provincia_id" />
                 <ScalarProperty Name="provincia_nombre" ColumnName="provincia_nombre" />
@@ -557,7 +557,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="regiones">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.regiones">
+            <EntityTypeMapping TypeName="SeniorAppDB2.regiones">
               <MappingFragment StoreEntitySet="regiones">
                 <ScalarProperty Name="region_id" ColumnName="region_id" />
                 <ScalarProperty Name="region_nombre" ColumnName="region_nombre" />
@@ -566,7 +566,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="registro_perdida">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.registro_perdida">
+            <EntityTypeMapping TypeName="SeniorAppDB2.registro_perdida">
               <MappingFragment StoreEntitySet="registro_perdida">
                 <ScalarProperty Name="id_registro" ColumnName="id_registro" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
