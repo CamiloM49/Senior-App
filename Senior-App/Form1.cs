@@ -13,6 +13,8 @@ using QRCoder;
 using ZXing;
 using ZXing.Presentation;
 
+
+
 namespace Senior_App
 {
     public partial class Form1 : Form
@@ -147,6 +149,9 @@ namespace Senior_App
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
 
+
+
+            MessageBox.Show("a");
         }
     }
 }
