@@ -78,7 +78,8 @@ namespace Senior_App
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            Application.Exit();
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
@@ -113,7 +114,11 @@ namespace Senior_App
                 captureDevice.Stop();
             }
             
-                
+
+
+
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -157,19 +162,33 @@ namespace Senior_App
             {
                 var lst = from d in db1.cuenta
                           where d.mail == txtCorreo.Text
-                          && d.passwd == metroTextBox2.Text
+                          && d.passwd == sPass
                           select d;
+                
+                
+
+                
                 if (lst.Count() > 0)
-                { MessageBox.Show("Usuario"); }
+                {
+
+                    Form2 adm = new Form2();
+                    adm.Show();
+
+                }
                 else
                 {
-                    MessageBox.Show("El usuario no existev");
+                    txtExito.Visible= true;
                 }
-                txtExito.Text = sPass + " " + txtCorreo.Text;
-            }
+                            }
             
 
 
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            Form2 adm = new Form2();
+            adm.Show();
         }
     }
 }

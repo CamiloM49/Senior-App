@@ -61,6 +61,8 @@ namespace Senior_App
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.txtExito = new MaterialSkin.Controls.MaterialLabel();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
             this.metroConsulta.SuspendLayout();
@@ -95,6 +97,8 @@ namespace Senior_App
             // metroLogin
             // 
             this.metroLogin.BackColor = System.Drawing.Color.White;
+            this.metroLogin.Controls.Add(this.materialFlatButton1);
+            this.metroLogin.Controls.Add(this.txtExito);
             this.metroLogin.Controls.Add(this.materialLabel2);
             this.metroLogin.Controls.Add(this.materialLabel1);
             this.metroLogin.Controls.Add(this.materialRaisedButton1);
@@ -176,7 +180,7 @@ namespace Senior_App
             this.metroTextBox2.Location = new System.Drawing.Point(256, 256);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
+            this.metroTextBox2.PasswordChar = '*';
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
             this.metroTextBox2.SelectionLength = 0;
@@ -232,7 +236,7 @@ namespace Senior_App
             this.metroConsulta.HorizontalScrollbarSize = 10;
             this.metroConsulta.Location = new System.Drawing.Point(4, 37);
             this.metroConsulta.Name = "metroConsulta";
-            this.metroConsulta.Size = new System.Drawing.Size(834, 536);
+            this.metroConsulta.Size = new System.Drawing.Size(834, 533);
             this.metroConsulta.TabIndex = 1;
             this.metroConsulta.Text = "Consultar Datos";
             this.metroConsulta.VerticalScrollbarBarColor = true;
@@ -341,7 +345,7 @@ namespace Senior_App
             this.metroGenera.HorizontalScrollbarSize = 10;
             this.metroGenera.Location = new System.Drawing.Point(4, 37);
             this.metroGenera.Name = "metroGenera";
-            this.metroGenera.Size = new System.Drawing.Size(834, 536);
+            this.metroGenera.Size = new System.Drawing.Size(834, 533);
             this.metroGenera.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroGenera.TabIndex = 2;
             this.metroGenera.Text = "Generar Codigo QR";
@@ -468,6 +472,37 @@ namespace Senior_App
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
             // 
+            // txtExito
+            // 
+            this.txtExito.AutoSize = true;
+            this.txtExito.BackColor = System.Drawing.Color.White;
+            this.txtExito.Depth = 0;
+            this.txtExito.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtExito.ForeColor = System.Drawing.Color.Red;
+            this.txtExito.Location = new System.Drawing.Point(256, 358);
+            this.txtExito.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtExito.Name = "txtExito";
+            this.txtExito.Size = new System.Drawing.Size(240, 19);
+            this.txtExito.TabIndex = 21;
+            this.txtExito.Text = "*  Usuario o contraseña incorrecto";
+            this.txtExito.Visible = false;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(64, 143);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(172, 36);
+            this.materialFlatButton1.TabIndex = 22;
+            this.materialFlatButton1.Text = "materialFlatButton1";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,6 +565,8 @@ namespace Senior_App
         private IntegracionDataSetTableAdapters.cuentaTableAdapter cuentaTableAdapter;
         private System.Windows.Forms.BindingSource cuentaBindingSource1;
         private System.Windows.Forms.BindingSource integracionDataSetBindingSource1;
+        private MaterialSkin.Controls.MaterialLabel txtExito;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
     }
 }
 
