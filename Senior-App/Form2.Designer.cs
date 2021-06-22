@@ -34,6 +34,20 @@ namespace Senior_App
             this.tabMantenedores = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
             this.tabComunas = new MetroFramework.Controls.MetroTabPage();
+            this.labelError = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtCoumnaID = new System.Windows.Forms.TextBox();
+            this.txtComunaName = new System.Windows.Forms.TextBox();
+            this.cboComunaProvID = new MetroFramework.Controls.MetroComboBox();
+            this.provinciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.todoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.todo = new Senior_App.Todo();
+            this.dgvComuna = new System.Windows.Forms.DataGridView();
+            this.comunaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comunanombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provinciaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comunasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabProvincia = new MetroFramework.Controls.MetroTabPage();
             this.tabRegion = new MetroFramework.Controls.MetroTabPage();
             this.tabUsers = new MetroFramework.Controls.MetroTabPage();
@@ -41,40 +55,26 @@ namespace Senior_App
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvComuna = new System.Windows.Forms.DataGridView();
-            this.todo = new Senior_App.Todo();
             this.apoderadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apoderadoTableAdapter = new Senior_App.TodoTableAdapters.apoderadoTableAdapter();
             this.fKportadorapoderadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.portadorTableAdapter = new Senior_App.TodoTableAdapters.portadorTableAdapter();
-            this.todoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comunasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comunasTableAdapter = new Senior_App.TodoTableAdapters.comunasTableAdapter();
-            this.comunaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comunanombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provinciaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboComunaProvID = new MetroFramework.Controls.MetroComboBox();
-            this.provinciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.provinciasTableAdapter = new Senior_App.TodoTableAdapters.provinciasTableAdapter();
             this.integracionDataSet1 = new Senior_App.IntegracionDataSet();
             this.todo1 = new Senior_App.Todo();
-            this.txtComunaName = new System.Windows.Forms.TextBox();
-            this.txtCoumnaID = new System.Windows.Forms.TextBox();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtCamposLlenos = new MaterialSkin.Controls.MaterialLabel();
             this.metroTabControl1.SuspendLayout();
             this.tabMantenedores.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
             this.tabComunas.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComuna)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComuna)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comunasBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKportadorapoderadoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comunasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integracionDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todo1)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +122,7 @@ namespace Senior_App
             // 
             // tabComunas
             // 
-            this.tabComunas.Controls.Add(this.txtCamposLlenos);
+            this.tabComunas.Controls.Add(this.labelError);
             this.tabComunas.Controls.Add(this.materialRaisedButton2);
             this.tabComunas.Controls.Add(this.materialRaisedButton1);
             this.tabComunas.Controls.Add(this.txtCoumnaID);
@@ -140,6 +140,135 @@ namespace Senior_App
             this.tabComunas.VerticalScrollbarBarColor = true;
             this.tabComunas.VerticalScrollbarHighlightOnWheel = false;
             this.tabComunas.VerticalScrollbarSize = 10;
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.BackColor = System.Drawing.Color.White;
+            this.labelError.Depth = 0;
+            this.labelError.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(4, 2);
+            this.labelError.MouseState = MaterialSkin.MouseState.HOVER;
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(223, 19);
+            this.labelError.TabIndex = 22;
+            this.labelError.Text = "* Favor llenar todos los campos\r\n";
+            this.labelError.Visible = false;
+            // 
+            // materialRaisedButton2
+            // 
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(409, 59);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(401, 36);
+            this.materialRaisedButton2.TabIndex = 15;
+            this.materialRaisedButton2.Text = "Eliminar comuna";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(4, 59);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(399, 36);
+            this.materialRaisedButton1.TabIndex = 14;
+            this.materialRaisedButton1.Text = "AGREGAR COMuna";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
+            // txtCoumnaID
+            // 
+            this.txtCoumnaID.Location = new System.Drawing.Point(4, 24);
+            this.txtCoumnaID.MaxLength = 3;
+            this.txtCoumnaID.Multiline = true;
+            this.txtCoumnaID.Name = "txtCoumnaID";
+            this.txtCoumnaID.Size = new System.Drawing.Size(255, 29);
+            this.txtCoumnaID.TabIndex = 10;
+            // 
+            // txtComunaName
+            // 
+            this.txtComunaName.Location = new System.Drawing.Point(265, 24);
+            this.txtComunaName.MaxLength = 20;
+            this.txtComunaName.Multiline = true;
+            this.txtComunaName.Name = "txtComunaName";
+            this.txtComunaName.Size = new System.Drawing.Size(261, 29);
+            this.txtComunaName.TabIndex = 9;
+            // 
+            // cboComunaProvID
+            // 
+            this.cboComunaProvID.DataSource = this.provinciasBindingSource;
+            this.cboComunaProvID.DisplayMember = "provincia_id";
+            this.cboComunaProvID.FormattingEnabled = true;
+            this.cboComunaProvID.ItemHeight = 23;
+            this.cboComunaProvID.Location = new System.Drawing.Point(529, 24);
+            this.cboComunaProvID.Name = "cboComunaProvID";
+            this.cboComunaProvID.Size = new System.Drawing.Size(278, 29);
+            this.cboComunaProvID.Style = MetroFramework.MetroColorStyle.Silver;
+            this.cboComunaProvID.TabIndex = 6;
+            this.cboComunaProvID.UseCustomBackColor = true;
+            this.cboComunaProvID.UseSelectable = true;
+            this.cboComunaProvID.ValueMember = "provincia_id";
+            // 
+            // provinciasBindingSource
+            // 
+            this.provinciasBindingSource.DataMember = "provincias";
+            this.provinciasBindingSource.DataSource = this.todoBindingSource;
+            // 
+            // todoBindingSource
+            // 
+            this.todoBindingSource.DataSource = this.todo;
+            this.todoBindingSource.Position = 0;
+            // 
+            // todo
+            // 
+            this.todo.DataSetName = "Todo";
+            this.todo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dgvComuna
+            // 
+            this.dgvComuna.AllowUserToOrderColumns = true;
+            this.dgvComuna.AutoGenerateColumns = false;
+            this.dgvComuna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.comunaidDataGridViewTextBoxColumn,
+            this.comunanombreDataGridViewTextBoxColumn,
+            this.provinciaidDataGridViewTextBoxColumn});
+            this.dgvComuna.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvComuna.DataSource = this.comunasBindingSource;
+            this.dgvComuna.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvComuna.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgvComuna.Location = new System.Drawing.Point(0, 101);
+            this.dgvComuna.Name = "dgvComuna";
+            this.dgvComuna.Size = new System.Drawing.Size(810, 350);
+            this.dgvComuna.TabIndex = 2;
+            this.dgvComuna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComuna_CellContentClick);
+            // 
+            // comunaidDataGridViewTextBoxColumn
+            // 
+            this.comunaidDataGridViewTextBoxColumn.DataPropertyName = "comuna_id";
+            this.comunaidDataGridViewTextBoxColumn.HeaderText = "comuna_id";
+            this.comunaidDataGridViewTextBoxColumn.Name = "comunaidDataGridViewTextBoxColumn";
+            // 
+            // comunanombreDataGridViewTextBoxColumn
+            // 
+            this.comunanombreDataGridViewTextBoxColumn.DataPropertyName = "comuna_nombre";
+            this.comunanombreDataGridViewTextBoxColumn.HeaderText = "comuna_nombre";
+            this.comunanombreDataGridViewTextBoxColumn.Name = "comunanombreDataGridViewTextBoxColumn";
+            // 
+            // provinciaidDataGridViewTextBoxColumn
+            // 
+            this.provinciaidDataGridViewTextBoxColumn.DataPropertyName = "provincia_id";
+            this.provinciaidDataGridViewTextBoxColumn.HeaderText = "provincia_id";
+            this.provinciaidDataGridViewTextBoxColumn.Name = "provinciaidDataGridViewTextBoxColumn";
+            // 
+            // comunasBindingSource
+            // 
+            this.comunasBindingSource.DataMember = "comunas";
+            this.comunasBindingSource.DataSource = this.todoBindingSource;
             // 
             // tabProvincia
             // 
@@ -234,28 +363,6 @@ namespace Senior_App
             this.panel1.Size = new System.Drawing.Size(826, 48);
             this.panel1.TabIndex = 7;
             // 
-            // dgvComuna
-            // 
-            this.dgvComuna.AllowUserToOrderColumns = true;
-            this.dgvComuna.AutoGenerateColumns = false;
-            this.dgvComuna.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.comunaidDataGridViewTextBoxColumn,
-            this.comunanombreDataGridViewTextBoxColumn,
-            this.provinciaidDataGridViewTextBoxColumn});
-            this.dgvComuna.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dgvComuna.DataSource = this.comunasBindingSource;
-            this.dgvComuna.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvComuna.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvComuna.Location = new System.Drawing.Point(0, 101);
-            this.dgvComuna.Name = "dgvComuna";
-            this.dgvComuna.Size = new System.Drawing.Size(810, 350);
-            this.dgvComuna.TabIndex = 2;
-            // 
-            // todo
-            // 
-            this.todo.DataSetName = "Todo";
-            this.todo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // apoderadoBindingSource
             // 
             this.apoderadoBindingSource.DataMember = "apoderado";
@@ -274,57 +381,9 @@ namespace Senior_App
             // 
             this.portadorTableAdapter.ClearBeforeFill = true;
             // 
-            // todoBindingSource
-            // 
-            this.todoBindingSource.DataSource = this.todo;
-            this.todoBindingSource.Position = 0;
-            // 
-            // comunasBindingSource
-            // 
-            this.comunasBindingSource.DataMember = "comunas";
-            this.comunasBindingSource.DataSource = this.todoBindingSource;
-            // 
             // comunasTableAdapter
             // 
             this.comunasTableAdapter.ClearBeforeFill = true;
-            // 
-            // comunaidDataGridViewTextBoxColumn
-            // 
-            this.comunaidDataGridViewTextBoxColumn.DataPropertyName = "comuna_id";
-            this.comunaidDataGridViewTextBoxColumn.HeaderText = "comuna_id";
-            this.comunaidDataGridViewTextBoxColumn.Name = "comunaidDataGridViewTextBoxColumn";
-            // 
-            // comunanombreDataGridViewTextBoxColumn
-            // 
-            this.comunanombreDataGridViewTextBoxColumn.DataPropertyName = "comuna_nombre";
-            this.comunanombreDataGridViewTextBoxColumn.HeaderText = "comuna_nombre";
-            this.comunanombreDataGridViewTextBoxColumn.Name = "comunanombreDataGridViewTextBoxColumn";
-            // 
-            // provinciaidDataGridViewTextBoxColumn
-            // 
-            this.provinciaidDataGridViewTextBoxColumn.DataPropertyName = "provincia_id";
-            this.provinciaidDataGridViewTextBoxColumn.HeaderText = "provincia_id";
-            this.provinciaidDataGridViewTextBoxColumn.Name = "provinciaidDataGridViewTextBoxColumn";
-            // 
-            // cboComunaProvID
-            // 
-            this.cboComunaProvID.DataSource = this.provinciasBindingSource;
-            this.cboComunaProvID.DisplayMember = "provincia_nombre";
-            this.cboComunaProvID.FormattingEnabled = true;
-            this.cboComunaProvID.ItemHeight = 23;
-            this.cboComunaProvID.Location = new System.Drawing.Point(529, 24);
-            this.cboComunaProvID.Name = "cboComunaProvID";
-            this.cboComunaProvID.Size = new System.Drawing.Size(278, 29);
-            this.cboComunaProvID.Style = MetroFramework.MetroColorStyle.Silver;
-            this.cboComunaProvID.TabIndex = 6;
-            this.cboComunaProvID.UseCustomBackColor = true;
-            this.cboComunaProvID.UseSelectable = true;
-            this.cboComunaProvID.ValueMember = "provincia_id";
-            // 
-            // provinciasBindingSource
-            // 
-            this.provinciasBindingSource.DataMember = "provincias";
-            this.provinciasBindingSource.DataSource = this.todoBindingSource;
             // 
             // provinciasTableAdapter
             // 
@@ -339,65 +398,6 @@ namespace Senior_App
             // 
             this.todo1.DataSetName = "Todo";
             this.todo1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // txtComunaName
-            // 
-            this.txtComunaName.Location = new System.Drawing.Point(265, 24);
-            this.txtComunaName.MaxLength = 20;
-            this.txtComunaName.Multiline = true;
-            this.txtComunaName.Name = "txtComunaName";
-            this.txtComunaName.Size = new System.Drawing.Size(261, 29);
-            this.txtComunaName.TabIndex = 9;
-            // 
-            // txtCoumnaID
-            // 
-            this.txtCoumnaID.Location = new System.Drawing.Point(4, 24);
-            this.txtCoumnaID.MaxLength = 3;
-            this.txtCoumnaID.Multiline = true;
-            this.txtCoumnaID.Name = "txtCoumnaID";
-            this.txtCoumnaID.Size = new System.Drawing.Size(255, 29);
-            this.txtCoumnaID.TabIndex = 10;
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(4, 59);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(399, 36);
-            this.materialRaisedButton1.TabIndex = 14;
-            this.materialRaisedButton1.Text = "AGREGAR COMuna";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(409, 59);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(401, 36);
-            this.materialRaisedButton2.TabIndex = 15;
-            this.materialRaisedButton2.Text = "Eliminar comuna";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
-            // 
-            // txtCamposLlenos
-            // 
-            this.txtCamposLlenos.AutoSize = true;
-            this.txtCamposLlenos.BackColor = System.Drawing.Color.White;
-            this.txtCamposLlenos.Depth = 0;
-            this.txtCamposLlenos.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtCamposLlenos.ForeColor = System.Drawing.Color.Red;
-            this.txtCamposLlenos.Location = new System.Drawing.Point(4, 2);
-            this.txtCamposLlenos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtCamposLlenos.Name = "txtCamposLlenos";
-            this.txtCamposLlenos.Size = new System.Drawing.Size(223, 19);
-            this.txtCamposLlenos.TabIndex = 22;
-            this.txtCamposLlenos.Text = "* Favor llenar todos los campos\r\n";
-            this.txtCamposLlenos.Visible = false;
             // 
             // Form2
             // 
@@ -414,14 +414,14 @@ namespace Senior_App
             this.metroTabControl2.ResumeLayout(false);
             this.tabComunas.ResumeLayout(false);
             this.tabComunas.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComuna)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.todoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComuna)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comunasBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKportadorapoderadoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.todoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comunasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integracionDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todo1)).EndInit();
             this.ResumeLayout(false);
@@ -462,6 +462,6 @@ namespace Senior_App
         private System.Windows.Forms.TextBox txtComunaName;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialLabel txtCamposLlenos;
+        private MaterialSkin.Controls.MaterialLabel labelError;
     }
 }

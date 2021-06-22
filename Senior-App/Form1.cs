@@ -80,6 +80,7 @@ namespace Senior_App
         {
 
             Application.Exit();
+            this.Close(); 
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
@@ -177,14 +178,14 @@ namespace Senior_App
                 }
                 else
                 {
-                    txtExito.Visible= true;
+                    txtError.Visible= true;
                 }
                             }
             
 
 
         }
-
+        //Este esta para no tener que logear siempre xd
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             Form2 adm = new Form2();

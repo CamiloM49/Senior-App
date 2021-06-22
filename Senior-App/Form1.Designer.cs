@@ -61,7 +61,7 @@ namespace Senior_App
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.txtExito = new MaterialSkin.Controls.MaterialLabel();
+            this.txtError = new MaterialSkin.Controls.MaterialLabel();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
@@ -98,7 +98,7 @@ namespace Senior_App
             // 
             this.metroLogin.BackColor = System.Drawing.Color.White;
             this.metroLogin.Controls.Add(this.materialFlatButton1);
-            this.metroLogin.Controls.Add(this.txtExito);
+            this.metroLogin.Controls.Add(this.txtError);
             this.metroLogin.Controls.Add(this.materialLabel2);
             this.metroLogin.Controls.Add(this.materialLabel1);
             this.metroLogin.Controls.Add(this.materialRaisedButton1);
@@ -472,20 +472,20 @@ namespace Senior_App
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
             // 
-            // txtExito
+            // txtError
             // 
-            this.txtExito.AutoSize = true;
-            this.txtExito.BackColor = System.Drawing.Color.White;
-            this.txtExito.Depth = 0;
-            this.txtExito.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtExito.ForeColor = System.Drawing.Color.Red;
-            this.txtExito.Location = new System.Drawing.Point(256, 358);
-            this.txtExito.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtExito.Name = "txtExito";
-            this.txtExito.Size = new System.Drawing.Size(240, 19);
-            this.txtExito.TabIndex = 21;
-            this.txtExito.Text = "*  Usuario o contraseña incorrecto";
-            this.txtExito.Visible = false;
+            this.txtError.AutoSize = true;
+            this.txtError.BackColor = System.Drawing.Color.White;
+            this.txtError.Depth = 0;
+            this.txtError.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtError.ForeColor = System.Drawing.Color.Red;
+            this.txtError.Location = new System.Drawing.Point(256, 358);
+            this.txtError.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(240, 19);
+            this.txtError.TabIndex = 21;
+            this.txtError.Text = "*  Usuario o contraseña incorrecto";
+            this.txtError.Visible = false;
             // 
             // materialFlatButton1
             // 
@@ -565,7 +565,7 @@ namespace Senior_App
         private IntegracionDataSetTableAdapters.cuentaTableAdapter cuentaTableAdapter;
         private System.Windows.Forms.BindingSource cuentaBindingSource1;
         private System.Windows.Forms.BindingSource integracionDataSetBindingSource1;
-        private MaterialSkin.Controls.MaterialLabel txtExito;
+        private MaterialSkin.Controls.MaterialLabel txtError;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
     }
 }

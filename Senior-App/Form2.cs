@@ -16,6 +16,31 @@ namespace Senior_App
         public Form2()
         {
             InitializeComponent();
+            using (SeniorAppDB.SeniorAppDB db1 = new SeniorAppDB.SeniorAppDB())
+            {
+                //consultamos todas las filas 
+                var lst = from d in db1.comunas
+                          select d;
+
+                //creamos variable que cuente todas las filas
+                var filasID = lst.Count();
+
+                //Establecemos automatico el ID
+                txtCoumnaID.Text = "" + (lst.Count() + 1);
+                txtCoumnaID.Enabled = false;
+
+
+                /*
+                if (lst.Count() > 1)
+                {
+                    this.comunasTableAdapter.Insert(int.Parse(this.txtCoumnaID.Text), this.txtComunaName.Text, int.Parse(this.cboComunaProvID.Text));
+                }
+                else
+                {
+                    txtCamposLlenos.Text = "ID repetida, favor cambiar";
+                }
+                */
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,7 +63,7 @@ namespace Senior_App
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
@@ -48,44 +73,82 @@ namespace Senior_App
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-
-
-            /*
-            DataGridViewRow fila = new DataGridViewRow();
-            fila.CreateCells(dgvComuna);
-            fila.Cells[0].Value = txtCoumnaID.Text;
-            fila.Cells[1].Value = txtComunaName.Text;
-            fila.Cells[2].Value = cboComunaProvID.SelectedItem;
-            if(txtCoumnaID.TextLength < 1 || txtComunaName.TextLength < 2)
+            using (SeniorAppDB.SeniorAppDB db1 = new SeniorAppDB.SeniorAppDB())
             {
-                txtCamposLlenos.Visible = true;
+                //consultamos todas las filas 
+                var lst = from d in db1.comunas
+                          where d.comuna_id == 186
+                          select d;
+
+                if (lst.Count()  > 0)
+                {
+                    this.comunasTableAdapter.Insert(int.Parse(this.txtCoumnaID.Text), this.txtComunaName.Text, int.Parse(this.cboComunaProvID.Text));
+                    MessageBox.Show("tamo gucci");
+                      
+                    dgvComuna.Update();
+                    dgvComuna.Refresh();
+                    
+                }
+                else
+                {
+                    labelError.Visible = true; 
+                    labelError.Text = "ID repetida, favor cambiar";
+                }
+                
+            }
+
+
+
+            if (txtCoumnaID.TextLength < 1 || txtComunaName.TextLength < 2)
+            {
+                labelError.Visible = true;
+
             }
             else
             {
 
-                using (SeniorAppDB.SeniorAppDB db2 = new SeniorAppDB.SeniorAppDB())
+
+                
+                /*
+                DataGridViewRow fila = new DataGridViewRow();
+                fila.CreateCells(dgvComuna);
+                fila.Cells[0].Value = txtCoumnaID.Text;
+                fila.Cells[1].Value = txtComunaName.Text;
+                fila.Cells[2].Value = cboComunaProvID.SelectedItem;
+                if(txtCoumnaID.TextLength < 1 || txtComunaName.TextLength < 2)
                 {
-                    
-                               
+                    txtCamposLlenos.Visible = true;
                 }
-                    
+                else
+                {
+
+                    using (SeniorAppDB.SeniorAppDB db2 = new SeniorAppDB.SeniorAppDB())
+                    {
 
 
-                dgvComuna.Rows.Add(fila);
-                txtCoumnaID.Text = "";
-                txtComunaName.Text = ";";
-                MessageBox.Show("Comuna agregada con exito", "Notifiacion");
-            
-            }*/
+                    }
 
 
+
+                    dgvComuna.Rows.Add(fila);
+                    txtCoumnaID.Text = "";
+                    txtComunaName.Text = ";";
+                    MessageBox.Show("Comuna agregada con exito", "Notifiacion");
+
+                }*/
+
+
+
+
+            }
 
 
         }
 
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        private void dgvComuna_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            DataGridView tabla = new DataGridView();
+            tabla.Update();
         }
     }
 }
