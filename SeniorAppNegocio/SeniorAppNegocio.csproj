@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractService.cs" />
+    <Compile Include="CifradoNegocio.cs" />
     <Compile Include="LoginNegocio.cs" />
     <Compile Include="TokenNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,10 +53,6 @@
     <ProjectReference Include="..\SeniorAppDB\SeniorAppDB.csproj">
       <Project>{e36104f1-90b9-44fb-ae25-782404dd8646}</Project>
       <Name>SeniorAppDB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SeniorAppDTO\SeniorAppDTO.csproj">
-      <Project>{7016ab13-661f-4319-9cd1-1248850f5a01}</Project>
-      <Name>SeniorAppDTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

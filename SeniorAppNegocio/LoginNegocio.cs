@@ -1,26 +1,36 @@
-﻿using SeniorAppDB;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Security.Cryptography;
-
+using SeniorAppDB;
+using SeniorAppNegocio;
 
 namespace SeniorAppNegocio
 {
     public class LoginNegocio
     {
-        public static string GetSHA256(string str)
-        {
-            SHA256 sha256 = SHA256Managed.Create();
-            ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[] stream = null;
-            StringBuilder sb = new StringBuilder();
-            stream = sha256.ComputeHash(encoding.GetBytes(str));
-            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
-            return sb.ToString();
-        }
-    }
-}
+        public bool respuesta;
+        public void validadDatos(string textocorreo, string passwd) {
+            string sPass = CifradoNegocio.GetSHA256(passwd);
+            using (SeniorAppDB.SeniorAppDB db = new SeniorAppDB.SeniorAppDB())
+            {
+
+                var lst = from d in db.cuenta
+                          where d.mail == textocorreo
+                          && d.passwd == sPass
+                          select d;
+                if (lst.Count() > 0)
+                {
+
+                    respuesta = true;
+
+                } 
+                else { respuesta = false; }
+            } } } }
+                
+
+                
+                
+    
 

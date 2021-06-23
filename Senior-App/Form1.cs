@@ -113,7 +113,8 @@ namespace Senior_App
             if (captureDevice.IsRunning)
             {
                 captureDevice.Stop();
-            }
+            } 
+            
             
 
 
@@ -158,33 +159,29 @@ namespace Senior_App
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            string sPass = SeniorAppNegocio.LoginNegocio.GetSHA256(metroTextBox2.Text.Trim());
-            using (SeniorAppDB.SeniorAppDB db1 = new SeniorAppDB.SeniorAppDB())
+            LoginNegocio obj = new LoginNegocio();
+            obj.validadDatos(txtCorreo.Text, metroTextBox2.Text.Trim());
+        {
+            if (obj.respuesta == true)
             {
-                var lst = from d in db1.cuenta
-                          where d.mail == txtCorreo.Text
-                          && d.passwd == sPass
-                          select d;
-                
-                
 
-                
-                if (lst.Count() > 0)
-                {
-
-                    Form2 adm = new Form2();
-                    adm.Show();
+                Form2 adm = new Form2();
+                adm.Show();
+                    txtError.Visible = false;
 
                 }
-                else
-                {
-                    txtError.Visible= true;
-                }
-                            }
-            
+            else
+            {
+                txtError.Visible = true;
 
-
+            }
         }
+
+
+
+
+
+    }
         //Este esta para no tener que logear siempre xd
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
