@@ -147,7 +147,7 @@ namespace Senior_App
             this.labelError.BackColor = System.Drawing.Color.White;
             this.labelError.Depth = 0;
             this.labelError.Font = new System.Drawing.Font("Roboto", 11F);
-            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelError.Location = new System.Drawing.Point(4, 2);
             this.labelError.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelError.Name = "labelError";

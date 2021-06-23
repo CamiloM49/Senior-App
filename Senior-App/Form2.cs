@@ -27,7 +27,7 @@ namespace Senior_App
 
                 //Establecemos automatico el ID
                 txtCoumnaID.Text = "" + (lst.Count() + 1);
-                txtCoumnaID.Enabled = false;
+                //txtCoumnaID.Enabled = false;
 
 
                 /*
@@ -75,19 +75,34 @@ namespace Senior_App
         {
             using (SeniorAppDB.SeniorAppDB db1 = new SeniorAppDB.SeniorAppDB())
             {
+                var idcomuna = int.Parse(txtCoumnaID.Text);
                 //consultamos todas las filas 
-                var lst = from d in db1.comunas
-                          where d.comuna_id == 186
+                var lsta = from d in db1.comunas
+                          where d.comuna_id == idcomuna
                           select d;
 
-                if (lst.Count()  > 0)
+                if (lsta.Count() == 0)
                 {
-                    this.comunasTableAdapter.Insert(int.Parse(this.txtCoumnaID.Text), this.txtComunaName.Text, int.Parse(this.cboComunaProvID.Text));
+                    this.comunasTableAdapter.Insert(int.Parse(txtCoumnaID.Text) ,this.txtComunaName.Text, int.Parse(this.cboComunaProvID.Text));
                     MessageBox.Show("tamo gucci");
-                      
+
+                    // TODO ESTE CODIGO RECARGA LA CAGÁ DE GRIDVIEW
+                    // TODO: esta línea de código carga datos en la tabla 'todo.provincias' Puede moverla o quitarla según sea necesario.
+                    this.provinciasTableAdapter.Fill(this.todo.provincias);
+                    // TODO: esta línea de código carga datos en la tabla 'todo.comunas' Puede moverla o quitarla según sea necesario.
+                    this.comunasTableAdapter.Fill(this.todo.comunas);
+                    // TODO: esta línea de código carga datos en la tabla 'todo.portador' Puede moverla o quitarla según sea necesario.
+                    this.portadorTableAdapter.Fill(this.todo.portador);
+                    // TODO: esta línea de código carga datos en la tabla 'todo.apoderado' Puede moverla o quitarla según sea necesario.
+                    this.apoderadoTableAdapter.Fill(this.todo.apoderado);
                     dgvComuna.Update();
                     dgvComuna.Refresh();
-                    
+                    DataGridView tabla = new DataGridView();
+                    tabla.Update();
+
+
+
+
                 }
                 else
                 {
@@ -150,5 +165,7 @@ namespace Senior_App
             DataGridView tabla = new DataGridView();
             tabla.Update();
         }
+
+        
     }
 }
