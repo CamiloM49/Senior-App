@@ -78,9 +78,17 @@ namespace Senior_App
 
         private void buttonSalir_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("¿Realmente quieres salir de la aplicación?", "Salir", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
 
-            Application.Exit();
-            this.Close(); 
+            }
+            //Application.Exit();
+            //this.Close(); 
         }
 
         private void materialLabel1_Click(object sender, EventArgs e)
