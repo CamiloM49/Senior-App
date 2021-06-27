@@ -61,6 +61,10 @@ namespace Senior_App
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
             this.metroConsulta.SuspendLayout();
@@ -253,6 +257,10 @@ namespace Senior_App
             // 
             // metroConsulta
             // 
+            this.metroConsulta.Controls.Add(this.metroLabel4);
+            this.metroConsulta.Controls.Add(this.metroLabel3);
+            this.metroConsulta.Controls.Add(this.metroLabel2);
+            this.metroConsulta.Controls.Add(this.metroLabel1);
             this.metroConsulta.Controls.Add(this.materialRaisedButton2);
             this.metroConsulta.Controls.Add(this.txtQR);
             this.metroConsulta.Controls.Add(this.pictureBox2);
@@ -293,7 +301,7 @@ namespace Senior_App
             // 
             this.txtQR.Depth = 0;
             this.txtQR.Hint = "";
-            this.txtQR.Location = new System.Drawing.Point(511, 96);
+            this.txtQR.Location = new System.Drawing.Point(468, 96);
             this.txtQR.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtQR.Name = "txtQR";
             this.txtQR.PasswordChar = '\0';
@@ -303,6 +311,7 @@ namespace Senior_App
             this.txtQR.Size = new System.Drawing.Size(286, 23);
             this.txtQR.TabIndex = 32;
             this.txtQR.UseSystemPasswordChar = false;
+            this.txtQR.Click += new System.EventHandler(this.txtQR_Click);
             // 
             // pictureBox2
             // 
@@ -313,6 +322,7 @@ namespace Senior_App
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // materialLabel4
             // 
@@ -487,6 +497,38 @@ namespace Senior_App
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(480, 189);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel1.TabIndex = 35;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(480, 208);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel2.TabIndex = 36;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(480, 227);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel3.TabIndex = 37;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(480, 246);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel4.TabIndex = 38;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +546,7 @@ namespace Senior_App
             this.metroLogin.ResumeLayout(false);
             this.metroLogin.PerformLayout();
             this.metroConsulta.ResumeLayout(false);
+            this.metroConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.metroGenera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picboxGenerador)).EndInit();
@@ -549,6 +592,10 @@ namespace Senior_App
         private System.Windows.Forms.BindingSource integracionDataSetBindingSource1;
         private MaterialSkin.Controls.MaterialLabel txtError;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
 

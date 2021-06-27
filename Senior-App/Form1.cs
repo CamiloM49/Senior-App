@@ -24,7 +24,7 @@ namespace Senior_App
 {
     public partial class Form1 : Form
     {
-
+        public string resultadoqr;
 
         public Form1()
         {
@@ -128,6 +128,7 @@ namespace Senior_App
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+
             if(pictureBox2.Image!= null)
             {
 
@@ -140,12 +141,21 @@ namespace Senior_App
                     timer1.Stop();
                     if (captureDevice.IsRunning)
                         captureDevice.Stop();
+                    this.resultadoqr = result.ToString();
+
                 }
             }
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
+            ConsultaPortadorNegocio csp = new ConsultaPortadorNegocio();
+            csp.detalleportador(resultadoqr);
+            metroLabel1.Text = csp.nombre;
+            metroLabel2.Text = csp.apdpataterno;
+            metroLabel3.Text = csp.apdmaterno;
+            metroLabel4.Text = csp.contacto;
+
             if (txtQR.TextLength >= 4)
             {
                 materialRaisedButton2.IsAccessible = false; 
@@ -212,6 +222,16 @@ namespace Senior_App
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtQR_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
