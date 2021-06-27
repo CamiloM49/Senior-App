@@ -50,6 +50,8 @@ namespace Senior_App
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'todo.regiones' Puede moverla o quitarla según sea necesario.
+            this.regionesTableAdapter.Fill(this.todo.regiones);
             // TODO: esta línea de código carga datos en la tabla 'todo.provincias' Puede moverla o quitarla según sea necesario.
             this.provinciasTableAdapter.Fill(this.todo.provincias);
             // TODO: esta línea de código carga datos en la tabla 'todo.comunas' Puede moverla o quitarla según sea necesario.
@@ -78,15 +80,15 @@ namespace Senior_App
                 var idcomuna = int.Parse(txtCoumnaID.Text);
                 //consultamos todas las filas 
                 var lsta = from d in db1.comunas
-                          where d.comuna_id == idcomuna
-                          select d;
+                           where d.comuna_id == idcomuna
+                           select d;
 
                 if (lsta.Count() == 0)
                 {
-                    this.comunasTableAdapter.Insert(int.Parse(txtCoumnaID.Text) ,this.txtComunaName.Text, int.Parse(this.cboComunaProvID.Text));
+                    this.comunasTableAdapter.Insert(int.Parse(txtCoumnaID.Text), this.txtComunaName.Text, int.Parse(this.cboComunaProvID.Text));
                     MessageBox.Show("tamo gucci");
 
-                    // TODO ESTE CODIGO RECARGA LA CAGÁ DE GRIDVIEW
+                    // TODO ESTE CODIGO RECARGA TODOS LOS GRIDVIEW
                     // TODO: esta línea de código carga datos en la tabla 'todo.provincias' Puede moverla o quitarla según sea necesario.
                     this.provinciasTableAdapter.Fill(this.todo.provincias);
                     // TODO: esta línea de código carga datos en la tabla 'todo.comunas' Puede moverla o quitarla según sea necesario.
@@ -106,10 +108,10 @@ namespace Senior_App
                 }
                 else
                 {
-                    labelError.Visible = true; 
+                    labelError.Visible = true;
                     labelError.Text = "ID repetida, favor cambiar";
                 }
-                
+
             }
 
 
@@ -123,7 +125,7 @@ namespace Senior_App
             {
 
 
-                
+
                 /*
                 DataGridViewRow fila = new DataGridViewRow();
                 fila.CreateCells(dgvComuna);
@@ -162,10 +164,56 @@ namespace Senior_App
 
         private void dgvComuna_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView tabla = new DataGridView();
-            tabla.Update();
+            /*
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                txtCoumnaID.Text = row.Cells["comuna_id"].Value.ToString();
+                txtComunaName.Text = row.Cells["comuna_nombre"].Value.ToString();
+               
+
+            
+            */
+
+
         }
 
-        
+        private void provinciasBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            //this.regionesTableAdapter.Delete();
+            //DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            //txtCoumnaID.Text = row.Cells["comuna_id"].Value.ToString();
+
+
+
+
+
+        }
+
+        private void dgvComuna_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvComuna.SelectedRows)
+            {
+                txtCoumnaID.Text = row.Cells[0].Value.ToString();
+                txtComunaName.Text = row.Cells[1].Value.ToString();
+                //NO LOGRO QUE ESTA WEA ME ACTUALICE EL COMBOBOX QUIZAS LO CAMBIO A TXT NO MAS. 
+                //cboComunaProvID.SelectedItem = row.Cells[2].Value;
+            }
+        }
     }
 }
