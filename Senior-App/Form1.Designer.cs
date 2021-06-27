@@ -41,7 +41,6 @@ namespace Senior_App
             this.txtCorreo = new MetroFramework.Controls.MetroTextBox();
             this.metroConsulta = new MetroFramework.Controls.MetroTabPage();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtQR = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.cboCamara = new MetroFramework.Controls.MetroComboBox();
@@ -262,7 +261,6 @@ namespace Senior_App
             this.metroConsulta.Controls.Add(this.metroLabel2);
             this.metroConsulta.Controls.Add(this.metroLabel1);
             this.metroConsulta.Controls.Add(this.materialRaisedButton2);
-            this.metroConsulta.Controls.Add(this.txtQR);
             this.metroConsulta.Controls.Add(this.pictureBox2);
             this.metroConsulta.Controls.Add(this.materialLabel4);
             this.metroConsulta.Controls.Add(this.cboCamara);
@@ -296,22 +294,6 @@ namespace Senior_App
             this.materialRaisedButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
             this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
-            // 
-            // txtQR
-            // 
-            this.txtQR.Depth = 0;
-            this.txtQR.Hint = "";
-            this.txtQR.Location = new System.Drawing.Point(468, 96);
-            this.txtQR.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtQR.Name = "txtQR";
-            this.txtQR.PasswordChar = '\0';
-            this.txtQR.SelectedText = "";
-            this.txtQR.SelectionLength = 0;
-            this.txtQR.SelectionStart = 0;
-            this.txtQR.Size = new System.Drawing.Size(286, 23);
-            this.txtQR.TabIndex = 32;
-            this.txtQR.UseSystemPasswordChar = false;
-            this.txtQR.Click += new System.EventHandler(this.txtQR_Click);
             // 
             // pictureBox2
             // 
@@ -576,7 +558,6 @@ namespace Senior_App
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MetroFramework.Controls.MetroComboBox cboCamara;
         private MaterialSkin.Controls.MaterialRaisedButton buttonStart;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtQR;
         private System.Windows.Forms.Timer timer1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MetroFramework.Controls.MetroTabPage metroGenera;

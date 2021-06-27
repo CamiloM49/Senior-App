@@ -137,11 +137,17 @@ namespace Senior_App
                 Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image); 
                 if(result != null)
                 {
-                    txtQR.Text = result.ToString();
+                    
                     timer1.Stop();
                     if (captureDevice.IsRunning)
                         captureDevice.Stop();
                     this.resultadoqr = result.ToString();
+                    ConsultaPortadorNegocio csp = new ConsultaPortadorNegocio();
+                    csp.detalleportador(resultadoqr);
+                    metroLabel1.Text = csp.nombre;
+                    metroLabel2.Text = csp.apdpataterno;
+                    metroLabel3.Text = csp.apdmaterno;
+                    metroLabel4.Text = csp.contacto;
 
                 }
             }
@@ -156,10 +162,7 @@ namespace Senior_App
             metroLabel3.Text = csp.apdmaterno;
             metroLabel4.Text = csp.contacto;
 
-            if (txtQR.TextLength >= 4)
-            {
-                materialRaisedButton2.IsAccessible = false; 
-            }
+            
         }
 
         private void buttonGenerarQR_Click(object sender, EventArgs e)
