@@ -33,5 +33,6 @@ namespace SeniorAppDB
         public virtual DbSet<provincias> provincias { get; set; }
         public virtual DbSet<regiones> regiones { get; set; }
         public virtual DbSet<registro_perdida> registro_perdida { get; set; }
+        public virtual DbSet<token> token { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace SeniorAppDB
         {
             this.last_location = new HashSet<last_location>();
             this.registro_perdida = new HashSet<registro_perdida>();
+            this.token = new HashSet<token>();
         }
     
         public int id_portador { get; set; }
@@ -43,5 +44,7 @@ namespace SeniorAppDB
         public virtual ICollection<last_location> last_location { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<registro_perdida> registro_perdida { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<token> token { get; set; }
     }
 }

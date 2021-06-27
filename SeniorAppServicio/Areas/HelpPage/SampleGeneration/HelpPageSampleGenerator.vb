@@ -360,13 +360,7 @@ Namespace Areas.HelpPage
 
         <SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification:="Handling the failure by returning the original string.")>
         Private Shared Function TryFormatXml(str As String) As String
-            Try
-                Dim Xml As XDocument = XDocument.Parse(str)
-                Return Xml.ToString()
-            Catch
-                ' can't parse XML, return the original string
-                Return str
-            End Try
+
         End Function
 
         Private Shared Function IsFormatSupported(sampleDirection As SampleDirection, formatter As MediaTypeFormatter, type As Type) As Boolean

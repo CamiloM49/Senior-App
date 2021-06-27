@@ -69,6 +69,9 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -79,6 +82,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,9 +103,11 @@
   <ItemGroup>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -129,6 +135,7 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -188,6 +195,10 @@
     <ProjectReference Include="..\SeniorAppDB\SeniorAppDB.csproj">
       <Project>{e36104f1-90b9-44fb-ae25-782404dd8646}</Project>
       <Name>SeniorAppDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeniorAppDTO\SeniorAppDTO.csproj">
+      <Project>{7016ab13-661f-4319-9cd1-1248850f5a01}</Project>
+      <Name>SeniorAppDTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\SeniorAppNegocio\SeniorAppNegocio.csproj">
       <Project>{716f0d62-3333-4cbf-a8d6-51967cdc1bcc}</Project>

@@ -33,8 +33,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,16 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractService.cs" />
     <Compile Include="CifradoNegocio.cs" />
+    <Compile Include="TokenAleatorioNegocio.cs" />
+    <Compile Include="GeneradorQRNegocio.cs" />
     <Compile Include="LoginNegocio.cs" />
-    <Compile Include="TokenNegocio.cs" />
+    <Compile Include="ConsultaPortadorNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SeniorAppDB\SeniorAppDB.csproj">
       <Project>{e36104f1-90b9-44fb-ae25-782404dd8646}</Project>
       <Name>SeniorAppDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeniorAppDTO\SeniorAppDTO.csproj">
+      <Project>{7016ab13-661f-4319-9cd1-1248850f5a01}</Project>
+      <Name>SeniorAppDTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

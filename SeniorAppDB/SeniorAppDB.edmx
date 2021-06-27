@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SeniorAppDB2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SeniorAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
@@ -37,6 +37,7 @@
           <Property Name="mail" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="passwd" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="tipo_cuenta" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="last_location">
           <Key>
@@ -105,6 +106,15 @@
           <Property Name="enviado_auth" Type="binary" MaxLength="1" />
           <Property Name="ip_apoderado" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="token">
+          <Key>
+            <PropertyRef Name="id_token" />
+          </Key>
+          <Property Name="id_token" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="token_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="valido" Type="bit" Nullable="false" />
+          <Property Name="id_portador" Type="int" Nullable="false" />
+        </EntityType>
         <Association Name="FK_apoderado_comunas">
           <End Role="comunas" Type="Self.comunas" Multiplicity="1" />
           <End Role="apoderado" Type="Self.apoderado" Multiplicity="*" />
@@ -189,7 +199,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SeniorAppDB2StoreContainer">
+        <Association Name="FK_token_portador">
+          <End Role="portador" Type="Self.portador" Multiplicity="1" />
+          <End Role="token" Type="Self.token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="portador">
+              <PropertyRef Name="id_portador" />
+            </Principal>
+            <Dependent Role="token">
+              <PropertyRef Name="id_portador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SeniorAppDBModelStoreContainer">
           <EntitySet Name="apoderado" EntityType="Self.apoderado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comunas" EntityType="Self.comunas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cuenta" EntityType="Self.cuenta" Schema="dbo" store:Type="Tables" />
@@ -198,6 +220,7 @@
           <EntitySet Name="provincias" EntityType="Self.provincias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="regiones" EntityType="Self.regiones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="registro_perdida" EntityType="Self.registro_perdida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="token" EntityType="Self.token" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_apoderado_comunas" Association="Self.FK_apoderado_comunas">
             <End Role="comunas" EntitySet="comunas" />
             <End Role="apoderado" EntitySet="apoderado" />
@@ -226,12 +249,16 @@
             <End Role="portador" EntitySet="portador" />
             <End Role="registro_perdida" EntitySet="registro_perdida" />
           </AssociationSet>
+          <AssociationSet Name="FK_token_portador" Association="Self.FK_token_portador">
+            <End Role="portador" EntitySet="portador" />
+            <End Role="token" EntitySet="token" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SeniorAppDB2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SeniorAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
@@ -269,6 +296,7 @@
           <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="passwd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tipo_cuenta" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="apoderado" Relationship="Self.FK_apoderado_cuenta" FromRole="cuenta" ToRole="apoderado" />
         </EntityType>
         <EntityType Name="last_location">
@@ -309,6 +337,7 @@
           <NavigationProperty Name="apoderado" Relationship="Self.FK_portador_apoderado" FromRole="portador" ToRole="apoderado" />
           <NavigationProperty Name="last_location" Relationship="Self.FK_last_location_portador" FromRole="portador" ToRole="last_location" />
           <NavigationProperty Name="registro_perdida" Relationship="Self.FK_registro_perdida_portador" FromRole="portador" ToRole="registro_perdida" />
+          <NavigationProperty Name="token" Relationship="Self.FK_token_portador" FromRole="portador" ToRole="token" />
         </EntityType>
         <EntityType Name="provincias">
           <Key>
@@ -345,6 +374,16 @@
           <Property Name="enviado_auth" Type="Binary" MaxLength="1" FixedLength="true" />
           <Property Name="ip_apoderado" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="portador" Relationship="Self.FK_registro_perdida_portador" FromRole="registro_perdida" ToRole="portador" />
+        </EntityType>
+        <EntityType Name="token">
+          <Key>
+            <PropertyRef Name="id_token" />
+          </Key>
+          <Property Name="id_token" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="token_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="valido" Type="Boolean" Nullable="false" />
+          <Property Name="id_portador" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="portador" Relationship="Self.FK_token_portador" FromRole="token" ToRole="portador" />
         </EntityType>
         <Association Name="FK_apoderado_comunas">
           <End Role="comunas" Type="Self.comunas" Multiplicity="1" />
@@ -418,6 +457,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_token_portador">
+          <End Role="portador" Type="Self.portador" Multiplicity="1" />
+          <End Role="token" Type="Self.token" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="portador">
+              <PropertyRef Name="id_portador" />
+            </Principal>
+            <Dependent Role="token">
+              <PropertyRef Name="id_portador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Fk_provincias_regiones">
           <End Role="regiones" Type="Self.regiones" Multiplicity="1" />
           <End Role="provincias" Type="Self.provincias" Multiplicity="*" />
@@ -439,6 +490,7 @@
           <EntitySet Name="provincias" EntityType="Self.provincias" />
           <EntitySet Name="regiones" EntityType="Self.regiones" />
           <EntitySet Name="registro_perdida" EntityType="Self.registro_perdida" />
+          <EntitySet Name="token" EntityType="Self.token" />
           <AssociationSet Name="FK_apoderado_comunas" Association="Self.FK_apoderado_comunas">
             <End Role="comunas" EntitySet="comunas" />
             <End Role="apoderado" EntitySet="apoderado" />
@@ -463,6 +515,10 @@
             <End Role="portador" EntitySet="portador" />
             <End Role="registro_perdida" EntitySet="registro_perdida" />
           </AssociationSet>
+          <AssociationSet Name="FK_token_portador" Association="Self.FK_token_portador">
+            <End Role="portador" EntitySet="portador" />
+            <End Role="token" EntitySet="token" />
+          </AssociationSet>
           <AssociationSet Name="Fk_provincias_regiones" Association="Self.Fk_provincias_regiones">
             <End Role="regiones" EntitySet="regiones" />
             <End Role="provincias" EntitySet="provincias" />
@@ -473,9 +529,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SeniorAppDB2StoreContainer" CdmEntityContainer="SeniorAppDB">
+        <EntityContainerMapping StorageEntityContainer="SeniorAppDBModelStoreContainer" CdmEntityContainer="SeniorAppDB">
           <EntitySetMapping Name="apoderado">
-            <EntityTypeMapping TypeName="SeniorAppDB2.apoderado">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.apoderado">
               <MappingFragment StoreEntitySet="apoderado">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -491,7 +547,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="comunas">
-            <EntityTypeMapping TypeName="SeniorAppDB2.comunas">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.comunas">
               <MappingFragment StoreEntitySet="comunas">
                 <ScalarProperty Name="comuna_id" ColumnName="comuna_id" />
                 <ScalarProperty Name="comuna_nombre" ColumnName="comuna_nombre" />
@@ -500,18 +556,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cuenta">
-            <EntityTypeMapping TypeName="SeniorAppDB2.cuenta">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.cuenta">
               <MappingFragment StoreEntitySet="cuenta">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="mail" ColumnName="mail" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="passwd" ColumnName="passwd" />
+                <ScalarProperty Name="tipo_cuenta" ColumnName="tipo_cuenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="last_location">
-            <EntityTypeMapping TypeName="SeniorAppDB2.last_location">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.last_location">
               <MappingFragment StoreEntitySet="last_location">
                 <ScalarProperty Name="id_perdida" ColumnName="id_perdida" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
@@ -526,7 +583,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="portador">
-            <EntityTypeMapping TypeName="SeniorAppDB2.portador">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.portador">
               <MappingFragment StoreEntitySet="portador">
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -548,7 +605,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="provincias">
-            <EntityTypeMapping TypeName="SeniorAppDB2.provincias">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.provincias">
               <MappingFragment StoreEntitySet="provincias">
                 <ScalarProperty Name="provincia_id" ColumnName="provincia_id" />
                 <ScalarProperty Name="provincia_nombre" ColumnName="provincia_nombre" />
@@ -557,7 +614,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="regiones">
-            <EntityTypeMapping TypeName="SeniorAppDB2.regiones">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.regiones">
               <MappingFragment StoreEntitySet="regiones">
                 <ScalarProperty Name="region_id" ColumnName="region_id" />
                 <ScalarProperty Name="region_nombre" ColumnName="region_nombre" />
@@ -566,7 +623,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="registro_perdida">
-            <EntityTypeMapping TypeName="SeniorAppDB2.registro_perdida">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.registro_perdida">
               <MappingFragment StoreEntitySet="registro_perdida">
                 <ScalarProperty Name="id_registro" ColumnName="id_registro" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
@@ -579,6 +636,16 @@
                 <ScalarProperty Name="alerta_confirmada" ColumnName="alerta_confirmada" />
                 <ScalarProperty Name="enviado_auth" ColumnName="enviado_auth" />
                 <ScalarProperty Name="ip_apoderado" ColumnName="ip_apoderado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="token">
+            <EntityTypeMapping TypeName="SeniorAppDBModel.token">
+              <MappingFragment StoreEntitySet="token">
+                <ScalarProperty Name="id_token" ColumnName="id_token" />
+                <ScalarProperty Name="token_id" ColumnName="token_id" />
+                <ScalarProperty Name="valido" ColumnName="valido" />
+                <ScalarProperty Name="id_portador" ColumnName="id_portador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
