@@ -50,6 +50,8 @@ namespace Senior_App
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'todo.cuenta' Puede moverla o quitarla según sea necesario.
+            this.cuentaTableAdapter.Fill(this.todo.cuenta);
             // TODO: esta línea de código carga datos en la tabla 'todo.regiones' Puede moverla o quitarla según sea necesario.
             this.regionesTableAdapter.Fill(this.todo.regiones);
             // TODO: esta línea de código carga datos en la tabla 'todo.provincias' Puede moverla o quitarla según sea necesario.
@@ -214,6 +216,11 @@ namespace Senior_App
                 //NO LOGRO QUE ESTA WEA ME ACTUALICE EL COMBOBOX QUIZAS LO CAMBIO A TXT NO MAS. 
                 //cboComunaProvID.SelectedItem = row.Cells[2].Value;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

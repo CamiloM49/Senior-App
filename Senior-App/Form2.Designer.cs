@@ -30,7 +30,13 @@ namespace Senior_App
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.tabMantenedores = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
@@ -99,6 +105,27 @@ namespace Senior_App
             this.provinciasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.provinciasBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.regionesTableAdapter = new Senior_App.TodoTableAdapters.regionesTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuentaTableAdapter = new Senior_App.TodoTableAdapters.cuentaTableAdapter();
+            this.idapoderadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
+            this.apoderadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idapoderadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apdpatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apdmatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechanacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.membresiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comunaidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl1.SuspendLayout();
             this.tabMantenedores.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
@@ -115,6 +142,8 @@ namespace Senior_App
             this.tabRegion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionesBindingSource1)).BeginInit();
+            this.tabUsers.SuspendLayout();
+            this.tabApoderados.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKportadorapoderadoBindingSource)).BeginInit();
@@ -122,6 +151,10 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.todo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -130,10 +163,10 @@ namespace Senior_App
             this.metroTabControl1.Controls.Add(this.tabUsers);
             this.metroTabControl1.Controls.Add(this.tabApoderados);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 181);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 54);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(826, 408);
+            this.metroTabControl1.Size = new System.Drawing.Size(826, 535);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -145,7 +178,7 @@ namespace Senior_App
             this.tabMantenedores.HorizontalScrollbarSize = 10;
             this.tabMantenedores.Location = new System.Drawing.Point(4, 38);
             this.tabMantenedores.Name = "tabMantenedores";
-            this.tabMantenedores.Size = new System.Drawing.Size(818, 366);
+            this.tabMantenedores.Size = new System.Drawing.Size(818, 493);
             this.tabMantenedores.TabIndex = 0;
             this.tabMantenedores.Text = "Mantenedores";
             this.tabMantenedores.VerticalScrollbarBarColor = true;
@@ -158,10 +191,10 @@ namespace Senior_App
             this.metroTabControl2.Controls.Add(this.tabProvincia);
             this.metroTabControl2.Controls.Add(this.tabRegion);
             this.metroTabControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl2.Location = new System.Drawing.Point(0, -127);
+            this.metroTabControl2.Location = new System.Drawing.Point(0, 3);
             this.metroTabControl2.Name = "metroTabControl2";
             this.metroTabControl2.SelectedIndex = 0;
-            this.metroTabControl2.Size = new System.Drawing.Size(818, 493);
+            this.metroTabControl2.Size = new System.Drawing.Size(818, 490);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
             // 
@@ -182,7 +215,7 @@ namespace Senior_App
             this.tabComunas.HorizontalScrollbarSize = 10;
             this.tabComunas.Location = new System.Drawing.Point(4, 38);
             this.tabComunas.Name = "tabComunas";
-            this.tabComunas.Size = new System.Drawing.Size(810, 451);
+            this.tabComunas.Size = new System.Drawing.Size(810, 448);
             this.tabComunas.TabIndex = 0;
             this.tabComunas.Text = "Modificar comunas";
             this.tabComunas.VerticalScrollbarBarColor = true;
@@ -199,7 +232,7 @@ namespace Senior_App
             this.materialLabel5.Location = new System.Drawing.Point(525, 21);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(88, 18);
+            this.materialLabel5.Size = new System.Drawing.Size(89, 19);
             this.materialLabel5.TabIndex = 35;
             this.materialLabel5.Text = "ID Provincia";
             this.materialLabel5.Visible = false;
@@ -214,7 +247,7 @@ namespace Senior_App
             this.materialLabel6.Location = new System.Drawing.Point(261, 21);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(122, 18);
+            this.materialLabel6.Size = new System.Drawing.Size(123, 19);
             this.materialLabel6.TabIndex = 34;
             this.materialLabel6.Text = "Nombre Comuna";
             this.materialLabel6.Visible = false;
@@ -229,7 +262,7 @@ namespace Senior_App
             this.materialLabel7.Location = new System.Drawing.Point(4, 21);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(82, 18);
+            this.materialLabel7.Size = new System.Drawing.Size(83, 19);
             this.materialLabel7.TabIndex = 33;
             this.materialLabel7.Text = "ID Comuna";
             this.materialLabel7.Visible = false;
@@ -244,7 +277,7 @@ namespace Senior_App
             this.labelError.Location = new System.Drawing.Point(4, 2);
             this.labelError.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(222, 18);
+            this.labelError.Size = new System.Drawing.Size(223, 19);
             this.labelError.TabIndex = 22;
             this.labelError.Text = "* Favor llenar todos los campos\r\n";
             this.labelError.Visible = false;
@@ -333,20 +366,19 @@ namespace Senior_App
             this.provinciaidDataGridViewTextBoxColumn});
             this.dgvComuna.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvComuna.DataSource = this.comunasBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvComuna.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvComuna.Dock = System.Windows.Forms.DockStyle.Bottom;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComuna.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvComuna.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvComuna.GridColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dgvComuna.Location = new System.Drawing.Point(0, 114);
+            this.dgvComuna.Location = new System.Drawing.Point(-8, 118);
             this.dgvComuna.Name = "dgvComuna";
-            this.dgvComuna.Size = new System.Drawing.Size(810, 337);
+            this.dgvComuna.Size = new System.Drawing.Size(818, 333);
             this.dgvComuna.TabIndex = 2;
             this.dgvComuna.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComuna_CellContentClick);
             this.dgvComuna.SelectionChanged += new System.EventHandler(this.dgvComuna_SelectionChanged);
@@ -391,7 +423,7 @@ namespace Senior_App
             this.tabProvincia.HorizontalScrollbarSize = 10;
             this.tabProvincia.Location = new System.Drawing.Point(4, 38);
             this.tabProvincia.Name = "tabProvincia";
-            this.tabProvincia.Size = new System.Drawing.Size(810, 451);
+            this.tabProvincia.Size = new System.Drawing.Size(810, 448);
             this.tabProvincia.TabIndex = 1;
             this.tabProvincia.Text = "Modificar Provincias";
             this.tabProvincia.VerticalScrollbarBarColor = true;
@@ -408,7 +440,7 @@ namespace Senior_App
             this.materialLabel4.Location = new System.Drawing.Point(525, 23);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(73, 19);
             this.materialLabel4.TabIndex = 32;
             this.materialLabel4.Text = "ID Region";
             this.materialLabel4.Visible = false;
@@ -423,7 +455,7 @@ namespace Senior_App
             this.materialLabel3.Location = new System.Drawing.Point(261, 23);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(129, 19);
             this.materialLabel3.TabIndex = 31;
             this.materialLabel3.Text = "Nombre Provincia";
             this.materialLabel3.Visible = false;
@@ -438,7 +470,7 @@ namespace Senior_App
             this.materialLabel2.Location = new System.Drawing.Point(4, 23);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(88, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(89, 19);
             this.materialLabel2.TabIndex = 30;
             this.materialLabel2.Text = "ID Provincia";
             this.materialLabel2.Visible = false;
@@ -453,7 +485,7 @@ namespace Senior_App
             this.materialLabel1.Location = new System.Drawing.Point(4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(222, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(223, 19);
             this.materialLabel1.TabIndex = 29;
             this.materialLabel1.Text = "* Favor llenar todos los campos\r\n";
             this.materialLabel1.Visible = false;
@@ -533,7 +565,7 @@ namespace Senior_App
             this.dataGridView1.DataSource = this.provinciasBindingSource2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 119);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(810, 332);
             this.dataGridView1.TabIndex = 23;
@@ -578,7 +610,7 @@ namespace Senior_App
             this.tabRegion.HorizontalScrollbarSize = 10;
             this.tabRegion.Location = new System.Drawing.Point(4, 38);
             this.tabRegion.Name = "tabRegion";
-            this.tabRegion.Size = new System.Drawing.Size(810, 451);
+            this.tabRegion.Size = new System.Drawing.Size(810, 448);
             this.tabRegion.TabIndex = 2;
             this.tabRegion.Text = "Modificar regiones";
             this.tabRegion.VerticalScrollbarBarColor = true;
@@ -604,7 +636,7 @@ namespace Senior_App
             this.materialLabel8.Location = new System.Drawing.Point(546, 23);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(105, 19);
+            this.materialLabel8.Size = new System.Drawing.Size(106, 19);
             this.materialLabel8.TabIndex = 42;
             this.materialLabel8.Text = "Region Ordinal";
             this.materialLabel8.Visible = false;
@@ -620,7 +652,7 @@ namespace Senior_App
             this.materialLabel9.Location = new System.Drawing.Point(261, 23);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(112, 19);
+            this.materialLabel9.Size = new System.Drawing.Size(113, 19);
             this.materialLabel9.TabIndex = 41;
             this.materialLabel9.Text = "Nombre Region";
             this.materialLabel9.Visible = false;
@@ -635,7 +667,7 @@ namespace Senior_App
             this.materialLabel10.Location = new System.Drawing.Point(4, 23);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel10.Size = new System.Drawing.Size(73, 19);
             this.materialLabel10.TabIndex = 40;
             this.materialLabel10.Text = "ID Region";
             this.materialLabel10.Visible = false;
@@ -650,7 +682,7 @@ namespace Senior_App
             this.materialLabel11.Location = new System.Drawing.Point(4, 0);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(222, 19);
+            this.materialLabel11.Size = new System.Drawing.Size(223, 19);
             this.materialLabel11.TabIndex = 39;
             this.materialLabel11.Text = "* Favor llenar todos los campos\r\n";
             this.materialLabel11.Visible = false;
@@ -709,7 +741,7 @@ namespace Senior_App
             this.dataGridView2.DataSource = this.regionesBindingSource1;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 119);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 116);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(810, 332);
             this.dataGridView2.TabIndex = 33;
@@ -739,12 +771,13 @@ namespace Senior_App
             // 
             // tabUsers
             // 
+            this.tabUsers.Controls.Add(this.metroGrid1);
             this.tabUsers.HorizontalScrollbarBarColor = true;
             this.tabUsers.HorizontalScrollbarHighlightOnWheel = false;
             this.tabUsers.HorizontalScrollbarSize = 10;
             this.tabUsers.Location = new System.Drawing.Point(4, 38);
             this.tabUsers.Name = "tabUsers";
-            this.tabUsers.Size = new System.Drawing.Size(818, 496);
+            this.tabUsers.Size = new System.Drawing.Size(818, 493);
             this.tabUsers.TabIndex = 1;
             this.tabUsers.Text = "Usuarios";
             this.tabUsers.VerticalScrollbarBarColor = true;
@@ -753,12 +786,13 @@ namespace Senior_App
             // 
             // tabApoderados
             // 
+            this.tabApoderados.Controls.Add(this.metroGrid2);
             this.tabApoderados.HorizontalScrollbarBarColor = true;
             this.tabApoderados.HorizontalScrollbarHighlightOnWheel = false;
             this.tabApoderados.HorizontalScrollbarSize = 10;
             this.tabApoderados.Location = new System.Drawing.Point(4, 38);
             this.tabApoderados.Name = "tabApoderados";
-            this.tabApoderados.Size = new System.Drawing.Size(818, 496);
+            this.tabApoderados.Size = new System.Drawing.Size(818, 493);
             this.tabApoderados.TabIndex = 3;
             this.tabApoderados.Text = "Apoderados";
             this.tabApoderados.VerticalScrollbarBarColor = true;
@@ -794,6 +828,7 @@ namespace Senior_App
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.buttonSalir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -853,6 +888,234 @@ namespace Senior_App
             // 
             this.regionesTableAdapter.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(309, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(309, 48);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Administrador";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // metroGrid1
+            // 
+            this.metroGrid1.AllowUserToResizeRows = false;
+            this.metroGrid1.AutoGenerateColumns = false;
+            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idapoderadoDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn,
+            this.mailDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.passwdDataGridViewTextBoxColumn});
+            this.metroGrid1.DataSource = this.cuentaBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.metroGrid1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroGrid1.EnableHeadersVisualStyles = false;
+            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.Location = new System.Drawing.Point(0, 3);
+            this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid1.Size = new System.Drawing.Size(818, 490);
+            this.metroGrid1.TabIndex = 2;
+            // 
+            // cuentaBindingSource
+            // 
+            this.cuentaBindingSource.DataMember = "cuenta";
+            this.cuentaBindingSource.DataSource = this.todoBindingSource;
+            // 
+            // cuentaTableAdapter
+            // 
+            this.cuentaTableAdapter.ClearBeforeFill = true;
+            // 
+            // idapoderadoDataGridViewTextBoxColumn
+            // 
+            this.idapoderadoDataGridViewTextBoxColumn.DataPropertyName = "id_apoderado";
+            this.idapoderadoDataGridViewTextBoxColumn.HeaderText = "id_apoderado";
+            this.idapoderadoDataGridViewTextBoxColumn.Name = "idapoderadoDataGridViewTextBoxColumn";
+            this.idapoderadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            this.mailDataGridViewTextBoxColumn.DataPropertyName = "mail";
+            this.mailDataGridViewTextBoxColumn.HeaderText = "mail";
+            this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            // 
+            // passwdDataGridViewTextBoxColumn
+            // 
+            this.passwdDataGridViewTextBoxColumn.DataPropertyName = "passwd";
+            this.passwdDataGridViewTextBoxColumn.HeaderText = "passwd";
+            this.passwdDataGridViewTextBoxColumn.Name = "passwdDataGridViewTextBoxColumn";
+            // 
+            // metroGrid2
+            // 
+            this.metroGrid2.AllowUserToResizeRows = false;
+            this.metroGrid2.AutoGenerateColumns = false;
+            this.metroGrid2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.metroGrid2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.metroGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGrid2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idapoderadoDataGridViewTextBoxColumn1,
+            this.nombreDataGridViewTextBoxColumn,
+            this.apdpatDataGridViewTextBoxColumn,
+            this.apdmatDataGridViewTextBoxColumn,
+            this.fechanacimientoDataGridViewTextBoxColumn,
+            this.rutDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.membresiaDataGridViewTextBoxColumn,
+            this.comunaidDataGridViewTextBoxColumn1});
+            this.metroGrid2.DataSource = this.apoderadoBindingSource1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.metroGrid2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.metroGrid2.EnableHeadersVisualStyles = false;
+            this.metroGrid2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid2.Location = new System.Drawing.Point(0, 0);
+            this.metroGrid2.Name = "metroGrid2";
+            this.metroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid2.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.metroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid2.Size = new System.Drawing.Size(818, 493);
+            this.metroGrid2.TabIndex = 2;
+            // 
+            // apoderadoBindingSource1
+            // 
+            this.apoderadoBindingSource1.DataMember = "apoderado";
+            this.apoderadoBindingSource1.DataSource = this.todoBindingSource;
+            // 
+            // idapoderadoDataGridViewTextBoxColumn1
+            // 
+            this.idapoderadoDataGridViewTextBoxColumn1.DataPropertyName = "id_apoderado";
+            this.idapoderadoDataGridViewTextBoxColumn1.HeaderText = "id_apoderado";
+            this.idapoderadoDataGridViewTextBoxColumn1.Name = "idapoderadoDataGridViewTextBoxColumn1";
+            this.idapoderadoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apdpatDataGridViewTextBoxColumn
+            // 
+            this.apdpatDataGridViewTextBoxColumn.DataPropertyName = "apdpat";
+            this.apdpatDataGridViewTextBoxColumn.HeaderText = "apdpat";
+            this.apdpatDataGridViewTextBoxColumn.Name = "apdpatDataGridViewTextBoxColumn";
+            // 
+            // apdmatDataGridViewTextBoxColumn
+            // 
+            this.apdmatDataGridViewTextBoxColumn.DataPropertyName = "apdmat";
+            this.apdmatDataGridViewTextBoxColumn.HeaderText = "apdmat";
+            this.apdmatDataGridViewTextBoxColumn.Name = "apdmatDataGridViewTextBoxColumn";
+            // 
+            // fechanacimientoDataGridViewTextBoxColumn
+            // 
+            this.fechanacimientoDataGridViewTextBoxColumn.DataPropertyName = "fecha_nacimiento";
+            this.fechanacimientoDataGridViewTextBoxColumn.HeaderText = "fecha_nacimiento";
+            this.fechanacimientoDataGridViewTextBoxColumn.Name = "fechanacimientoDataGridViewTextBoxColumn";
+            // 
+            // rutDataGridViewTextBoxColumn
+            // 
+            this.rutDataGridViewTextBoxColumn.DataPropertyName = "rut";
+            this.rutDataGridViewTextBoxColumn.HeaderText = "rut";
+            this.rutDataGridViewTextBoxColumn.Name = "rutDataGridViewTextBoxColumn";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            // 
+            // membresiaDataGridViewTextBoxColumn
+            // 
+            this.membresiaDataGridViewTextBoxColumn.DataPropertyName = "membresia";
+            this.membresiaDataGridViewTextBoxColumn.HeaderText = "membresia";
+            this.membresiaDataGridViewTextBoxColumn.Name = "membresiaDataGridViewTextBoxColumn";
+            // 
+            // comunaidDataGridViewTextBoxColumn1
+            // 
+            this.comunaidDataGridViewTextBoxColumn1.DataPropertyName = "comuna_id";
+            this.comunaidDataGridViewTextBoxColumn1.HeaderText = "comuna_id";
+            this.comunaidDataGridViewTextBoxColumn1.Name = "comunaidDataGridViewTextBoxColumn1";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -882,6 +1145,8 @@ namespace Senior_App
             this.tabRegion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionesBindingSource1)).EndInit();
+            this.tabUsers.ResumeLayout(false);
+            this.tabApoderados.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKportadorapoderadoBindingSource)).EndInit();
@@ -889,6 +1154,10 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.todo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -963,5 +1232,26 @@ namespace Senior_App
         private System.Windows.Forms.DataGridViewTextBoxColumn regionnombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn regionordinalDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource regionesBindingSource1;
+        private System.Windows.Forms.Label label2;
+        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private System.Windows.Forms.BindingSource cuentaBindingSource;
+        private TodoTableAdapters.cuentaTableAdapter cuentaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idapoderadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwdDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroGrid metroGrid2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idapoderadoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apdpatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apdmatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechanacimientoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rutDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn membresiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comunaidDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource apoderadoBindingSource1;
     }
 }

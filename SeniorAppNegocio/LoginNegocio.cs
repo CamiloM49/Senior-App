@@ -14,6 +14,7 @@ namespace SeniorAppNegocio
     {
         public bool respuesta;
         public string tipo_deCuenta;
+        public string responsable; 
         public SeniorAppDB.SeniorAppDB db = new SeniorAppDB.SeniorAppDB();
         public void validadDatos(string textocorreo, string passwd)
         {
@@ -27,7 +28,7 @@ namespace SeniorAppNegocio
                            select new
                            {
 
-                               id_apoderado = des.apoderado,
+                               idApoderado = des.apoderado,
                                usuario = des.usuario,
                                mail = des.mail,
                                telefono = des.telefono,
@@ -40,6 +41,8 @@ namespace SeniorAppNegocio
                 {
                     var tipo_cuenta = des.tipo;
                     this.tipo_deCuenta = tipo_cuenta;
+                    var papito = des.idApoderado;
+                    this.responsable = papito.ToString();
                     if (lst.Count() > 0)
                     {
 

@@ -121,10 +121,10 @@ namespace Senior_App
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (captureDevice.IsRunning)
-            {
-                captureDevice.Stop();
-            }
+            //if (captureDevice.IsRunning)
+            //{
+            //    captureDevice.Stop();
+            //}
 
 
 
@@ -251,6 +251,12 @@ namespace Senior_App
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialFlatButton2_Click_1(object sender, EventArgs e)
+        {
+            Form3 usr = new Form3();
+            usr.Show();
         }
     }
 }

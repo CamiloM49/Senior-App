@@ -56,14 +56,14 @@ namespace Senior_App
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
-            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.integracionDataSet = new Senior_App.IntegracionDataSet();
             this.integracionDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
             this.metroConsulta.SuspendLayout();
@@ -84,12 +84,13 @@ namespace Senior_App
             this.metroTabControl1.Controls.Add(this.metroLogin);
             this.metroTabControl1.Controls.Add(this.metroConsulta);
             this.metroTabControl1.Controls.Add(this.metroGenera);
+            this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 156);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(842, 472);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(842, 577);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.TabIndex = 5;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -98,6 +99,7 @@ namespace Senior_App
             // metroLogin
             // 
             this.metroLogin.BackColor = System.Drawing.Color.White;
+            this.metroLogin.Controls.Add(this.materialFlatButton2);
             this.metroLogin.Controls.Add(this.materialFlatButton1);
             this.metroLogin.Controls.Add(this.txtError);
             this.metroLogin.Controls.Add(this.materialLabel2);
@@ -111,7 +113,7 @@ namespace Senior_App
             this.metroLogin.HorizontalScrollbarSize = 10;
             this.metroLogin.Location = new System.Drawing.Point(4, 37);
             this.metroLogin.Name = "metroLogin";
-            this.metroLogin.Size = new System.Drawing.Size(834, 533);
+            this.metroLogin.Size = new System.Drawing.Size(834, 536);
             this.metroLogin.TabIndex = 0;
             this.metroLogin.Text = "Login";
             this.metroLogin.VerticalScrollbarBarColor = true;
@@ -144,7 +146,7 @@ namespace Senior_App
             this.txtError.Location = new System.Drawing.Point(256, 358);
             this.txtError.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(239, 18);
+            this.txtError.Size = new System.Drawing.Size(240, 19);
             this.txtError.TabIndex = 21;
             this.txtError.Text = "*  Usuario o contraseña incorrecto";
             this.txtError.Visible = false;
@@ -158,7 +160,7 @@ namespace Senior_App
             this.materialLabel2.Location = new System.Drawing.Point(256, 216);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(156, 18);
+            this.materialLabel2.Size = new System.Drawing.Size(157, 19);
             this.materialLabel2.TabIndex = 20;
             this.materialLabel2.Text = "Ingrese su contraseña";
             // 
@@ -171,7 +173,7 @@ namespace Senior_App
             this.materialLabel1.Location = new System.Drawing.Point(256, 124);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(125, 18);
+            this.materialLabel1.Size = new System.Drawing.Size(126, 19);
             this.materialLabel1.TabIndex = 19;
             this.materialLabel1.Text = "Ingrese su correo";
             this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
@@ -270,7 +272,7 @@ namespace Senior_App
             this.metroConsulta.HorizontalScrollbarSize = 10;
             this.metroConsulta.Location = new System.Drawing.Point(4, 37);
             this.metroConsulta.Name = "metroConsulta";
-            this.metroConsulta.Size = new System.Drawing.Size(834, 431);
+            this.metroConsulta.Size = new System.Drawing.Size(834, 536);
             this.metroConsulta.TabIndex = 1;
             this.metroConsulta.Text = "Consultar Datos";
             this.metroConsulta.VerticalScrollbarBarColor = true;
@@ -389,7 +391,7 @@ namespace Senior_App
             this.metroGenera.HorizontalScrollbarSize = 10;
             this.metroGenera.Location = new System.Drawing.Point(4, 37);
             this.metroGenera.Name = "metroGenera";
-            this.metroGenera.Size = new System.Drawing.Size(834, 533);
+            this.metroGenera.Size = new System.Drawing.Size(834, 536);
             this.metroGenera.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroGenera.TabIndex = 2;
             this.metroGenera.Text = "Generar Codigo QR";
@@ -469,19 +471,6 @@ namespace Senior_App
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // materialContextMenuStrip1
-            // 
-            this.materialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialContextMenuStrip1.Depth = 0;
-            this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // metroContextMenu1
-            // 
-            this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(61, 4);
-            // 
             // integracionDataSet
             // 
             this.integracionDataSet.DataSetName = "IntegracionDataSet";
@@ -510,6 +499,36 @@ namespace Senior_App
             // 
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 37);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(834, 536);
+            this.metroTabPage1.TabIndex = 3;
+            this.metroTabPage1.Text = "Maps";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // materialFlatButton2
+            // 
+            this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton2.Depth = 0;
+            this.materialFlatButton2.Location = new System.Drawing.Point(603, 116);
+            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton2.Name = "materialFlatButton2";
+            this.materialFlatButton2.Primary = false;
+            this.materialFlatButton2.Size = new System.Drawing.Size(172, 36);
+            this.materialFlatButton2.TabIndex = 23;
+            this.materialFlatButton2.Text = "materialFlatButton2";
+            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click_1);
             // 
             // Form1
             // 
@@ -563,8 +582,6 @@ namespace Senior_App
         private MetroFramework.Controls.MetroTabPage metroGenera;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGenerarQR;
         private System.Windows.Forms.PictureBox picboxGenerador;
-        private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
-        private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
         private System.Windows.Forms.BindingSource integracionDataSetBindingSource;
         private IntegracionDataSet integracionDataSet;
         private System.Windows.Forms.BindingSource cuentaBindingSource;
@@ -577,6 +594,8 @@ namespace Senior_App
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
     }
 }
 
