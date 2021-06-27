@@ -14,6 +14,9 @@ using ZXing;
 using ZXing.Presentation;
 using SeniorAppDB;
 using SeniorAppNegocio;
+using SeniorAppDTO;
+using System.Web.Script.Serialization;
+using System.Net;
 
 
 
@@ -151,11 +154,25 @@ namespace Senior_App
 
         private void buttonGenerarQR_Click(object sender, EventArgs e)
         {
+            string url = "https://localhost:44393/api/Token";
+            TokenDTO objt = new TokenDTO();
+            GeneradorQRNegocio genqr = new GeneradorQRNegocio();
+            TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
+            tokeng.tokenfinal();
+            objt.Token_id = tokeng.tokenf;
+            objt.Id_portador = 7;
+            objt.Valido = true;
+            string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
+            
+            string qrgenerado = objt.Token_id;
             QRCodeGenerator qr = new QRCodeGenerator();
-            QRCodeData data = qr.CreateQrCode(txtQRGenerar.Text, QRCodeGenerator.ECCLevel.Q);
+            QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
             picboxGenerador.Image = code.GetGraphic(5);
+            
+
         }
+
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
@@ -187,6 +204,16 @@ namespace Senior_App
         {
             Form2 adm = new Form2();
             adm.Show();
+        }
+
+        private void picboxGenerador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

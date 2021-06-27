@@ -91,6 +91,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SeniorAppDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="token.cs">
+      <DependentUpon>SeniorAppDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

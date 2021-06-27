@@ -32,13 +32,14 @@ namespace Senior_App
             this.components = new System.ComponentModel.Container();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroLogin = new MetroFramework.Controls.MetroTabPage();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtError = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.txtCorreo = new MetroFramework.Controls.MetroTextBox();
             this.metroConsulta = new MetroFramework.Controls.MetroTabPage();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtQR = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,6 @@ namespace Senior_App
             this.cboCamara = new MetroFramework.Controls.MetroComboBox();
             this.buttonStart = new MaterialSkin.Controls.MaterialRaisedButton();
             this.metroGenera = new MetroFramework.Controls.MetroTabPage();
-            this.txtQRGenerar = new System.Windows.Forms.RichTextBox();
             this.buttonGenerarQR = new MaterialSkin.Controls.MaterialRaisedButton();
             this.picboxGenerador = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -61,8 +61,6 @@ namespace Senior_App
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.txtError = new MaterialSkin.Controls.MaterialLabel();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
             this.metroConsulta.SuspendLayout();
@@ -87,7 +85,7 @@ namespace Senior_App
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 54);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(842, 574);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.TabIndex = 5;
@@ -116,6 +114,37 @@ namespace Senior_App
             this.metroLogin.VerticalScrollbarBarColor = true;
             this.metroLogin.VerticalScrollbarHighlightOnWheel = false;
             this.metroLogin.VerticalScrollbarSize = 10;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(64, 143);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(172, 36);
+            this.materialFlatButton1.TabIndex = 22;
+            this.materialFlatButton1.Text = "materialFlatButton1";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
+            // txtError
+            // 
+            this.txtError.AutoSize = true;
+            this.txtError.BackColor = System.Drawing.Color.White;
+            this.txtError.Depth = 0;
+            this.txtError.Font = new System.Drawing.Font("Roboto", 11F);
+            this.txtError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtError.Location = new System.Drawing.Point(256, 358);
+            this.txtError.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(240, 19);
+            this.txtError.TabIndex = 21;
+            this.txtError.Text = "*  Usuario o contraseña incorrecto";
+            this.txtError.Visible = false;
             // 
             // materialLabel2
             // 
@@ -224,7 +253,6 @@ namespace Senior_App
             // 
             // metroConsulta
             // 
-            this.metroConsulta.Controls.Add(this.webBrowser1);
             this.metroConsulta.Controls.Add(this.materialRaisedButton2);
             this.metroConsulta.Controls.Add(this.txtQR);
             this.metroConsulta.Controls.Add(this.pictureBox2);
@@ -242,15 +270,6 @@ namespace Senior_App
             this.metroConsulta.VerticalScrollbarBarColor = true;
             this.metroConsulta.VerticalScrollbarHighlightOnWheel = false;
             this.metroConsulta.VerticalScrollbarSize = 10;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(543, 62);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(268, 261);
-            this.webBrowser1.TabIndex = 35;
-            this.webBrowser1.Url = new System.Uri("https://localhost:44393/api/Token", System.UriKind.Absolute);
             // 
             // materialRaisedButton2
             // 
@@ -274,22 +293,24 @@ namespace Senior_App
             // 
             this.txtQR.Depth = 0;
             this.txtQR.Hint = "";
-            this.txtQR.Location = new System.Drawing.Point(585, 391);
+            this.txtQR.Location = new System.Drawing.Point(511, 96);
             this.txtQR.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtQR.Name = "txtQR";
             this.txtQR.PasswordChar = '\0';
             this.txtQR.SelectedText = "";
             this.txtQR.SelectionLength = 0;
             this.txtQR.SelectionStart = 0;
-            this.txtQR.Size = new System.Drawing.Size(226, 23);
+            this.txtQR.Size = new System.Drawing.Size(286, 23);
             this.txtQR.TabIndex = 32;
             this.txtQR.UseSystemPasswordChar = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(12, 71);
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox2.Location = new System.Drawing.Point(78, 79);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(496, 452);
+            this.pictureBox2.Size = new System.Drawing.Size(354, 305);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
             // 
@@ -337,7 +358,6 @@ namespace Senior_App
             // 
             // metroGenera
             // 
-            this.metroGenera.Controls.Add(this.txtQRGenerar);
             this.metroGenera.Controls.Add(this.buttonGenerarQR);
             this.metroGenera.Controls.Add(this.picboxGenerador);
             this.metroGenera.HorizontalScrollbarBarColor = true;
@@ -353,14 +373,6 @@ namespace Senior_App
             this.metroGenera.VerticalScrollbarHighlightOnWheel = false;
             this.metroGenera.VerticalScrollbarSize = 10;
             // 
-            // txtQRGenerar
-            // 
-            this.txtQRGenerar.Location = new System.Drawing.Point(476, 13);
-            this.txtQRGenerar.Name = "txtQRGenerar";
-            this.txtQRGenerar.Size = new System.Drawing.Size(350, 126);
-            this.txtQRGenerar.TabIndex = 39;
-            this.txtQRGenerar.Text = "";
-            // 
             // buttonGenerarQR
             // 
             this.buttonGenerarQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -368,11 +380,11 @@ namespace Senior_App
             this.buttonGenerarQR.FlatAppearance.BorderSize = 0;
             this.buttonGenerarQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGenerarQR.ForeColor = System.Drawing.Color.Teal;
-            this.buttonGenerarQR.Location = new System.Drawing.Point(476, 145);
+            this.buttonGenerarQR.Location = new System.Drawing.Point(192, 391);
             this.buttonGenerarQR.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonGenerarQR.Name = "buttonGenerarQR";
             this.buttonGenerarQR.Primary = true;
-            this.buttonGenerarQR.Size = new System.Drawing.Size(350, 30);
+            this.buttonGenerarQR.Size = new System.Drawing.Size(364, 30);
             this.buttonGenerarQR.TabIndex = 35;
             this.buttonGenerarQR.Text = "GENERAR QR";
             this.buttonGenerarQR.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -381,11 +393,14 @@ namespace Senior_App
             // 
             // picboxGenerador
             // 
-            this.picboxGenerador.Location = new System.Drawing.Point(8, 13);
+            this.picboxGenerador.BackColor = System.Drawing.SystemColors.Window;
+            this.picboxGenerador.Location = new System.Drawing.Point(192, 26);
             this.picboxGenerador.Name = "picboxGenerador";
-            this.picboxGenerador.Size = new System.Drawing.Size(462, 308);
+            this.picboxGenerador.Size = new System.Drawing.Size(364, 342);
+            this.picboxGenerador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxGenerador.TabIndex = 2;
             this.picboxGenerador.TabStop = false;
+            this.picboxGenerador.Click += new System.EventHandler(this.picboxGenerador_Click);
             // 
             // panel1
             // 
@@ -472,37 +487,6 @@ namespace Senior_App
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
             // 
-            // txtError
-            // 
-            this.txtError.AutoSize = true;
-            this.txtError.BackColor = System.Drawing.Color.White;
-            this.txtError.Depth = 0;
-            this.txtError.Font = new System.Drawing.Font("Roboto", 11F);
-            this.txtError.ForeColor = System.Drawing.Color.Red;
-            this.txtError.Location = new System.Drawing.Point(256, 358);
-            this.txtError.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(240, 19);
-            this.txtError.TabIndex = 21;
-            this.txtError.Text = "*  Usuario o contraseña incorrecto";
-            this.txtError.Visible = false;
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(64, 143);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(172, 36);
-            this.materialFlatButton1.TabIndex = 22;
-            this.materialFlatButton1.Text = "materialFlatButton1";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,9 +536,7 @@ namespace Senior_App
         private MaterialSkin.Controls.MaterialSingleLineTextField txtQR;
         private System.Windows.Forms.Timer timer1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private MetroFramework.Controls.MetroTabPage metroGenera;
-        private System.Windows.Forms.RichTextBox txtQRGenerar;
         private MaterialSkin.Controls.MaterialRaisedButton buttonGenerarQR;
         private System.Windows.Forms.PictureBox picboxGenerador;
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;

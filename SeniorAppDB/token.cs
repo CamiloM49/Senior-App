@@ -12,15 +12,13 @@ namespace SeniorAppDB
     using System;
     using System.Collections.Generic;
     
-    public partial class cuenta
+    public partial class token
     {
-        public int id_apoderado { get; set; }
-        public string usuario { get; set; }
-        public string mail { get; set; }
-        public string telefono { get; set; }
-        public string passwd { get; set; }
-        public string tipo_cuenta { get; set; }
+        public int id_token { get; set; }
+        public string token_id { get; set; }
+        public bool valido { get; set; }
+        public int id_portador { get; set; }
     
-        public virtual apoderado apoderado { get; set; }
+        public virtual portador portador { get; set; }
     }
 }
