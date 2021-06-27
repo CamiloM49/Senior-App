@@ -40,6 +40,10 @@ namespace Senior_App
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.txtCorreo = new MetroFramework.Controls.MetroTextBox();
             this.metroConsulta = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -60,10 +64,6 @@ namespace Senior_App
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
             this.metroConsulta.SuspendLayout();
@@ -86,10 +86,10 @@ namespace Senior_App
             this.metroTabControl1.Controls.Add(this.metroGenera);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 54);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 156);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(842, 574);
+            this.metroTabControl1.Size = new System.Drawing.Size(842, 472);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.TabIndex = 5;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -144,7 +144,7 @@ namespace Senior_App
             this.txtError.Location = new System.Drawing.Point(256, 358);
             this.txtError.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(240, 19);
+            this.txtError.Size = new System.Drawing.Size(239, 18);
             this.txtError.TabIndex = 21;
             this.txtError.Text = "*  Usuario o contraseña incorrecto";
             this.txtError.Visible = false;
@@ -158,7 +158,7 @@ namespace Senior_App
             this.materialLabel2.Location = new System.Drawing.Point(256, 216);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(157, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(156, 18);
             this.materialLabel2.TabIndex = 20;
             this.materialLabel2.Text = "Ingrese su contraseña";
             // 
@@ -171,7 +171,7 @@ namespace Senior_App
             this.materialLabel1.Location = new System.Drawing.Point(256, 124);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(126, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(125, 18);
             this.materialLabel1.TabIndex = 19;
             this.materialLabel1.Text = "Ingrese su correo";
             this.materialLabel1.Click += new System.EventHandler(this.materialLabel1_Click);
@@ -270,12 +270,44 @@ namespace Senior_App
             this.metroConsulta.HorizontalScrollbarSize = 10;
             this.metroConsulta.Location = new System.Drawing.Point(4, 37);
             this.metroConsulta.Name = "metroConsulta";
-            this.metroConsulta.Size = new System.Drawing.Size(834, 533);
+            this.metroConsulta.Size = new System.Drawing.Size(834, 431);
             this.metroConsulta.TabIndex = 1;
             this.metroConsulta.Text = "Consultar Datos";
             this.metroConsulta.VerticalScrollbarBarColor = true;
             this.metroConsulta.VerticalScrollbarHighlightOnWheel = false;
             this.metroConsulta.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(480, 246);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel4.TabIndex = 38;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(480, 227);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel3.TabIndex = 37;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(480, 208);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel2.TabIndex = 36;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(480, 189);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(0, 0);
+            this.metroLabel1.TabIndex = 35;
             // 
             // materialRaisedButton2
             // 
@@ -478,38 +510,6 @@ namespace Senior_App
             // 
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(480, 189);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel1.TabIndex = 35;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(480, 208);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel2.TabIndex = 36;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(480, 227);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel3.TabIndex = 37;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(480, 246);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel4.TabIndex = 38;
             // 
             // Form1
             // 

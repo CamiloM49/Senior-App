@@ -30,7 +30,7 @@ namespace Senior_App
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.tabMantenedores = new MetroFramework.Controls.MetroTabPage();
             this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
@@ -130,10 +130,10 @@ namespace Senior_App
             this.metroTabControl1.Controls.Add(this.tabUsers);
             this.metroTabControl1.Controls.Add(this.tabApoderados);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 181);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(826, 538);
+            this.metroTabControl1.Size = new System.Drawing.Size(826, 408);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -145,7 +145,7 @@ namespace Senior_App
             this.tabMantenedores.HorizontalScrollbarSize = 10;
             this.tabMantenedores.Location = new System.Drawing.Point(4, 38);
             this.tabMantenedores.Name = "tabMantenedores";
-            this.tabMantenedores.Size = new System.Drawing.Size(818, 496);
+            this.tabMantenedores.Size = new System.Drawing.Size(818, 366);
             this.tabMantenedores.TabIndex = 0;
             this.tabMantenedores.Text = "Mantenedores";
             this.tabMantenedores.VerticalScrollbarBarColor = true;
@@ -158,7 +158,7 @@ namespace Senior_App
             this.metroTabControl2.Controls.Add(this.tabProvincia);
             this.metroTabControl2.Controls.Add(this.tabRegion);
             this.metroTabControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.metroTabControl2.Location = new System.Drawing.Point(0, 3);
+            this.metroTabControl2.Location = new System.Drawing.Point(0, -127);
             this.metroTabControl2.Name = "metroTabControl2";
             this.metroTabControl2.SelectedIndex = 0;
             this.metroTabControl2.Size = new System.Drawing.Size(818, 493);
@@ -199,7 +199,7 @@ namespace Senior_App
             this.materialLabel5.Location = new System.Drawing.Point(525, 21);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel5.Size = new System.Drawing.Size(88, 18);
             this.materialLabel5.TabIndex = 35;
             this.materialLabel5.Text = "ID Provincia";
             this.materialLabel5.Visible = false;
@@ -214,7 +214,7 @@ namespace Senior_App
             this.materialLabel6.Location = new System.Drawing.Point(261, 21);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel6.Size = new System.Drawing.Size(122, 18);
             this.materialLabel6.TabIndex = 34;
             this.materialLabel6.Text = "Nombre Comuna";
             this.materialLabel6.Visible = false;
@@ -229,7 +229,7 @@ namespace Senior_App
             this.materialLabel7.Location = new System.Drawing.Point(4, 21);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel7.Size = new System.Drawing.Size(82, 18);
             this.materialLabel7.TabIndex = 33;
             this.materialLabel7.Text = "ID Comuna";
             this.materialLabel7.Visible = false;
@@ -244,7 +244,7 @@ namespace Senior_App
             this.labelError.Location = new System.Drawing.Point(4, 2);
             this.labelError.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(223, 19);
+            this.labelError.Size = new System.Drawing.Size(222, 18);
             this.labelError.TabIndex = 22;
             this.labelError.Text = "* Favor llenar todos los campos\r\n";
             this.labelError.Visible = false;
@@ -333,14 +333,14 @@ namespace Senior_App
             this.provinciaidDataGridViewTextBoxColumn});
             this.dgvComuna.Cursor = System.Windows.Forms.Cursors.Default;
             this.dgvComuna.DataSource = this.comunasBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvComuna.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComuna.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvComuna.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvComuna.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvComuna.GridColor = System.Drawing.SystemColors.InactiveCaption;
@@ -408,7 +408,7 @@ namespace Senior_App
             this.materialLabel4.Location = new System.Drawing.Point(525, 23);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(72, 19);
             this.materialLabel4.TabIndex = 32;
             this.materialLabel4.Text = "ID Region";
             this.materialLabel4.Visible = false;
@@ -423,7 +423,7 @@ namespace Senior_App
             this.materialLabel3.Location = new System.Drawing.Point(261, 23);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(129, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(128, 19);
             this.materialLabel3.TabIndex = 31;
             this.materialLabel3.Text = "Nombre Provincia";
             this.materialLabel3.Visible = false;
@@ -438,7 +438,7 @@ namespace Senior_App
             this.materialLabel2.Location = new System.Drawing.Point(4, 23);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(88, 19);
             this.materialLabel2.TabIndex = 30;
             this.materialLabel2.Text = "ID Provincia";
             this.materialLabel2.Visible = false;
@@ -453,7 +453,7 @@ namespace Senior_App
             this.materialLabel1.Location = new System.Drawing.Point(4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(223, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(222, 19);
             this.materialLabel1.TabIndex = 29;
             this.materialLabel1.Text = "* Favor llenar todos los campos\r\n";
             this.materialLabel1.Visible = false;
@@ -604,7 +604,7 @@ namespace Senior_App
             this.materialLabel8.Location = new System.Drawing.Point(546, 23);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(106, 19);
+            this.materialLabel8.Size = new System.Drawing.Size(105, 19);
             this.materialLabel8.TabIndex = 42;
             this.materialLabel8.Text = "Region Ordinal";
             this.materialLabel8.Visible = false;
@@ -620,7 +620,7 @@ namespace Senior_App
             this.materialLabel9.Location = new System.Drawing.Point(261, 23);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(113, 19);
+            this.materialLabel9.Size = new System.Drawing.Size(112, 19);
             this.materialLabel9.TabIndex = 41;
             this.materialLabel9.Text = "Nombre Region";
             this.materialLabel9.Visible = false;
@@ -635,7 +635,7 @@ namespace Senior_App
             this.materialLabel10.Location = new System.Drawing.Point(4, 23);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel10.Size = new System.Drawing.Size(72, 19);
             this.materialLabel10.TabIndex = 40;
             this.materialLabel10.Text = "ID Region";
             this.materialLabel10.Visible = false;
@@ -650,7 +650,7 @@ namespace Senior_App
             this.materialLabel11.Location = new System.Drawing.Point(4, 0);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(223, 19);
+            this.materialLabel11.Size = new System.Drawing.Size(222, 19);
             this.materialLabel11.TabIndex = 39;
             this.materialLabel11.Text = "* Favor llenar todos los campos\r\n";
             this.materialLabel11.Visible = false;

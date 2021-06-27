@@ -29,7 +29,7 @@ namespace Senior_App
         public Form1()
         {
             InitializeComponent();
-            
+
 
 
 
@@ -57,7 +57,7 @@ namespace Senior_App
             FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in FilterInfoCollection)
                 cboCamara.Items.Add(filterInfo.Name);
-            cboCamara.SelectedIndex = 0; 
+            cboCamara.SelectedIndex = 0;
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -109,13 +109,13 @@ namespace Senior_App
             captureDevice = new VideoCaptureDevice(FilterInfoCollection[cboCamara.SelectedIndex].MonikerString);
             captureDevice.NewFrame += CaptureDevide_NewFrame;
             captureDevice.Start();
-            timer1.Start(); 
+            timer1.Start();
 
         }
 
         private void CaptureDevide_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            
+
             pictureBox2.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
@@ -124,9 +124,9 @@ namespace Senior_App
             if (captureDevice.IsRunning)
             {
                 captureDevice.Stop();
-            } 
-            
-            
+            }
+
+
 
 
 
@@ -137,15 +137,15 @@ namespace Senior_App
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if(pictureBox2.Image!= null)
+            if  (pictureBox2.Image  != null)
             {
 
 
                 ZXing.BarcodeReader barcodeReader = new ZXing.BarcodeReader();
-                Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image); 
-                if(result != null)
+                Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image);
+                if  (result != null)
                 {
-                    
+
                     timer1.Stop();
                     if (captureDevice.IsRunning)
                         captureDevice.Stop();
@@ -170,7 +170,7 @@ namespace Senior_App
             metroLabel3.Text = csp.apdmaterno;
             metroLabel4.Text = csp.contacto;
 
-            
+
         }
 
         private void buttonGenerarQR_Click(object sender, EventArgs e)
@@ -184,13 +184,13 @@ namespace Senior_App
             objt.Id_portador = 12;
             objt.Valido = true;
             string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
-            
+
             string qrgenerado = objt.Token_id;
             QRCodeGenerator qr = new QRCodeGenerator();
             QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
             picboxGenerador.Image = code.GetGraphic(5);
-            
+
 
         }
 
@@ -199,27 +199,33 @@ namespace Senior_App
         {
             LoginNegocio obj = new LoginNegocio();
             obj.validadDatos(txtCorreo.Text, metroTextBox2.Text.Trim());
-        {
-            if (obj.respuesta == true)
             {
+                if (obj.respuesta == true)
+                {
+                    if(obj.tipo_deCuenta == "A")
+                    {
+                        Form2 adm = new Form2();
+                        adm.Show();
+                    }
+                    else
+                    {
+                        Form3 normal = new Form3();
+                        normal.Show();
+                    }
 
-                Form2 adm = new Form2();
-                adm.Show();
+                    
                     txtError.Visible = false;
-
+                    
+                
                 }
-            else
-            {
-                txtError.Visible = true;
-
-            }
-        }
+            
 
 
 
 
 
-    }
+
+                }  }  
         //Este esta para no tener que logear siempre xd
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
