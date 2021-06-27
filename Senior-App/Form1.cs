@@ -173,7 +173,7 @@ namespace Senior_App
             TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
             tokeng.tokenfinal();
             objt.Token_id = tokeng.tokenf;
-            objt.Id_portador = 7;
+            objt.Id_portador = 12;
             objt.Valido = true;
             string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
             
