@@ -56,34 +56,7 @@ namespace SeniorAppNegocio
 
             }
         }
-        public void ultimoqr() {
-            try
-            {
-                LoginNegocio logincon = new LoginNegocio();
-
-                var informaciontoken = (from a in db.cuenta
-                                        join p in db.portador
-                                        on a.id_apoderado equals p.id_apoderado
-                                        join t in db.token on p.id_portador equals t.id_portador
-                                        where p.id_apoderado == 2
-                                        select new
-                                        {
-
-
-                                            TOKENFINAL = t.token_id
-
-
-                                        }).Take(1).ToList();
-                foreach (var t in informaciontoken)
-                {
-
-
-                    Console.WriteLine("{0}", (t.TOKENFINAL));
-                }
-            
-            }
-            catch { MessageBox.Show("no se encontro qr, genere uno ahora"); }
-        }
+        
 
     }
 }

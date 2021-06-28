@@ -33,15 +33,15 @@ namespace Senior_App
             gMapa.MaxZoom = 24;
             gMapa.Zoom = 12;
             gMapa.AutoScroll = true;
+            TokenDTO dto = new TokenDTO();
             QRCodeGenerator qr = new QRCodeGenerator();
-            ConsultaPortadorNegocio consulp = new ConsultaPortadorNegocio();
-            TokenDTO prueba = new TokenDTO();
-            consulp.ultimoqr();
-            
-            
-            /*QRCodeData data = qr.CreateQrCode(consulp.tokenfinales, QRCodeGenerator.ECCLevel.Q);
+            QRCodeData data = qr.CreateQrCode(LoginNegocio.Tokenfinales, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
-            pictureBox1.Image = code.GetGraphic(5);*/
+            pictureBox1.Image = code.GetGraphic(5);
+            //Console.WriteLine(LoginNegocio.Idapod);
+
+
+
 
         }
         public void load_data()
@@ -108,6 +108,20 @@ namespace Senior_App
 
 
             }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+
+            TokenDTO dto = new TokenDTO();
+            
+            
+            QRCodeGenerator qr = new QRCodeGenerator();
+
+            QRCodeData data = qr.CreateQrCode(LoginNegocio.Tokenfinales, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+            pictureBox1.Image = code.GetGraphic(5);
         }
     }
 }

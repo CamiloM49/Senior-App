@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using SeniorAppDB;
 using SeniorAppNegocio;
 
@@ -16,7 +17,11 @@ namespace SeniorAppNegocio
         public string tipo_deCuenta;
         public string responsable; 
         public string idapoderado;
-        public SeniorAppDB.SeniorAppDB db = new SeniorAppDB.SeniorAppDB();
+        public string tokenfinales;
+        static public string Tokenfinales;
+        static public int Idapod;
+
+        static public SeniorAppDB.SeniorAppDB db = new SeniorAppDB.SeniorAppDB();
         public void validadDatos(string textocorreo, string passwd)
         {
             string sPass = CifradoNegocio.GetSHA256(passwd);
@@ -28,13 +33,14 @@ namespace SeniorAppNegocio
                            && des.passwd == sPass
                            select new
                            {
-
+                               idApoderado2 = des.id_apoderado,
                                idApoderado = des.apoderado,
                                usuario = des.usuario,
                                mail = des.mail,
                                telefono = des.telefono,
                                pass = des.passwd,
                                tipo = des.tipo_cuenta
+                               
 
 
                            }).ToList();
@@ -46,6 +52,10 @@ namespace SeniorAppNegocio
                     this.responsable = papito.ToString();
                     var idapoderado = des.idApoderado;
                     this.idapoderado = idapoderado.ToString();
+                    var id_apoderado = des.idApoderado2;
+                    Ultimoqr(id_apoderado);
+                    Idapod = id_apoderado;
+
                     if (lst.Count() > 0)
                     {
 
@@ -69,7 +79,7 @@ namespace SeniorAppNegocio
         public SeniorAppDB.SeniorAppDB db2 = new SeniorAppDB.SeniorAppDB();
         public void tipo_usuario(string tokencode)
         {
-            LoginNegocio logincon = new LoginNegocio();
+            
 
             var informacionportado = (from t in db2.token
                                       join p in db2.portador
@@ -82,6 +92,7 @@ namespace SeniorAppNegocio
                                           APATERNO = p.apdpat,
                                           AMATERNO = p.apdmat,
                                           CONTACTO = p.contacto_emergencia,
+                                          idapoderado2 = p.id_apoderado
 
 
                                       }).ToList();
@@ -96,11 +107,50 @@ namespace SeniorAppNegocio
                 this.apdpataterno = apdpataterno;
                 this.apdmaterno = apdmaterno;
                 this.contacto = contacto;
+                
 
 
 
 
             }
+        }
+         public string Ultimoqr(int idapo)
+        {
+            try
+            {
+                
+
+                var informaciontoken = (from a in db.cuenta
+                                        join p in db.portador
+                                        on a.id_apoderado equals p.id_apoderado
+                                        join t in db.token on p.id_portador equals t.id_portador
+                                        where p.id_apoderado == idapo
+                                        select new
+                                        {
+
+
+                                            TOKENFINAL = t.token_id
+
+
+                                        }).Take(1).ToList();
+                foreach (var t in informaciontoken)
+                {
+
+
+                    string tokenfinales = t.TOKENFINAL;
+
+                    Tokenfinales = tokenfinales;
+
+
+
+                }
+                
+
+
+
+            }
+            catch { MessageBox.Show("no se encontro qr, genere uno ahora"); }
+            return tokenfinales;
         }
     }
 }
