@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorAppDTO", "SeniorAppDT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senior-App", "Senior-App\Senior-App.csproj", "{D7BC898A-84DA-4DDA-99D1-F0A25E6B8731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorAppServicio", "..\..\SeniorAppServicio\SeniorAppServicio\SeniorAppServicio.csproj", "{6B759D05-CE74-43ED-8412-69AF27017CBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorAppServicio", "SeniorAppServicio\SeniorAppServicio.csproj", "{6B759D05-CE74-43ED-8412-69AF27017CBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
