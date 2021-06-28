@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SeniorAppNegocio;
 using SeniorAppDB;
+using QRCoder;
+using SeniorAppDTO;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 namespace Senior_App
 {
@@ -20,6 +25,23 @@ namespace Senior_App
             InitializeComponent();
             load_data();
             cargar_datos();
+            gMapa.DragButton = MouseButtons.Left;
+            gMapa.CanDragMap = true;
+            gMapa.MapProvider = GMapProviders.GoogleMap;
+            gMapa.Position = new GMap.NET.PointLatLng(-33.46250690553818, -70.66059838031153);
+            gMapa.MinZoom = 0;
+            gMapa.MaxZoom = 24;
+            gMapa.Zoom = 12;
+            gMapa.AutoScroll = true;
+            QRCodeGenerator qr = new QRCodeGenerator();
+            ConsultaPortadorNegocio consulp = new ConsultaPortadorNegocio();
+            TokenDTO prueba = new TokenDTO();
+            consulp.ultimoqr();
+            
+            
+            /*QRCodeData data = qr.CreateQrCode(consulp.tokenfinales, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+            pictureBox1.Image = code.GetGraphic(5);*/
 
         }
         public void load_data()
@@ -63,6 +85,29 @@ namespace Senior_App
         private void buttonFiltrar_Click(object sender, EventArgs e)
         {
             filtrar(cboPortadores.Text);
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            {
+                string url = "https://localhost:44393/api/Token";
+                TokenDTO objt = new TokenDTO();
+                GeneradorQRNegocio genqr = new GeneradorQRNegocio();
+                TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
+                tokeng.tokenfinal();
+                objt.Token_id = tokeng.tokenf;
+                objt.Id_portador = 15;
+                objt.Valido = true;
+                string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
+
+                string qrgenerado = objt.Token_id;
+                QRCodeGenerator qr = new QRCodeGenerator();
+                QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
+                QRCode code = new QRCode(data);
+                pictureBox1.Image = code.GetGraphic(5);
+
+
+            }
         }
     }
 }

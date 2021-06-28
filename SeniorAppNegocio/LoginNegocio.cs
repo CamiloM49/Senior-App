@@ -15,6 +15,7 @@ namespace SeniorAppNegocio
         public bool respuesta;
         public string tipo_deCuenta;
         public string responsable; 
+        public string idapoderado;
         public SeniorAppDB.SeniorAppDB db = new SeniorAppDB.SeniorAppDB();
         public void validadDatos(string textocorreo, string passwd)
         {
@@ -43,6 +44,8 @@ namespace SeniorAppNegocio
                     this.tipo_deCuenta = tipo_cuenta;
                     var papito = des.idApoderado;
                     this.responsable = papito.ToString();
+                    var idapoderado = des.idApoderado;
+                    this.idapoderado = idapoderado.ToString();
                     if (lst.Count() > 0)
                     {
 

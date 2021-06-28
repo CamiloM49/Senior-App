@@ -67,15 +67,22 @@ namespace Senior_App
             this.portadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.portadorTableAdapter = new Senior_App.TodoTableAdapters.portadorTableAdapter();
             this.portadorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.gMapa = new GMap.NET.WindowsForms.GMapControl();
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.todo)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource1)).BeginInit();
+            this.metroTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -117,13 +124,16 @@ namespace Senior_App
             // 
             // metroTabControl1
             // 
+            this.metroTabControl1.AccessibleDescription = "";
+            this.metroTabControl1.AccessibleName = "";
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(826, 538);
             this.metroTabControl1.TabIndex = 8;
             this.metroTabControl1.UseSelectable = true;
@@ -373,6 +383,8 @@ namespace Senior_App
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.materialFlatButton1);
+            this.metroTabPage2.Controls.Add(this.pictureBox1);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 10;
@@ -422,6 +434,73 @@ namespace Senior_App
             this.portadorBindingSource1.DataMember = "portador";
             this.portadorBindingSource1.DataSource = this.todo;
             // 
+            // metroTabPage4
+            // 
+            this.metroTabPage4.Controls.Add(this.gMapa);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(818, 496);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "Mapa";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.pictureBox1.Location = new System.Drawing.Point(161, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(407, 382);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // materialFlatButton1
+            // 
+            this.materialFlatButton1.AutoSize = true;
+            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton1.Depth = 0;
+            this.materialFlatButton1.Location = new System.Drawing.Point(282, 429);
+            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton1.Name = "materialFlatButton1";
+            this.materialFlatButton1.Primary = false;
+            this.materialFlatButton1.Size = new System.Drawing.Size(143, 36);
+            this.materialFlatButton1.TabIndex = 3;
+            this.materialFlatButton1.Text = "Generar nuevo QR";
+            this.materialFlatButton1.UseVisualStyleBackColor = true;
+            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
+            // gMapa
+            // 
+            this.gMapa.Bearing = 0F;
+            this.gMapa.CanDragMap = true;
+            this.gMapa.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapa.GrayScaleMode = false;
+            this.gMapa.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapa.LevelsKeepInMemory = 5;
+            this.gMapa.Location = new System.Drawing.Point(8, 16);
+            this.gMapa.MarkersEnabled = true;
+            this.gMapa.MaxZoom = 2;
+            this.gMapa.MinZoom = 2;
+            this.gMapa.MouseWheelZoomEnabled = true;
+            this.gMapa.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapa.Name = "gMapa";
+            this.gMapa.NegativeMode = false;
+            this.gMapa.PolygonsEnabled = true;
+            this.gMapa.RetryLoadTile = 0;
+            this.gMapa.RoutesEnabled = true;
+            this.gMapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapa.ShowTileGridLines = false;
+            this.gMapa.Size = new System.Drawing.Size(553, 472);
+            this.gMapa.TabIndex = 2;
+            this.gMapa.Zoom = 0D;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,9 +517,13 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.todo)).EndInit();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource1)).EndInit();
+            this.metroTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -481,5 +564,9 @@ namespace Senior_App
         private System.Windows.Forms.DataGridViewTextBoxColumn contactoemergenciaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idapoderadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource portadorBindingSource2;
+        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+        private GMap.NET.WindowsForms.GMapControl gMapa;
     }
 }

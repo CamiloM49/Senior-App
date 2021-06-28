@@ -32,6 +32,7 @@ namespace Senior_App
             this.components = new System.ComponentModel.Container();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroLogin = new MetroFramework.Controls.MetroTabPage();
+            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtError = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -44,14 +45,21 @@ namespace Senior_App
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.cboCamara = new MetroFramework.Controls.MetroComboBox();
             this.buttonStart = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.metroGenera = new MetroFramework.Controls.MetroTabPage();
-            this.buttonGenerarQR = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.picboxGenerador = new System.Windows.Forms.PictureBox();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.telefonoTxt = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.apellidoMaMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.apellidoPaMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.nombreMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.etiquetaDescripcion = new MetroFramework.Controls.MetroLabel();
+            this.generarAlerta = new MaterialSkin.Controls.MaterialFlatButton();
+            this.gMapa = new GMap.NET.WindowsForms.GMapControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
@@ -62,14 +70,12 @@ namespace Senior_App
             this.cuentaTableAdapter = new Senior_App.IntegracionDataSetTableAdapters.cuentaTableAdapter();
             this.integracionDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+            this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
             this.metroTabControl1.SuspendLayout();
             this.metroLogin.SuspendLayout();
             this.metroConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.metroGenera.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picboxGenerador)).BeginInit();
+            this.metroTabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integracionDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integracionDataSetBindingSource)).BeginInit();
@@ -83,7 +89,6 @@ namespace Senior_App
             this.metroTabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.metroTabControl1.Controls.Add(this.metroLogin);
             this.metroTabControl1.Controls.Add(this.metroConsulta);
-            this.metroTabControl1.Controls.Add(this.metroGenera);
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
@@ -120,6 +125,22 @@ namespace Senior_App
             this.metroLogin.VerticalScrollbarHighlightOnWheel = false;
             this.metroLogin.VerticalScrollbarSize = 10;
             // 
+            // materialFlatButton2
+            // 
+            this.materialFlatButton2.AutoSize = true;
+            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialFlatButton2.Depth = 0;
+            this.materialFlatButton2.Location = new System.Drawing.Point(603, 116);
+            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialFlatButton2.Name = "materialFlatButton2";
+            this.materialFlatButton2.Primary = false;
+            this.materialFlatButton2.Size = new System.Drawing.Size(172, 36);
+            this.materialFlatButton2.TabIndex = 23;
+            this.materialFlatButton2.Text = "materialFlatButton2";
+            this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click_1);
+            // 
             // materialFlatButton1
             // 
             this.materialFlatButton1.AutoSize = true;
@@ -150,6 +171,7 @@ namespace Senior_App
             this.txtError.TabIndex = 21;
             this.txtError.Text = "*  Usuario o contraseña incorrecto";
             this.txtError.Visible = false;
+            this.txtError.Click += new System.EventHandler(this.txtError_Click);
             // 
             // materialLabel2
             // 
@@ -262,7 +284,6 @@ namespace Senior_App
             this.metroConsulta.Controls.Add(this.metroLabel3);
             this.metroConsulta.Controls.Add(this.metroLabel2);
             this.metroConsulta.Controls.Add(this.metroLabel1);
-            this.metroConsulta.Controls.Add(this.materialRaisedButton2);
             this.metroConsulta.Controls.Add(this.pictureBox2);
             this.metroConsulta.Controls.Add(this.materialLabel4);
             this.metroConsulta.Controls.Add(this.cboCamara);
@@ -311,30 +332,12 @@ namespace Senior_App
             this.metroLabel1.Size = new System.Drawing.Size(0, 0);
             this.metroLabel1.TabIndex = 35;
             // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.FlatAppearance.BorderSize = 0;
-            this.materialRaisedButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialRaisedButton2.ForeColor = System.Drawing.Color.Teal;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(585, 429);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(226, 30);
-            this.materialRaisedButton2.TabIndex = 34;
-            this.materialRaisedButton2.Text = "BUSCAR DATOS CON CODIGO";
-            this.materialRaisedButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox2.Location = new System.Drawing.Point(78, 79);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(354, 305);
+            this.pictureBox2.Size = new System.Drawing.Size(447, 406);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -346,7 +349,7 @@ namespace Senior_App
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(8, 23);
+            this.materialLabel4.Location = new System.Drawing.Point(130, 452);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(77, 29);
@@ -358,9 +361,9 @@ namespace Senior_App
             // 
             this.cboCamara.FormattingEnabled = true;
             this.cboCamara.ItemHeight = 23;
-            this.cboCamara.Location = new System.Drawing.Point(91, 23);
+            this.cboCamara.Location = new System.Drawing.Point(213, 452);
             this.cboCamara.Name = "cboCamara";
-            this.cboCamara.Size = new System.Drawing.Size(195, 29);
+            this.cboCamara.Size = new System.Drawing.Size(261, 29);
             this.cboCamara.TabIndex = 29;
             this.cboCamara.UseSelectable = true;
             // 
@@ -371,7 +374,7 @@ namespace Senior_App
             this.buttonStart.FlatAppearance.BorderSize = 0;
             this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStart.ForeColor = System.Drawing.Color.Teal;
-            this.buttonStart.Location = new System.Drawing.Point(309, 23);
+            this.buttonStart.Location = new System.Drawing.Point(499, 452);
             this.buttonStart.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Primary = true;
@@ -382,51 +385,180 @@ namespace Senior_App
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
-            // metroGenera
+            // metroTabPage1
             // 
-            this.metroGenera.Controls.Add(this.buttonGenerarQR);
-            this.metroGenera.Controls.Add(this.picboxGenerador);
-            this.metroGenera.HorizontalScrollbarBarColor = true;
-            this.metroGenera.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroGenera.HorizontalScrollbarSize = 10;
-            this.metroGenera.Location = new System.Drawing.Point(4, 37);
-            this.metroGenera.Name = "metroGenera";
-            this.metroGenera.Size = new System.Drawing.Size(834, 536);
-            this.metroGenera.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroGenera.TabIndex = 2;
-            this.metroGenera.Text = "Generar Codigo QR";
-            this.metroGenera.VerticalScrollbarBarColor = true;
-            this.metroGenera.VerticalScrollbarHighlightOnWheel = false;
-            this.metroGenera.VerticalScrollbarSize = 10;
+            this.metroTabPage1.Controls.Add(this.telefonoTxt);
+            this.metroTabPage1.Controls.Add(this.metroTextBox1);
+            this.metroTabPage1.Controls.Add(this.apellidoMaMaptxt);
+            this.metroTabPage1.Controls.Add(this.apellidoPaMaptxt);
+            this.metroTabPage1.Controls.Add(this.nombreMaptxt);
+            this.metroTabPage1.Controls.Add(this.metroLabel6);
+            this.metroTabPage1.Controls.Add(this.metroLabel5);
+            this.metroTabPage1.Controls.Add(this.etiquetaDescripcion);
+            this.metroTabPage1.Controls.Add(this.generarAlerta);
+            this.metroTabPage1.Controls.Add(this.gMapa);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 37);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(834, 536);
+            this.metroTabPage1.TabIndex = 3;
+            this.metroTabPage1.Text = "Maps";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
-            // buttonGenerarQR
+            // telefonoTxt
             // 
-            this.buttonGenerarQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonGenerarQR.Depth = 0;
-            this.buttonGenerarQR.FlatAppearance.BorderSize = 0;
-            this.buttonGenerarQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGenerarQR.ForeColor = System.Drawing.Color.Teal;
-            this.buttonGenerarQR.Location = new System.Drawing.Point(192, 391);
-            this.buttonGenerarQR.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonGenerarQR.Name = "buttonGenerarQR";
-            this.buttonGenerarQR.Primary = true;
-            this.buttonGenerarQR.Size = new System.Drawing.Size(364, 30);
-            this.buttonGenerarQR.TabIndex = 35;
-            this.buttonGenerarQR.Text = "GENERAR QR";
-            this.buttonGenerarQR.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.buttonGenerarQR.UseVisualStyleBackColor = true;
-            this.buttonGenerarQR.Click += new System.EventHandler(this.buttonGenerarQR_Click);
+            this.telefonoTxt.AutoSize = true;
+            this.telefonoTxt.Location = new System.Drawing.Point(564, 218);
+            this.telefonoTxt.Name = "telefonoTxt";
+            this.telefonoTxt.Size = new System.Drawing.Size(76, 19);
+            this.telefonoTxt.TabIndex = 11;
+            this.telefonoTxt.Text = "Descripcion";
+            this.telefonoTxt.Visible = false;
             // 
-            // picboxGenerador
+            // metroTextBox1
             // 
-            this.picboxGenerador.BackColor = System.Drawing.SystemColors.Window;
-            this.picboxGenerador.Location = new System.Drawing.Point(192, 26);
-            this.picboxGenerador.Name = "picboxGenerador";
-            this.picboxGenerador.Size = new System.Drawing.Size(364, 342);
-            this.picboxGenerador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picboxGenerador.TabIndex = 2;
-            this.picboxGenerador.TabStop = false;
-            this.picboxGenerador.Click += new System.EventHandler(this.picboxGenerador_Click);
+            // 
+            // 
+            // 
+            this.metroTextBox1.CustomButton.Image = null;
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(199, 1);
+            this.metroTextBox1.CustomButton.Name = "";
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox1.CustomButton.TabIndex = 1;
+            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox1.CustomButton.UseSelectable = true;
+            this.metroTextBox1.CustomButton.Visible = false;
+            this.metroTextBox1.Lines = new string[] {
+        "Ingrese descripcion"};
+            this.metroTextBox1.Location = new System.Drawing.Point(564, 251);
+            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox1.SelectedText = "";
+            this.metroTextBox1.SelectionLength = 0;
+            this.metroTextBox1.SelectionStart = 0;
+            this.metroTextBox1.ShortcutsEnabled = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(221, 23);
+            this.metroTextBox1.TabIndex = 10;
+            this.metroTextBox1.Text = "Ingrese descripcion";
+            this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.Visible = false;
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
+            // 
+            // apellidoMaMaptxt
+            // 
+            this.apellidoMaMaptxt.AutoSize = true;
+            this.apellidoMaMaptxt.Location = new System.Drawing.Point(564, 188);
+            this.apellidoMaMaptxt.Name = "apellidoMaMaptxt";
+            this.apellidoMaMaptxt.Size = new System.Drawing.Size(76, 19);
+            this.apellidoMaMaptxt.TabIndex = 9;
+            this.apellidoMaMaptxt.Text = "Descripcion";
+            this.apellidoMaMaptxt.Visible = false;
+            // 
+            // apellidoPaMaptxt
+            // 
+            this.apellidoPaMaptxt.AutoSize = true;
+            this.apellidoPaMaptxt.Location = new System.Drawing.Point(564, 159);
+            this.apellidoPaMaptxt.Name = "apellidoPaMaptxt";
+            this.apellidoPaMaptxt.Size = new System.Drawing.Size(76, 19);
+            this.apellidoPaMaptxt.TabIndex = 8;
+            this.apellidoPaMaptxt.Text = "Descripcion";
+            this.apellidoPaMaptxt.Visible = false;
+            this.apellidoPaMaptxt.Click += new System.EventHandler(this.metroLabel8_Click);
+            // 
+            // nombreMaptxt
+            // 
+            this.nombreMaptxt.AutoSize = true;
+            this.nombreMaptxt.Location = new System.Drawing.Point(564, 131);
+            this.nombreMaptxt.Name = "nombreMaptxt";
+            this.nombreMaptxt.Size = new System.Drawing.Size(76, 19);
+            this.nombreMaptxt.TabIndex = 7;
+            this.nombreMaptxt.Text = "Descripcion";
+            this.nombreMaptxt.Visible = false;
+            this.nombreMaptxt.Click += new System.EventHandler(this.metroLabel7_Click);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(564, 100);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel6.TabIndex = 6;
+            this.metroLabel6.Text = "Latitud";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(564, 71);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel5.TabIndex = 5;
+            this.metroLabel5.Text = "Longitud";
+            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click_1);
+            // 
+            // etiquetaDescripcion
+            // 
+            this.etiquetaDescripcion.AutoSize = true;
+            this.etiquetaDescripcion.Location = new System.Drawing.Point(633, 40);
+            this.etiquetaDescripcion.Name = "etiquetaDescripcion";
+            this.etiquetaDescripcion.Size = new System.Drawing.Size(76, 19);
+            this.etiquetaDescripcion.TabIndex = 4;
+            this.etiquetaDescripcion.Text = "Descripcion";
+            this.etiquetaDescripcion.Click += new System.EventHandler(this.metroLabel5_Click);
+            // 
+            // generarAlerta
+            // 
+            this.generarAlerta.AutoSize = true;
+            this.generarAlerta.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.generarAlerta.BackColor = System.Drawing.SystemColors.Control;
+            this.generarAlerta.Depth = 0;
+            this.generarAlerta.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.generarAlerta.Location = new System.Drawing.Point(603, 402);
+            this.generarAlerta.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.generarAlerta.MouseState = MaterialSkin.MouseState.HOVER;
+            this.generarAlerta.Name = "generarAlerta";
+            this.generarAlerta.Primary = false;
+            this.generarAlerta.Size = new System.Drawing.Size(127, 36);
+            this.generarAlerta.TabIndex = 3;
+            this.generarAlerta.Text = "Generar alerta";
+            this.generarAlerta.UseVisualStyleBackColor = false;
+            this.generarAlerta.Visible = false;
+            this.generarAlerta.Click += new System.EventHandler(this.materialFlatButton3_Click);
+            // 
+            // gMapa
+            // 
+            this.gMapa.Bearing = 0F;
+            this.gMapa.CanDragMap = true;
+            this.gMapa.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapa.GrayScaleMode = false;
+            this.gMapa.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapa.LevelsKeepInMemory = 5;
+            this.gMapa.Location = new System.Drawing.Point(8, 14);
+            this.gMapa.MarkersEnabled = true;
+            this.gMapa.MaxZoom = 2;
+            this.gMapa.MinZoom = 2;
+            this.gMapa.MouseWheelZoomEnabled = true;
+            this.gMapa.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapa.Name = "gMapa";
+            this.gMapa.NegativeMode = false;
+            this.gMapa.PolygonsEnabled = true;
+            this.gMapa.RetryLoadTile = 0;
+            this.gMapa.RoutesEnabled = true;
+            this.gMapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapa.ShowTileGridLines = false;
+            this.gMapa.Size = new System.Drawing.Size(530, 502);
+            this.gMapa.TabIndex = 2;
+            this.gMapa.Zoom = 0D;
+            this.gMapa.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // panel1
             // 
@@ -500,35 +632,9 @@ namespace Senior_App
             this.cuentaBindingSource1.DataMember = "cuenta";
             this.cuentaBindingSource1.DataSource = this.integracionDataSetBindingSource1;
             // 
-            // metroTabPage1
+            // sqLiteCommand1
             // 
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 37);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(834, 536);
-            this.metroTabPage1.TabIndex = 3;
-            this.metroTabPage1.Text = "Maps";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Location = new System.Drawing.Point(603, 116);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(172, 36);
-            this.materialFlatButton2.TabIndex = 23;
-            this.materialFlatButton2.Text = "materialFlatButton2";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
-            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click_1);
+            this.sqLiteCommand1.CommandText = null;
             // 
             // Form1
             // 
@@ -549,8 +655,8 @@ namespace Senior_App
             this.metroConsulta.ResumeLayout(false);
             this.metroConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.metroGenera.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picboxGenerador)).EndInit();
+            this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.integracionDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.integracionDataSetBindingSource)).EndInit();
@@ -578,10 +684,6 @@ namespace Senior_App
         private MetroFramework.Controls.MetroComboBox cboCamara;
         private MaterialSkin.Controls.MaterialRaisedButton buttonStart;
         private System.Windows.Forms.Timer timer1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MetroFramework.Controls.MetroTabPage metroGenera;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonGenerarQR;
-        private System.Windows.Forms.PictureBox picboxGenerador;
         private System.Windows.Forms.BindingSource integracionDataSetBindingSource;
         private IntegracionDataSet integracionDataSet;
         private System.Windows.Forms.BindingSource cuentaBindingSource;
@@ -596,6 +698,17 @@ namespace Senior_App
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+        private GMap.NET.WindowsForms.GMapControl gMapa;
+        private MaterialSkin.Controls.MaterialFlatButton generarAlerta;
+        private MetroFramework.Controls.MetroLabel etiquetaDescripcion;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel apellidoPaMaptxt;
+        private MetroFramework.Controls.MetroLabel nombreMaptxt;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel apellidoMaMaptxt;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroLabel telefonoTxt;
+        private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
     }
 }
 

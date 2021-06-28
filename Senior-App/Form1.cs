@@ -17,6 +17,9 @@ using SeniorAppNegocio;
 using SeniorAppDTO;
 using System.Web.Script.Serialization;
 using System.Net;
+using GMap.NET.MapProviders;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
 
 
 
@@ -58,6 +61,16 @@ namespace Senior_App
             foreach (FilterInfo filterInfo in FilterInfoCollection)
                 cboCamara.Items.Add(filterInfo.Name);
             cboCamara.SelectedIndex = 0;
+            //
+            gMapa.DragButton = MouseButtons.Left;
+            gMapa.CanDragMap = true;
+            gMapa.MapProvider = GMapProviders.GoogleMap;
+            gMapa.Position = new GMap.NET.PointLatLng(-33.46250690553818, -70.66059838031153);
+            gMapa.MinZoom = 0;
+            gMapa.MaxZoom = 24;
+            gMapa.Zoom = 12;
+            gMapa.AutoScroll = true;
+
         }
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -142,7 +155,7 @@ namespace Senior_App
 
 
                 ZXing.BarcodeReader barcodeReader = new ZXing.BarcodeReader();
-                Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image);
+                ZXing.Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image);
                 if  (result != null)
                 {
 
@@ -152,47 +165,29 @@ namespace Senior_App
                     this.resultadoqr = result.ToString();
                     ConsultaPortadorNegocio csp = new ConsultaPortadorNegocio();
                     csp.detalleportador(resultadoqr);
+                    //
                     metroLabel1.Text = csp.nombre;
                     metroLabel2.Text = csp.apdpataterno;
                     metroLabel3.Text = csp.apdmaterno;
                     metroLabel4.Text = csp.contacto;
+                    nombreMaptxt.Text = csp.nombre;
+                    apellidoPaMaptxt.Text = csp.apdpataterno;
+                    apellidoMaMaptxt.Text = csp.apdmaterno;
+                    telefonoTxt.Text = csp.contacto;
+                    nombreMaptxt.Visible = true;
+                    apellidoPaMaptxt.Visible = true;
+                    apellidoMaMaptxt.Visible = true;
+                    telefonoTxt.Visible = true;
+                    generarAlerta.Visible = true;
+
 
                 }
             }
         }
 
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
-        {
-            ConsultaPortadorNegocio csp = new ConsultaPortadorNegocio();
-            csp.detalleportador(resultadoqr);
-            metroLabel1.Text = csp.nombre;
-            metroLabel2.Text = csp.apdpataterno;
-            metroLabel3.Text = csp.apdmaterno;
-            metroLabel4.Text = csp.contacto;
+        
 
-
-        }
-
-        private void buttonGenerarQR_Click(object sender, EventArgs e)
-        {
-            string url = "https://localhost:44393/api/Token";
-            TokenDTO objt = new TokenDTO();
-            GeneradorQRNegocio genqr = new GeneradorQRNegocio();
-            TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
-            tokeng.tokenfinal();
-            objt.Token_id = tokeng.tokenf;
-            objt.Id_portador = 12;
-            objt.Valido = true;
-            string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
-
-            string qrgenerado = objt.Token_id;
-            QRCodeGenerator qr = new QRCodeGenerator();
-            QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
-            QRCode code = new QRCode(data);
-            picboxGenerador.Image = code.GetGraphic(5);
-
-
-        }
+        
 
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -202,28 +197,39 @@ namespace Senior_App
             {
                 if (obj.respuesta == true)
                 {
-                    if(obj.tipo_deCuenta == "A")
+                    if (obj.tipo_deCuenta == "A")
                     {
                         Form2 adm = new Form2();
                         adm.Show();
+                        txtError.Visible = false;
                     }
                     else
                     {
-                        Form3 normal = new Form3();
-                        normal.Show();
+
+                        if (obj.tipo_deCuenta == "N")
+                        {
+                           
+                            Form3 normal = new Form3();
+                            normal.Show();
+                            txtError.Visible = false;
+                        }
                     }
 
-                    
-                    txtError.Visible = false;
-                    
-                
                 }
-            
-
-
-
-
-
+                else {
+                    if (obj.respuesta == false && metroTextBox2.Text == "" || txtCorreo.Text == "")
+                    {
+                        txtError.Text = "* Formulario vacio";
+                        txtError.Visible = true; }
+                    else {
+                        if (obj.respuesta == false)
+                        {
+                            txtError.Text = "*  Usuario o contraseña incorrecto";
+                            txtError.Visible = true;
+                        }
+                           
+                    }
+                }
 
                 }  }  
         //Este esta para no tener que logear siempre xd
@@ -257,6 +263,47 @@ namespace Senior_App
         {
             Form3 usr = new Form3();
             usr.Show();
+        }
+
+        private void gMapControl1_Load(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void materialFlatButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTextBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtError_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
