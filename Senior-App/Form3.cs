@@ -33,13 +33,13 @@ namespace Senior_App
             gMapa.MaxZoom = 24;
             gMapa.Zoom = 12;
             gMapa.AutoScroll = true;
-            TokenDTO dto = new TokenDTO();
-            QRCodeGenerator qr = new QRCodeGenerator();
-            QRCodeData data = qr.CreateQrCode(LoginNegocio.Tokenfinales, QRCodeGenerator.ECCLevel.Q);
-            QRCode code = new QRCode(data);
-            pictureBox1.Image = code.GetGraphic(5);
-            //Console.WriteLine(LoginNegocio.Idapod);
 
+            if (LoginNegocio.Tokenfinales == null)
+            {
+                eventogQR();
+
+            }
+            else { eventoverQR(); }
 
 
 
@@ -54,7 +54,7 @@ namespace Senior_App
                 cboPortadores.Items.Add(item.id_apoderado);
             }
         }
-        
+
         private void cargar_datos()
         {
             gridConsulta.DataSource = db.portador.ToList();
@@ -62,8 +62,8 @@ namespace Senior_App
         private void Form3_Load(object sender, EventArgs e)
         {
             gridConsulta.DataSource = db.portador.ToList();
-            
-             
+
+
 
         }
 
@@ -74,7 +74,7 @@ namespace Senior_App
 
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void filtrar(string id_apoderado)
         {
@@ -90,21 +90,7 @@ namespace Senior_App
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             {
-                string url = "https://localhost:44393/api/Token";
-                TokenDTO objt = new TokenDTO();
-                GeneradorQRNegocio genqr = new GeneradorQRNegocio();
-                TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
-                tokeng.tokenfinal();
-                objt.Token_id = tokeng.tokenf;
-                objt.Id_portador = 15;
-                objt.Valido = true;
-                string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
-
-                string qrgenerado = objt.Token_id;
-                QRCodeGenerator qr = new QRCodeGenerator();
-                QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
-                QRCode code = new QRCode(data);
-                pictureBox1.Image = code.GetGraphic(5);
+                eventogQR();
 
 
             }
@@ -115,13 +101,40 @@ namespace Senior_App
 
 
             TokenDTO dto = new TokenDTO();
-            
-            
+
+
             QRCodeGenerator qr = new QRCodeGenerator();
 
             QRCodeData data = qr.CreateQrCode(LoginNegocio.Tokenfinales, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
             pictureBox1.Image = code.GetGraphic(5);
+        }
+        public void eventogQR()
+        {
+            string url = "https://localhost:44393/api/Token";
+            TokenDTO objt = new TokenDTO();
+            GeneradorQRNegocio genqr = new GeneradorQRNegocio();
+            TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
+            tokeng.tokenfinal();
+            objt.Token_id = tokeng.tokenf;
+            objt.Id_portador = LoginNegocio.Idporta;
+            objt.Valido = true;
+            string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
+
+            string qrgenerado = objt.Token_id;
+            QRCodeGenerator qr = new QRCodeGenerator();
+            QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+            pictureBox1.Image = code.GetGraphic(5);
+        }
+        public void eventoverQR()
+        {
+            TokenDTO dto = new TokenDTO();
+            QRCodeGenerator qr = new QRCodeGenerator();
+            QRCodeData data = qr.CreateQrCode(LoginNegocio.Tokenfinales, QRCodeGenerator.ECCLevel.Q);
+            QRCode code = new QRCode(data);
+            pictureBox1.Image = code.GetGraphic(5);
+            //Console.WriteLine(LoginNegocio.Idapod);}
         }
     }
 }

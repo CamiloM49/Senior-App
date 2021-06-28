@@ -20,6 +20,7 @@ namespace SeniorAppNegocio
         public string tokenfinales;
         static public string Tokenfinales;
         static public int Idapod;
+        static public int Idporta;
 
         static public SeniorAppDB.SeniorAppDB db = new SeniorAppDB.SeniorAppDB();
         public void validadDatos(string textocorreo, string passwd)
@@ -125,11 +126,13 @@ namespace SeniorAppNegocio
                                         on a.id_apoderado equals p.id_apoderado
                                         join t in db.token on p.id_portador equals t.id_portador
                                         where p.id_apoderado == idapo
+                                        orderby t.id_token descending
                                         select new
                                         {
 
 
-                                            TOKENFINAL = t.token_id
+                                            TOKENFINAL = t.token_id,
+                                            IDPORTA = t.id_portador
 
 
                                         }).Take(1).ToList();
@@ -138,19 +141,46 @@ namespace SeniorAppNegocio
 
 
                     string tokenfinales = t.TOKENFINAL;
-
+                    int idporta = t.IDPORTA;
+       
                     Tokenfinales = tokenfinales;
 
 
 
+                }//
+                var informacionporta = (from a in db.cuenta
+                                        join p in db.portador
+                                        on a.id_apoderado equals p.id_apoderado
+                                        where p.id_apoderado == idapo
+                                        
+                                        select new
+                                        {
+
+
+                                            
+                                            IDPORTA = p.id_portador
+
+
+                                        }).Take(1).ToList();
+                foreach (var t in informacionporta)
+                {
+
+
+                  
+                    int idporta = t.IDPORTA;
+                    Idporta = idporta;
+          
+
+
+
                 }
-                
+
 
 
 
             }
             catch { MessageBox.Show("no se encontro qr, genere uno ahora"); }
-            return tokenfinales;
+            return "listo";
         }
     }
 }
