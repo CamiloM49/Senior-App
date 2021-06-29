@@ -56,7 +56,6 @@
   <ItemGroup>
     <Compile Include="CifradoNegocio.cs" />
     <Compile Include="MapaNegocio.cs" />
-    <Compile Include="NegocioCliente.cs" />
     <Compile Include="TokenAleatorioNegocio.cs" />
     <Compile Include="GeneradorQRNegocio.cs" />
     <Compile Include="LoginNegocio.cs" />

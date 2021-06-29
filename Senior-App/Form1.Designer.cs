@@ -32,8 +32,6 @@ namespace Senior_App
             this.components = new System.ComponentModel.Container();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroLogin = new MetroFramework.Controls.MetroTabPage();
-            this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtError = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -104,8 +102,6 @@ namespace Senior_App
             // metroLogin
             // 
             this.metroLogin.BackColor = System.Drawing.Color.White;
-            this.metroLogin.Controls.Add(this.materialFlatButton2);
-            this.metroLogin.Controls.Add(this.materialFlatButton1);
             this.metroLogin.Controls.Add(this.txtError);
             this.metroLogin.Controls.Add(this.materialLabel2);
             this.metroLogin.Controls.Add(this.materialLabel1);
@@ -124,38 +120,6 @@ namespace Senior_App
             this.metroLogin.VerticalScrollbarBarColor = true;
             this.metroLogin.VerticalScrollbarHighlightOnWheel = false;
             this.metroLogin.VerticalScrollbarSize = 10;
-            // 
-            // materialFlatButton2
-            // 
-            this.materialFlatButton2.AutoSize = true;
-            this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton2.Depth = 0;
-            this.materialFlatButton2.Location = new System.Drawing.Point(603, 116);
-            this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton2.Name = "materialFlatButton2";
-            this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(172, 36);
-            this.materialFlatButton2.TabIndex = 23;
-            this.materialFlatButton2.Text = "materialFlatButton2";
-            this.materialFlatButton2.UseVisualStyleBackColor = true;
-            this.materialFlatButton2.Click += new System.EventHandler(this.materialFlatButton2_Click_1);
-            // 
-            // materialFlatButton1
-            // 
-            this.materialFlatButton1.AutoSize = true;
-            this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialFlatButton1.Depth = 0;
-            this.materialFlatButton1.Location = new System.Drawing.Point(64, 143);
-            this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFlatButton1.Name = "materialFlatButton1";
-            this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(172, 36);
-            this.materialFlatButton1.TabIndex = 22;
-            this.materialFlatButton1.Text = "materialFlatButton1";
-            this.materialFlatButton1.UseVisualStyleBackColor = true;
-            this.materialFlatButton1.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
             // txtError
             // 
@@ -347,7 +311,7 @@ namespace Senior_App
             // 
             this.materialLabel4.BackColor = System.Drawing.Color.White;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(130, 452);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -691,13 +655,11 @@ namespace Senior_App
         private System.Windows.Forms.BindingSource cuentaBindingSource1;
         private System.Windows.Forms.BindingSource integracionDataSetBindingSource1;
         private MaterialSkin.Controls.MaterialLabel txtError;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
         private GMap.NET.WindowsForms.GMapControl gMapa;
         private MaterialSkin.Controls.MaterialFlatButton generarAlerta;
         private MetroFramework.Controls.MetroLabel etiquetaDescripcion;

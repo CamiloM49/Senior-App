@@ -26,7 +26,7 @@ namespace Senior_App
         {
             InitializeComponent();
             WSMantenedor.WebService1 ws2 = new WSMantenedor.WebService1();
-            dataGridView1.DataSource = ws2.LoadData("SELECT * FROM cuenta ORDER BY id_apoderado asc", null, null, "cuenta");
+            dataGridView1.DataSource = ws2.LoadData("SELECT * FROM last_location", null, null, "last_location");
             load_data();
             cargar_datos();
             gMapa.DragButton = MouseButtons.Left;
@@ -136,6 +136,11 @@ namespace Senior_App
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void metroTabPage3_Click(object sender, EventArgs e)
         {
 
         }
