@@ -16,6 +16,7 @@ namespace Senior_App
         public Form2()
         {
             InitializeComponent();
+            
             using (SeniorAppDB.SeniorAppDB db1 = new SeniorAppDB.SeniorAppDB())
             {
                 //consultamos todas las filas 
@@ -193,6 +194,10 @@ namespace Senior_App
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
 
+            WSMantenedor.WebService1 ws2 = new WSMantenedor.WebService1();
+            ws2.LoadData("insert into comunas values"+txtProvincia+","+txtNameProvincia +","+cboidRegion.SelectedText , null, null, "cuenta");
+            DataGridView tabla = new DataGridView();
+            tabla.Update();
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)

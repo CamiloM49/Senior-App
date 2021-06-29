@@ -35,6 +35,7 @@ namespace SeniorAppServicio
                 for (var i = 0; i < paramenter.Length; i++)
                     cmd.Parameters.AddWithValue(paramenter[i], values[i]);
             var dr = cmd.ExecuteReader();
+            
             var dt = new DataTable(table);
             dt.Load(dr);
             dr.Dispose();

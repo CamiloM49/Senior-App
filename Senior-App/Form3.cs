@@ -14,7 +14,7 @@ using SeniorAppDTO;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-using Senior_App.WService2;
+
 
 
 namespace Senior_App
@@ -82,7 +82,8 @@ namespace Senior_App
         }
         private void filtrar(string id_apoderado)
         {
-            gridConsulta.DataSource = db.portador.SqlQuery("select * from portador where " + id_apoderado);
+            WSMantenedor.WebService1 filt = new WSMantenedor.WebService1();
+            gridConsulta.DataSource = filt.LoadData("SELECT * FROM portador where id_apoderado = "+ "'" + cboPortadores.Text + "'", null, null, "portador");
             gridConsulta.Visible = true;
         }
 

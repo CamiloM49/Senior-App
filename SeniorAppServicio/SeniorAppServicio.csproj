@@ -319,6 +319,24 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Senior-App\Senior-App.csproj">
+      <Project>{d7bc898a-84da-4dda-99d1-f0a25e6b8731}</Project>
+      <Name>Senior-App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeniorAppDB\SeniorAppDB.csproj">
+      <Project>{e36104f1-90b9-44fb-ae25-782404dd8646}</Project>
+      <Name>SeniorAppDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeniorAppDTO\SeniorAppDTO.csproj">
+      <Project>{7016ab13-661f-4319-9cd1-1248850f5a01}</Project>
+      <Name>SeniorAppDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SeniorAppNegocio\SeniorAppNegocio.csproj">
+      <Project>{716f0d62-3333-4cbf-a8d6-51967cdc1bcc}</Project>
+      <Name>SeniorAppNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
