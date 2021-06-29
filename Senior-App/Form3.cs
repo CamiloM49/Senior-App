@@ -15,6 +15,7 @@ using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 
+
 namespace Senior_App
 {
     public partial class Form3 : Form
@@ -36,10 +37,10 @@ namespace Senior_App
 
             if (LoginNegocio.Tokenfinales == null)
             {
-                eventogQR();
+                EventogQR();
 
             }
-            else { eventoverQR(); }
+            else { EventoverQR(); }
 
 
 
@@ -90,7 +91,7 @@ namespace Senior_App
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
             {
-                eventogQR();
+                EventogQR();
 
 
             }
@@ -109,25 +110,18 @@ namespace Senior_App
             QRCode code = new QRCode(data);
             pictureBox1.Image = code.GetGraphic(5);
         }
-        public void eventogQR()
+        public void EventogQR()
         {
-            string url = "https://localhost:44393/api/Token";
-            TokenDTO objt = new TokenDTO();
-            GeneradorQRNegocio genqr = new GeneradorQRNegocio();
-            TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
-            tokeng.tokenfinal();
-            objt.Token_id = tokeng.tokenf;
-            objt.Id_portador = LoginNegocio.Idporta;
-            objt.Valido = true;
-            string resultado = genqr.Send<TokenDTO>(url, objt, "POST");
 
-            string qrgenerado = objt.Token_id;
+
+            GeneradorQRNegocio generacionqr = new GeneradorQRNegocio();
+            generacionqr.generaciontoken();
             QRCodeGenerator qr = new QRCodeGenerator();
-            QRCodeData data = qr.CreateQrCode(qrgenerado, QRCodeGenerator.ECCLevel.Q);
+            QRCodeData data = qr.CreateQrCode(GeneradorQRNegocio.ResultadoQR, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
             pictureBox1.Image = code.GetGraphic(5);
         }
-        public void eventoverQR()
+        public void EventoverQR()
         {
             TokenDTO dto = new TokenDTO();
             QRCodeGenerator qr = new QRCodeGenerator();
@@ -135,6 +129,11 @@ namespace Senior_App
             QRCode code = new QRCode(data);
             pictureBox1.Image = code.GetGraphic(5);
             //Console.WriteLine(LoginNegocio.Idapod);}
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

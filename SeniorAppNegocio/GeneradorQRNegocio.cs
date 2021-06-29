@@ -8,21 +8,24 @@ using System.Net;
 using System.IO;
 using SeniorAppDTO;
 
+
 namespace SeniorAppNegocio
 {
     public class GeneradorQRNegocio
     {
-        public void generaciontoken(string tokenid, Boolean validoqr, int idportador){
-            string url = "http://localhost:34003/api/Persona";
-
-            TokenDTO oToken = new TokenDTO();
-            oToken.Token_id = tokenid;
-            oToken.Valido = validoqr;
-            oToken.Id_portador = idportador;
-            
-
-
-            string resultado = Send<TokenDTO>(url, oToken, "POST");
+        static public string ResultadoQR;
+        public void generaciontoken(){
+            GeneradorQRNegocio genqr = new GeneradorQRNegocio();
+            string url = "https://localhost:44393/api/Token";
+            TokenDTO objt = new TokenDTO();
+            GeneradorQRNegocio genqr2 = new GeneradorQRNegocio();
+            TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
+            tokeng.tokenfinal();
+            objt.Token_id = tokeng.tokenf;
+            objt.Id_portador = LoginNegocio.Idporta;
+            objt.Valido = true;
+            string resultado = genqr2.Send<TokenDTO>(url, objt, "POST");
+            ResultadoQR = tokeng.tokenf;
         }
         public string Send<T>(string url, T objectRequest, string method = "POST")
         {

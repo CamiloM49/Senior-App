@@ -90,10 +90,30 @@ namespace Senior_App
             this.regionordinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regionesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabUsers = new MetroFramework.Controls.MetroTabPage();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.idapoderadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabApoderados = new MetroFramework.Controls.MetroTabPage();
+            this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
+            this.idapoderadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apdpatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apdmatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechanacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.membresiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comunaidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apoderadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.apoderadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apoderadoTableAdapter = new Senior_App.TodoTableAdapters.apoderadoTableAdapter();
             this.fKportadorapoderadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -105,27 +125,7 @@ namespace Senior_App
             this.provinciasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.provinciasBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.regionesTableAdapter = new Senior_App.TodoTableAdapters.regionesTableAdapter();
-            this.label2 = new System.Windows.Forms.Label();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaTableAdapter = new Senior_App.TodoTableAdapters.cuentaTableAdapter();
-            this.idapoderadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metroGrid2 = new MetroFramework.Controls.MetroGrid();
-            this.apoderadoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idapoderadoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apdpatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apdmatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechanacimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.membresiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comunaidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroTabControl1.SuspendLayout();
             this.tabMantenedores.SuspendLayout();
             this.metroTabControl2.SuspendLayout();
@@ -143,7 +143,11 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionesBindingSource1)).BeginInit();
             this.tabUsers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             this.tabApoderados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKportadorapoderadoBindingSource)).BeginInit();
@@ -151,10 +155,6 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.todo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -165,7 +165,7 @@ namespace Senior_App
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 54);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(826, 535);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -193,7 +193,7 @@ namespace Senior_App
             this.metroTabControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl2.Location = new System.Drawing.Point(0, 3);
             this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
+            this.metroTabControl2.SelectedIndex = 1;
             this.metroTabControl2.Size = new System.Drawing.Size(818, 490);
             this.metroTabControl2.TabIndex = 2;
             this.metroTabControl2.UseSelectable = true;
@@ -227,12 +227,12 @@ namespace Senior_App
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.BackColor = System.Drawing.Color.White;
             this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel5.Location = new System.Drawing.Point(525, 21);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel5.Size = new System.Drawing.Size(87, 18);
             this.materialLabel5.TabIndex = 35;
             this.materialLabel5.Text = "ID Provincia";
             this.materialLabel5.Visible = false;
@@ -242,12 +242,12 @@ namespace Senior_App
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.BackColor = System.Drawing.Color.White;
             this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel6.Location = new System.Drawing.Point(261, 21);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel6.Size = new System.Drawing.Size(123, 18);
             this.materialLabel6.TabIndex = 34;
             this.materialLabel6.Text = "Nombre Comuna";
             this.materialLabel6.Visible = false;
@@ -257,12 +257,12 @@ namespace Senior_App
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.BackColor = System.Drawing.Color.White;
             this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel7.Location = new System.Drawing.Point(4, 21);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel7.Size = new System.Drawing.Size(83, 18);
             this.materialLabel7.TabIndex = 33;
             this.materialLabel7.Text = "ID Comuna";
             this.materialLabel7.Visible = false;
@@ -272,12 +272,12 @@ namespace Senior_App
             this.labelError.AutoSize = true;
             this.labelError.BackColor = System.Drawing.Color.White;
             this.labelError.Depth = 0;
-            this.labelError.Font = new System.Drawing.Font("Roboto", 11F);
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelError.Location = new System.Drawing.Point(4, 2);
             this.labelError.MouseState = MaterialSkin.MouseState.HOVER;
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(223, 19);
+            this.labelError.Size = new System.Drawing.Size(219, 18);
             this.labelError.TabIndex = 22;
             this.labelError.Text = "* Favor llenar todos los campos\r\n";
             this.labelError.Visible = false;
@@ -435,12 +435,12 @@ namespace Senior_App
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.BackColor = System.Drawing.Color.White;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(525, 23);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(73, 18);
             this.materialLabel4.TabIndex = 32;
             this.materialLabel4.Text = "ID Region";
             this.materialLabel4.Visible = false;
@@ -450,12 +450,12 @@ namespace Senior_App
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.BackColor = System.Drawing.Color.White;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel3.Location = new System.Drawing.Point(261, 23);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(129, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(127, 18);
             this.materialLabel3.TabIndex = 31;
             this.materialLabel3.Text = "Nombre Provincia";
             this.materialLabel3.Visible = false;
@@ -465,12 +465,12 @@ namespace Senior_App
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.BackColor = System.Drawing.Color.White;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(4, 23);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(87, 18);
             this.materialLabel2.TabIndex = 30;
             this.materialLabel2.Text = "ID Provincia";
             this.materialLabel2.Visible = false;
@@ -480,12 +480,12 @@ namespace Senior_App
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.White;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(223, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(219, 18);
             this.materialLabel1.TabIndex = 29;
             this.materialLabel1.Text = "* Favor llenar todos los campos\r\n";
             this.materialLabel1.Visible = false;
@@ -631,12 +631,12 @@ namespace Senior_App
             this.materialLabel8.AutoSize = true;
             this.materialLabel8.BackColor = System.Drawing.Color.White;
             this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel8.Location = new System.Drawing.Point(546, 23);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(106, 19);
+            this.materialLabel8.Size = new System.Drawing.Size(106, 18);
             this.materialLabel8.TabIndex = 42;
             this.materialLabel8.Text = "Region Ordinal";
             this.materialLabel8.Visible = false;
@@ -647,12 +647,12 @@ namespace Senior_App
             this.materialLabel9.AutoSize = true;
             this.materialLabel9.BackColor = System.Drawing.Color.White;
             this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel9.Location = new System.Drawing.Point(261, 23);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(113, 19);
+            this.materialLabel9.Size = new System.Drawing.Size(113, 18);
             this.materialLabel9.TabIndex = 41;
             this.materialLabel9.Text = "Nombre Region";
             this.materialLabel9.Visible = false;
@@ -662,12 +662,12 @@ namespace Senior_App
             this.materialLabel10.AutoSize = true;
             this.materialLabel10.BackColor = System.Drawing.Color.White;
             this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel10.Location = new System.Drawing.Point(4, 23);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel10.Size = new System.Drawing.Size(73, 18);
             this.materialLabel10.TabIndex = 40;
             this.materialLabel10.Text = "ID Region";
             this.materialLabel10.Visible = false;
@@ -677,12 +677,12 @@ namespace Senior_App
             this.materialLabel11.AutoSize = true;
             this.materialLabel11.BackColor = System.Drawing.Color.White;
             this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel11.Location = new System.Drawing.Point(4, 0);
             this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(223, 19);
+            this.materialLabel11.Size = new System.Drawing.Size(219, 18);
             this.materialLabel11.TabIndex = 39;
             this.materialLabel11.Text = "* Favor llenar todos los campos\r\n";
             this.materialLabel11.Visible = false;
@@ -784,123 +784,6 @@ namespace Senior_App
             this.tabUsers.VerticalScrollbarHighlightOnWheel = false;
             this.tabUsers.VerticalScrollbarSize = 10;
             // 
-            // tabApoderados
-            // 
-            this.tabApoderados.Controls.Add(this.metroGrid2);
-            this.tabApoderados.HorizontalScrollbarBarColor = true;
-            this.tabApoderados.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabApoderados.HorizontalScrollbarSize = 10;
-            this.tabApoderados.Location = new System.Drawing.Point(4, 38);
-            this.tabApoderados.Name = "tabApoderados";
-            this.tabApoderados.Size = new System.Drawing.Size(818, 493);
-            this.tabApoderados.TabIndex = 3;
-            this.tabApoderados.Text = "Apoderados";
-            this.tabApoderados.VerticalScrollbarBarColor = true;
-            this.tabApoderados.VerticalScrollbarHighlightOnWheel = false;
-            this.tabApoderados.VerticalScrollbarSize = 10;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 48);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Senior-App";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonSalir
-            // 
-            this.buttonSalir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonSalir.FlatAppearance.BorderSize = 0;
-            this.buttonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalir.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSalir.ForeColor = System.Drawing.Color.White;
-            this.buttonSalir.Location = new System.Drawing.Point(721, 0);
-            this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(105, 48);
-            this.buttonSalir.TabIndex = 0;
-            this.buttonSalir.Text = "X";
-            this.buttonSalir.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Teal;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.buttonSalir);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 48);
-            this.panel1.TabIndex = 7;
-            // 
-            // apoderadoBindingSource
-            // 
-            this.apoderadoBindingSource.DataMember = "apoderado";
-            this.apoderadoBindingSource.DataSource = this.todo;
-            // 
-            // apoderadoTableAdapter
-            // 
-            this.apoderadoTableAdapter.ClearBeforeFill = true;
-            // 
-            // fKportadorapoderadoBindingSource
-            // 
-            this.fKportadorapoderadoBindingSource.DataMember = "FK_portador_apoderado";
-            this.fKportadorapoderadoBindingSource.DataSource = this.apoderadoBindingSource;
-            // 
-            // portadorTableAdapter
-            // 
-            this.portadorTableAdapter.ClearBeforeFill = true;
-            // 
-            // comunasTableAdapter
-            // 
-            this.comunasTableAdapter.ClearBeforeFill = true;
-            // 
-            // provinciasTableAdapter
-            // 
-            this.provinciasTableAdapter.ClearBeforeFill = true;
-            // 
-            // integracionDataSet1
-            // 
-            this.integracionDataSet1.DataSetName = "IntegracionDataSet";
-            this.integracionDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // todo1
-            // 
-            this.todo1.DataSetName = "Todo";
-            this.todo1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // provinciasBindingSource1
-            // 
-            this.provinciasBindingSource1.DataMember = "provincias";
-            this.provinciasBindingSource1.DataSource = this.todoBindingSource;
-            this.provinciasBindingSource1.CurrentChanged += new System.EventHandler(this.provinciasBindingSource1_CurrentChanged);
-            // 
-            // provinciasBindingSource3
-            // 
-            this.provinciasBindingSource3.DataMember = "provincias";
-            this.provinciasBindingSource3.DataSource = this.todoBindingSource;
-            // 
-            // regionesTableAdapter
-            // 
-            this.regionesTableAdapter.ClearBeforeFill = true;
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(309, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(309, 48);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Administrador";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // metroGrid1
             // 
             this.metroGrid1.AllowUserToResizeRows = false;
@@ -953,15 +836,6 @@ namespace Senior_App
             this.metroGrid1.Size = new System.Drawing.Size(818, 490);
             this.metroGrid1.TabIndex = 2;
             // 
-            // cuentaBindingSource
-            // 
-            this.cuentaBindingSource.DataMember = "cuenta";
-            this.cuentaBindingSource.DataSource = this.todoBindingSource;
-            // 
-            // cuentaTableAdapter
-            // 
-            this.cuentaTableAdapter.ClearBeforeFill = true;
-            // 
             // idapoderadoDataGridViewTextBoxColumn
             // 
             this.idapoderadoDataGridViewTextBoxColumn.DataPropertyName = "id_apoderado";
@@ -992,6 +866,26 @@ namespace Senior_App
             this.passwdDataGridViewTextBoxColumn.DataPropertyName = "passwd";
             this.passwdDataGridViewTextBoxColumn.HeaderText = "passwd";
             this.passwdDataGridViewTextBoxColumn.Name = "passwdDataGridViewTextBoxColumn";
+            // 
+            // cuentaBindingSource
+            // 
+            this.cuentaBindingSource.DataMember = "cuenta";
+            this.cuentaBindingSource.DataSource = this.todoBindingSource;
+            // 
+            // tabApoderados
+            // 
+            this.tabApoderados.Controls.Add(this.metroGrid2);
+            this.tabApoderados.HorizontalScrollbarBarColor = true;
+            this.tabApoderados.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabApoderados.HorizontalScrollbarSize = 10;
+            this.tabApoderados.Location = new System.Drawing.Point(4, 38);
+            this.tabApoderados.Name = "tabApoderados";
+            this.tabApoderados.Size = new System.Drawing.Size(818, 493);
+            this.tabApoderados.TabIndex = 3;
+            this.tabApoderados.Text = "Apoderados";
+            this.tabApoderados.VerticalScrollbarBarColor = true;
+            this.tabApoderados.VerticalScrollbarHighlightOnWheel = false;
+            this.tabApoderados.VerticalScrollbarSize = 10;
             // 
             // metroGrid2
             // 
@@ -1049,11 +943,6 @@ namespace Senior_App
             this.metroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid2.Size = new System.Drawing.Size(818, 493);
             this.metroGrid2.TabIndex = 2;
-            // 
-            // apoderadoBindingSource1
-            // 
-            this.apoderadoBindingSource1.DataMember = "apoderado";
-            this.apoderadoBindingSource1.DataSource = this.todoBindingSource;
             // 
             // idapoderadoDataGridViewTextBoxColumn1
             // 
@@ -1116,6 +1005,117 @@ namespace Senior_App
             this.comunaidDataGridViewTextBoxColumn1.HeaderText = "comuna_id";
             this.comunaidDataGridViewTextBoxColumn1.Name = "comunaidDataGridViewTextBoxColumn1";
             // 
+            // apoderadoBindingSource1
+            // 
+            this.apoderadoBindingSource1.DataMember = "apoderado";
+            this.apoderadoBindingSource1.DataSource = this.todoBindingSource;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(309, 48);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Senior-App";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonSalir
+            // 
+            this.buttonSalir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonSalir.FlatAppearance.BorderSize = 0;
+            this.buttonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalir.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalir.ForeColor = System.Drawing.Color.White;
+            this.buttonSalir.Location = new System.Drawing.Point(721, 0);
+            this.buttonSalir.Name = "buttonSalir";
+            this.buttonSalir.Size = new System.Drawing.Size(105, 48);
+            this.buttonSalir.TabIndex = 0;
+            this.buttonSalir.Text = "X";
+            this.buttonSalir.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.buttonSalir);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(826, 48);
+            this.panel1.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(309, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(309, 48);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Administrador";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // apoderadoBindingSource
+            // 
+            this.apoderadoBindingSource.DataMember = "apoderado";
+            this.apoderadoBindingSource.DataSource = this.todo;
+            // 
+            // apoderadoTableAdapter
+            // 
+            this.apoderadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKportadorapoderadoBindingSource
+            // 
+            this.fKportadorapoderadoBindingSource.DataMember = "FK_portador_apoderado";
+            this.fKportadorapoderadoBindingSource.DataSource = this.apoderadoBindingSource;
+            // 
+            // portadorTableAdapter
+            // 
+            this.portadorTableAdapter.ClearBeforeFill = true;
+            // 
+            // comunasTableAdapter
+            // 
+            this.comunasTableAdapter.ClearBeforeFill = true;
+            // 
+            // provinciasTableAdapter
+            // 
+            this.provinciasTableAdapter.ClearBeforeFill = true;
+            // 
+            // integracionDataSet1
+            // 
+            this.integracionDataSet1.DataSetName = "IntegracionDataSet";
+            this.integracionDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // todo1
+            // 
+            this.todo1.DataSetName = "Todo";
+            this.todo1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // provinciasBindingSource1
+            // 
+            this.provinciasBindingSource1.DataMember = "provincias";
+            this.provinciasBindingSource1.DataSource = this.todoBindingSource;
+            this.provinciasBindingSource1.CurrentChanged += new System.EventHandler(this.provinciasBindingSource1_CurrentChanged);
+            // 
+            // provinciasBindingSource3
+            // 
+            this.provinciasBindingSource3.DataMember = "provincias";
+            this.provinciasBindingSource3.DataSource = this.todoBindingSource;
+            // 
+            // regionesTableAdapter
+            // 
+            this.regionesTableAdapter.ClearBeforeFill = true;
+            // 
+            // cuentaTableAdapter
+            // 
+            this.cuentaTableAdapter.ClearBeforeFill = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1146,7 +1146,11 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.regionesBindingSource1)).EndInit();
             this.tabUsers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
             this.tabApoderados.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKportadorapoderadoBindingSource)).EndInit();
@@ -1154,10 +1158,6 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.todo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinciasBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apoderadoBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

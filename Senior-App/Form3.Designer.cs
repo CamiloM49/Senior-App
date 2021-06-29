@@ -71,6 +71,7 @@ namespace Senior_App
             this.portadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.portadorTableAdapter = new Senior_App.TodoTableAdapters.portadorTableAdapter();
             this.portadorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -79,10 +80,12 @@ namespace Senior_App
             ((System.ComponentModel.ISupportInitialize)(this.todo)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.metroTabPage3.SuspendLayout();
             this.metroTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -133,7 +136,7 @@ namespace Senior_App
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(826, 538);
             this.metroTabControl1.TabIndex = 8;
             this.metroTabControl1.UseSelectable = true;
@@ -425,6 +428,7 @@ namespace Senior_App
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.Controls.Add(this.dataGridView1);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.HorizontalScrollbarSize = 10;
@@ -501,6 +505,15 @@ namespace Senior_App
             this.portadorBindingSource1.DataMember = "portador";
             this.portadorBindingSource1.DataSource = this.todo;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(349, 129);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,10 +533,12 @@ namespace Senior_App
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.metroTabPage3.ResumeLayout(false);
             this.metroTabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -568,5 +583,6 @@ namespace Senior_App
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
         private GMap.NET.WindowsForms.GMapControl gMapa;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

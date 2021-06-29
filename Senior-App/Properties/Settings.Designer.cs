@@ -33,5 +33,15 @@ namespace Senior_App.Properties {
                 return ((string)(this["IntegracionConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44393/WebService1.asmx")]
+        public string Senior_App_WSMantenedor_WebService1 {
+            get {
+                return ((string)(this["Senior_App_WSMantenedor_WebService1"]));
+            }
+        }
     }
 }
