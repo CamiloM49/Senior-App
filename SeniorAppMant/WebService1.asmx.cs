@@ -6,8 +6,6 @@ using System.Web.Services;
 using System.Data.SqlClient;
 using System.Data;
 
-
-
 namespace SeniorAppServicio
 {
     /// <summary>
@@ -28,12 +26,12 @@ namespace SeniorAppServicio
         }
         SqlConnection conn = new SqlConnection("Data Source=35.199.113.172;Initial Catalog=Integracion;User ID=SA;password=4dminD1234");
         [WebMethod]
-        public DataTable LoadData(string query, string[] paramenter, object[] values, string table) {
+        public DataTable LoadData(string query, string[] parameter, object[] values, string table) {
             conn.Open();
             var cmd = new SqlCommand(query, conn);
-            if (paramenter != null)
-                for (var i = 0; i < paramenter.Length; i++)
-                    cmd.Parameters.AddWithValue(paramenter[i], values[i]);
+            if (parameter != null)
+                for (var i = 0; i < parameter.Length; i++)
+                    cmd.Parameters.AddWithValue(parameter[i], values[i]);
             var dr = cmd.ExecuteReader();
             var dt = new DataTable(table);
             dt.Load(dr);

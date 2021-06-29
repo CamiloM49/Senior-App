@@ -14,6 +14,7 @@ using SeniorAppDTO;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
+using Senior_App.WService2;
 
 
 namespace Senior_App
@@ -24,6 +25,8 @@ namespace Senior_App
         public Form3()
         {
             InitializeComponent();
+            WSMantenedor.WebService1 ws2 = new WSMantenedor.WebService1();
+            dataGridView1.DataSource = ws2.LoadData("SELECT * FROM cuenta ORDER BY id_apoderado asc", null, null, "cuenta");
             load_data();
             cargar_datos();
             gMapa.DragButton = MouseButtons.Left;
