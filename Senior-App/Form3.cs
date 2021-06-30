@@ -85,6 +85,7 @@ namespace Senior_App
             WSMantenedor.WebService1 filt = new WSMantenedor.WebService1();
             gridConsulta.DataSource = filt.LoadData("SELECT * FROM portador where id_apoderado = "+ "'" + cboPortadores.Text + "'", null, null, "portador");
             gridConsulta.Visible = true;
+
         }
 
         private void buttonFiltrar_Click(object sender, EventArgs e)
@@ -143,6 +144,12 @@ namespace Senior_App
         private void metroTabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroButton1_Click_1(object sender, EventArgs e)
+        {
+            WSMantenedor.WebService1 filt = new WSMantenedor.WebService1();
+            filt.Insertar("SELECT * FROM portador" );
         }
     }
 }

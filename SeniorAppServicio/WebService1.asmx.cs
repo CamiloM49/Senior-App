@@ -26,14 +26,14 @@ namespace SeniorAppServicio
         {
             return "Hola a todos";
         }
-        SqlConnection conn = new SqlConnection("Data Source=35.199.113.172;Initial Catalog=Integracion;User ID=SA;password=4dminD1234");
+        static SqlConnection conn = new SqlConnection("Data Source=35.199.113.172;Initial Catalog=Integracion;User ID=SA;password=4dminD1234");
         [WebMethod]
-        public DataTable LoadData(string query, string[] paramenter, object[] values, string table) {
+        public DataTable LoadData(string query, string[] parameter, object[] values, string table) {
             conn.Open();
             var cmd = new SqlCommand(query, conn);
-            if (paramenter != null)
-                for (var i = 0; i < paramenter.Length; i++)
-                    cmd.Parameters.AddWithValue(paramenter[i], values[i]);
+            if (parameter != null)
+                for (var i = 0; i < parameter.Length; i++)
+                    cmd.Parameters.AddWithValue(parameter[i], values[i]);
             var dr = cmd.ExecuteReader();
             
             var dt = new DataTable(table);
@@ -42,5 +42,34 @@ namespace SeniorAppServicio
             conn.Close();
             return dt;
         }
+        [WebMethod]
+        static public void Insertar(string query)
+        {
+            var cmd = new SqlCommand();
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+        /*[WebMethod]
+        public DataTable MostrarProd()
+        {
+            DataTable table = new DataTable();
+            table = objetoCD.Mostrar();
+            return tabla; 
+        }
+
+        public void Editar ( string query, string [] parameter, object[] values)
+        {
+            conn.Connection = conn.abrirConexion();
+            conn.commandtext = "InsetarUsuarios";
+            coon.CommandType = CommandType.StoredProcedure;
+            conn.parameters.additiveValue("@id_apoderado", id_apoderado);
+            conn.parameters.additiveValue("@usuario", usuario);
+            conn.parameters.additiveValue("@mail", mail);
+            conn.parameters.additiveValue("@passwd", passwd);
+            conn.executeNonQuery(); 
+        }
+        */
+
+
     }
 }

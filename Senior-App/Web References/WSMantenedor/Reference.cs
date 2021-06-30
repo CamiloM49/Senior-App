@@ -35,6 +35,8 @@ namespace Senior_App.WSMantenedor {
         
         private System.Threading.SendOrPostCallback LoadDataOperationCompleted;
         
+        private System.Threading.SendOrPostCallback InsertarOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -80,6 +82,9 @@ namespace Senior_App.WSMantenedor {
         public event LoadDataCompletedEventHandler LoadDataCompleted;
         
         /// <remarks/>
+        public event InsertarCompletedEventHandler InsertarCompleted;
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string HelloWorld() {
             object[] results = this.Invoke("HelloWorld", new object[0]);
@@ -108,28 +113,28 @@ namespace Senior_App.WSMantenedor {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/LoadData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable LoadData(string query, string[] paramenter, object[] values, string table) {
+        public System.Data.DataTable LoadData(string query, string[] parameter, object[] values, string table) {
             object[] results = this.Invoke("LoadData", new object[] {
                         query,
-                        paramenter,
+                        parameter,
                         values,
                         table});
             return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void LoadDataAsync(string query, string[] paramenter, object[] values, string table) {
-            this.LoadDataAsync(query, paramenter, values, table, null);
+        public void LoadDataAsync(string query, string[] parameter, object[] values, string table) {
+            this.LoadDataAsync(query, parameter, values, table, null);
         }
         
         /// <remarks/>
-        public void LoadDataAsync(string query, string[] paramenter, object[] values, string table, object userState) {
+        public void LoadDataAsync(string query, string[] parameter, object[] values, string table, object userState) {
             if ((this.LoadDataOperationCompleted == null)) {
                 this.LoadDataOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLoadDataOperationCompleted);
             }
             this.InvokeAsync("LoadData", new object[] {
                         query,
-                        paramenter,
+                        parameter,
                         values,
                         table}, this.LoadDataOperationCompleted, userState);
         }
@@ -138,6 +143,34 @@ namespace Senior_App.WSMantenedor {
             if ((this.LoadDataCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LoadDataCompleted(this, new LoadDataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Insertar", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void Insertar(string query) {
+            this.Invoke("Insertar", new object[] {
+                        query});
+        }
+        
+        /// <remarks/>
+        public void InsertarAsync(string query) {
+            this.InsertarAsync(query, null);
+        }
+        
+        /// <remarks/>
+        public void InsertarAsync(string query, object userState) {
+            if ((this.InsertarOperationCompleted == null)) {
+                this.InsertarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertarOperationCompleted);
+            }
+            this.InvokeAsync("Insertar", new object[] {
+                        query}, this.InsertarOperationCompleted, userState);
+        }
+        
+        private void OnInsertarOperationCompleted(object arg) {
+            if ((this.InsertarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InsertarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -211,6 +244,10 @@ namespace Senior_App.WSMantenedor {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void InsertarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591
