@@ -151,5 +151,30 @@ namespace Senior_App
             WSMantenedor.WebService1 filt = new WSMantenedor.WebService1();
             filt.Insertar("SELECT * FROM portador" );
         }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

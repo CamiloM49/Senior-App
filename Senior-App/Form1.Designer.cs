@@ -92,7 +92,7 @@ namespace Senior_App
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(842, 577);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.TabIndex = 5;
@@ -177,7 +177,7 @@ namespace Senior_App
             this.materialRaisedButton1.Primary = true;
             this.materialRaisedButton1.Size = new System.Drawing.Size(327, 43);
             this.materialRaisedButton1.TabIndex = 18;
-            this.materialRaisedButton1.Text = "INGRESAR";
+            this.materialRaisedButton1.Text = "L";
             this.materialRaisedButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
@@ -311,7 +311,7 @@ namespace Senior_App
             // 
             this.materialLabel4.BackColor = System.Drawing.Color.White;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel4.Location = new System.Drawing.Point(130, 452);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
