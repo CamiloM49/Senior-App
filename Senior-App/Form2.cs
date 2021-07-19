@@ -194,14 +194,27 @@ namespace Senior_App
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
 
+
             WSMantenedor.WebService1 ws2 = new WSMantenedor.WebService1();
+
             ws2.LoadData("insert into comunas values"+txtProvincia+","+txtNameProvincia +","+cboidRegion.SelectedText , null, null, "cuenta");
+
             DataGridView tabla = new DataGridView();
+
             tabla.Update();
+
+
+
+
+
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show("Fila eliminada correctamente");
+            DataGridView tabla = new DataGridView();
+            tabla.Update();
             //this.regionesTableAdapter.Delete();
             //DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
             //txtCoumnaID.Text = row.Cells["comuna_id"].Value.ToString();
