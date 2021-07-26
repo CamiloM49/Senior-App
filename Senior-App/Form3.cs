@@ -26,7 +26,7 @@ namespace Senior_App
         {
             InitializeComponent();
             WSMantenedor.WebService1 ws2 = new WSMantenedor.WebService1();
-            dataGridView1.DataSource = ws2.LoadData("SELECT * FROM last_location", null, null, "last_location");
+            //dataGridView1.DataSource = ws2.LoadData("SELECT * FROM last_location", null, null, "last_location");
             load_data();
             cargar_datos();
             gMapa.DragButton = MouseButtons.Left;

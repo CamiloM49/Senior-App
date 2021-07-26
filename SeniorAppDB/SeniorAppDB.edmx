@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SeniorAppDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="IntegracionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
           </Key>
-          <Property Name="id_apoderado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_apoderado" Type="int" Nullable="false" />
           <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="apdpat" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="apdmat" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -45,7 +45,7 @@
           </Key>
           <Property Name="id_perdida" Type="int" Nullable="false" />
           <Property Name="id_portador" Type="int" />
-          <Property Name="fecha" Type="date" />
+          <Property Name="fecha" Type="datetime" />
           <Property Name="latitud" Type="nvarchar(max)" />
           <Property Name="longitud" Type="nvarchar(max)" />
           <Property Name="hora_lectura" Type="datetime" />
@@ -100,7 +100,7 @@
           <Property Name="hora_perdida" Type="datetime" />
           <Property Name="last_location" Type="nvarchar" MaxLength="255" />
           <Property Name="detalles" Type="nvarchar(max)" />
-          <Property Name="imagen" Type="image" />
+          <Property Name="imagen" Type="varbinary(max)" />
           <Property Name="estado_alerta" Type="binary" MaxLength="1" />
           <Property Name="alerta_confirmada" Type="binary" MaxLength="1" />
           <Property Name="enviado_auth" Type="binary" MaxLength="1" />
@@ -211,7 +211,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SeniorAppDBModelStoreContainer">
+        <EntityContainer Name="IntegracionModelStoreContainer">
           <EntitySet Name="apoderado" EntityType="Self.apoderado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comunas" EntityType="Self.comunas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cuenta" EntityType="Self.cuenta" Schema="dbo" store:Type="Tables" />
@@ -258,12 +258,12 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SeniorAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="IntegracionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="apoderado">
           <Key>
             <PropertyRef Name="id_apoderado" />
           </Key>
-          <Property Name="id_apoderado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_apoderado" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="apdpat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="apdmat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -305,7 +305,7 @@
           </Key>
           <Property Name="id_perdida" Type="Int32" Nullable="false" />
           <Property Name="id_portador" Type="Int32" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
           <Property Name="latitud" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="longitud" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="hora_lectura" Type="DateTime" Precision="3" />
@@ -529,9 +529,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SeniorAppDBModelStoreContainer" CdmEntityContainer="SeniorAppDB">
+        <EntityContainerMapping StorageEntityContainer="IntegracionModelStoreContainer" CdmEntityContainer="SeniorAppDB">
           <EntitySetMapping Name="apoderado">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.apoderado">
+            <EntityTypeMapping TypeName="IntegracionModel.apoderado">
               <MappingFragment StoreEntitySet="apoderado">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -547,7 +547,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="comunas">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.comunas">
+            <EntityTypeMapping TypeName="IntegracionModel.comunas">
               <MappingFragment StoreEntitySet="comunas">
                 <ScalarProperty Name="comuna_id" ColumnName="comuna_id" />
                 <ScalarProperty Name="comuna_nombre" ColumnName="comuna_nombre" />
@@ -556,7 +556,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="cuenta">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.cuenta">
+            <EntityTypeMapping TypeName="IntegracionModel.cuenta">
               <MappingFragment StoreEntitySet="cuenta">
                 <ScalarProperty Name="id_apoderado" ColumnName="id_apoderado" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
@@ -568,7 +568,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="last_location">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.last_location">
+            <EntityTypeMapping TypeName="IntegracionModel.last_location">
               <MappingFragment StoreEntitySet="last_location">
                 <ScalarProperty Name="id_perdida" ColumnName="id_perdida" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
@@ -583,7 +583,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="portador">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.portador">
+            <EntityTypeMapping TypeName="IntegracionModel.portador">
               <MappingFragment StoreEntitySet="portador">
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -605,7 +605,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="provincias">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.provincias">
+            <EntityTypeMapping TypeName="IntegracionModel.provincias">
               <MappingFragment StoreEntitySet="provincias">
                 <ScalarProperty Name="provincia_id" ColumnName="provincia_id" />
                 <ScalarProperty Name="provincia_nombre" ColumnName="provincia_nombre" />
@@ -614,7 +614,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="regiones">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.regiones">
+            <EntityTypeMapping TypeName="IntegracionModel.regiones">
               <MappingFragment StoreEntitySet="regiones">
                 <ScalarProperty Name="region_id" ColumnName="region_id" />
                 <ScalarProperty Name="region_nombre" ColumnName="region_nombre" />
@@ -623,7 +623,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="registro_perdida">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.registro_perdida">
+            <EntityTypeMapping TypeName="IntegracionModel.registro_perdida">
               <MappingFragment StoreEntitySet="registro_perdida">
                 <ScalarProperty Name="id_registro" ColumnName="id_registro" />
                 <ScalarProperty Name="id_portador" ColumnName="id_portador" />
@@ -640,7 +640,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="token">
-            <EntityTypeMapping TypeName="SeniorAppDBModel.token">
+            <EntityTypeMapping TypeName="IntegracionModel.token">
               <MappingFragment StoreEntitySet="token">
                 <ScalarProperty Name="id_token" ColumnName="id_token" />
                 <ScalarProperty Name="token_id" ColumnName="token_id" />

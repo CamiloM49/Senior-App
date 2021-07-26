@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fd77b21959bb4dedad9eb50ea0e73e09" Name="Diagram1">
-        <EntityTypeShape EntityType="SeniorAppDBModel.apoderado" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.comunas" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.cuenta" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.last_location" Width="1.5" PointX="12" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.portador" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.provincias" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.regiones" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.registro_perdida" Width="1.5" PointX="12" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SeniorAppDBModel.token" Width="1.5" PointX="12" PointY="9.125" IsExpanded="true" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_apoderado_comunas" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_apoderado_cuenta" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_portador_apoderado" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.Fk_comunas_provincias" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_last_location_portador" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_registro_perdida_portador" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.FK_token_portador" ManuallyRouted="false" />
-        <AssociationConnector Association="SeniorAppDBModel.Fk_provincias_regiones" ManuallyRouted="false" />
+      <Diagram DiagramId="c0f85178c9b0404b8528e102d5ace0e7" Name="Diagram1">
+        <EntityTypeShape EntityType="IntegracionModel.apoderado" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.comunas" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.cuenta" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.last_location" Width="1.5" PointX="12" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.portador" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.provincias" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.regiones" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.registro_perdida" Width="1.5" PointX="12" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IntegracionModel.token" Width="1.5" PointX="12" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="IntegracionModel.FK_apoderado_comunas" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_apoderado_cuenta" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_portador_apoderado" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.Fk_comunas_provincias" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_last_location_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_registro_perdida_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.FK_token_portador" ManuallyRouted="false" />
+        <AssociationConnector Association="IntegracionModel.Fk_provincias_regiones" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

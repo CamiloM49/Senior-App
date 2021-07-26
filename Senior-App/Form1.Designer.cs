@@ -90,10 +90,11 @@ namespace Senior_App
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.FontSize = MetroFramework.MetroTabControlSize.Small;
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
+            this.metroTabControl1.Location = new System.Drawing.Point(0, 63);
+            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
-            this.metroTabControl1.Size = new System.Drawing.Size(842, 577);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(1123, 710);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTabControl1.TabIndex = 5;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -111,15 +112,16 @@ namespace Senior_App
             this.metroLogin.ForeColor = System.Drawing.Color.Maroon;
             this.metroLogin.HorizontalScrollbarBarColor = true;
             this.metroLogin.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroLogin.HorizontalScrollbarSize = 10;
+            this.metroLogin.HorizontalScrollbarSize = 12;
             this.metroLogin.Location = new System.Drawing.Point(4, 37);
+            this.metroLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroLogin.Name = "metroLogin";
-            this.metroLogin.Size = new System.Drawing.Size(834, 536);
+            this.metroLogin.Size = new System.Drawing.Size(1115, 669);
             this.metroLogin.TabIndex = 0;
             this.metroLogin.Text = "Login";
             this.metroLogin.VerticalScrollbarBarColor = true;
             this.metroLogin.VerticalScrollbarHighlightOnWheel = false;
-            this.metroLogin.VerticalScrollbarSize = 10;
+            this.metroLogin.VerticalScrollbarSize = 13;
             // 
             // txtError
             // 
@@ -128,7 +130,8 @@ namespace Senior_App
             this.txtError.Depth = 0;
             this.txtError.Font = new System.Drawing.Font("Roboto", 11F);
             this.txtError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtError.Location = new System.Drawing.Point(256, 358);
+            this.txtError.Location = new System.Drawing.Point(341, 441);
+            this.txtError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtError.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(240, 19);
@@ -143,7 +146,8 @@ namespace Senior_App
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(256, 216);
+            this.materialLabel2.Location = new System.Drawing.Point(341, 266);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(157, 19);
@@ -156,7 +160,8 @@ namespace Senior_App
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(256, 124);
+            this.materialLabel1.Location = new System.Drawing.Point(341, 153);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(126, 19);
@@ -171,13 +176,14 @@ namespace Senior_App
             this.materialRaisedButton1.FlatAppearance.BorderSize = 0;
             this.materialRaisedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.materialRaisedButton1.ForeColor = System.Drawing.Color.Teal;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(256, 312);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(341, 384);
+            this.materialRaisedButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(327, 43);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(436, 53);
             this.materialRaisedButton1.TabIndex = 18;
-            this.materialRaisedButton1.Text = "L";
+            this.materialRaisedButton1.Text = "Iniciar sesion";
             this.materialRaisedButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
@@ -188,16 +194,18 @@ namespace Senior_App
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(305, 1);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(547, 2);
+            this.metroTextBox2.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(256, 256);
+            this.metroTextBox2.Location = new System.Drawing.Point(341, 315);
+            this.metroTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '*';
@@ -206,7 +214,7 @@ namespace Senior_App
             this.metroTextBox2.SelectionLength = 0;
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(327, 23);
+            this.metroTextBox2.Size = new System.Drawing.Size(436, 28);
             this.metroTextBox2.TabIndex = 15;
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -218,16 +226,18 @@ namespace Senior_App
             // 
             // 
             this.txtCorreo.CustomButton.Image = null;
-            this.txtCorreo.CustomButton.Location = new System.Drawing.Point(305, 1);
+            this.txtCorreo.CustomButton.Location = new System.Drawing.Point(547, 2);
+            this.txtCorreo.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtCorreo.CustomButton.Name = "";
-            this.txtCorreo.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCorreo.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.txtCorreo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCorreo.CustomButton.TabIndex = 1;
             this.txtCorreo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtCorreo.CustomButton.UseSelectable = true;
             this.txtCorreo.CustomButton.Visible = false;
             this.txtCorreo.Lines = new string[0];
-            this.txtCorreo.Location = new System.Drawing.Point(256, 157);
+            this.txtCorreo.Location = new System.Drawing.Point(341, 193);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCorreo.MaxLength = 32767;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PasswordChar = '\0';
@@ -236,7 +246,7 @@ namespace Senior_App
             this.txtCorreo.SelectionLength = 0;
             this.txtCorreo.SelectionStart = 0;
             this.txtCorreo.ShortcutsEnabled = true;
-            this.txtCorreo.Size = new System.Drawing.Size(327, 23);
+            this.txtCorreo.Size = new System.Drawing.Size(436, 28);
             this.txtCorreo.TabIndex = 13;
             this.txtCorreo.UseSelectable = true;
             this.txtCorreo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -254,20 +264,22 @@ namespace Senior_App
             this.metroConsulta.Controls.Add(this.buttonStart);
             this.metroConsulta.HorizontalScrollbarBarColor = true;
             this.metroConsulta.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroConsulta.HorizontalScrollbarSize = 10;
+            this.metroConsulta.HorizontalScrollbarSize = 12;
             this.metroConsulta.Location = new System.Drawing.Point(4, 37);
+            this.metroConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroConsulta.Name = "metroConsulta";
-            this.metroConsulta.Size = new System.Drawing.Size(834, 536);
+            this.metroConsulta.Size = new System.Drawing.Size(1115, 669);
             this.metroConsulta.TabIndex = 1;
             this.metroConsulta.Text = "Consultar Datos";
             this.metroConsulta.VerticalScrollbarBarColor = true;
             this.metroConsulta.VerticalScrollbarHighlightOnWheel = false;
-            this.metroConsulta.VerticalScrollbarSize = 10;
+            this.metroConsulta.VerticalScrollbarSize = 13;
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(480, 246);
+            this.metroLabel4.Location = new System.Drawing.Point(640, 303);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(0, 0);
             this.metroLabel4.TabIndex = 38;
@@ -275,7 +287,8 @@ namespace Senior_App
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(480, 227);
+            this.metroLabel3.Location = new System.Drawing.Point(640, 279);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(0, 0);
             this.metroLabel3.TabIndex = 37;
@@ -283,7 +296,8 @@ namespace Senior_App
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(480, 208);
+            this.metroLabel2.Location = new System.Drawing.Point(640, 256);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(0, 0);
             this.metroLabel2.TabIndex = 36;
@@ -291,7 +305,8 @@ namespace Senior_App
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(480, 189);
+            this.metroLabel1.Location = new System.Drawing.Point(640, 233);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(0, 0);
             this.metroLabel1.TabIndex = 35;
@@ -299,9 +314,10 @@ namespace Senior_App
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(11, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(447, 406);
+            this.pictureBox2.Size = new System.Drawing.Size(596, 500);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -311,12 +327,13 @@ namespace Senior_App
             // 
             this.materialLabel4.BackColor = System.Drawing.Color.White;
             this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(130, 452);
+            this.materialLabel4.Location = new System.Drawing.Point(173, 556);
+            this.materialLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(77, 29);
+            this.materialLabel4.Size = new System.Drawing.Size(103, 36);
             this.materialLabel4.TabIndex = 30;
             this.materialLabel4.Text = "Camara:";
             this.materialLabel4.Click += new System.EventHandler(this.materialLabel4_Click);
@@ -325,9 +342,10 @@ namespace Senior_App
             // 
             this.cboCamara.FormattingEnabled = true;
             this.cboCamara.ItemHeight = 23;
-            this.cboCamara.Location = new System.Drawing.Point(213, 452);
+            this.cboCamara.Location = new System.Drawing.Point(284, 556);
+            this.cboCamara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCamara.Name = "cboCamara";
-            this.cboCamara.Size = new System.Drawing.Size(261, 29);
+            this.cboCamara.Size = new System.Drawing.Size(347, 29);
             this.cboCamara.TabIndex = 29;
             this.cboCamara.UseSelectable = true;
             // 
@@ -338,11 +356,12 @@ namespace Senior_App
             this.buttonStart.FlatAppearance.BorderSize = 0;
             this.buttonStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStart.ForeColor = System.Drawing.Color.Teal;
-            this.buttonStart.Location = new System.Drawing.Point(499, 452);
+            this.buttonStart.Location = new System.Drawing.Point(665, 556);
+            this.buttonStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonStart.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Primary = true;
-            this.buttonStart.Size = new System.Drawing.Size(157, 30);
+            this.buttonStart.Size = new System.Drawing.Size(209, 37);
             this.buttonStart.TabIndex = 26;
             this.buttonStart.Text = "EMPEZAR ESCANEO";
             this.buttonStart.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -363,20 +382,22 @@ namespace Senior_App
             this.metroTabPage1.Controls.Add(this.gMapa);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.HorizontalScrollbarSize = 12;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 37);
+            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(834, 536);
+            this.metroTabPage1.Size = new System.Drawing.Size(1115, 669);
             this.metroTabPage1.TabIndex = 3;
             this.metroTabPage1.Text = "Maps";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.metroTabPage1.VerticalScrollbarSize = 13;
             // 
             // telefonoTxt
             // 
             this.telefonoTxt.AutoSize = true;
-            this.telefonoTxt.Location = new System.Drawing.Point(564, 218);
+            this.telefonoTxt.Location = new System.Drawing.Point(752, 268);
+            this.telefonoTxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.telefonoTxt.Name = "telefonoTxt";
             this.telefonoTxt.Size = new System.Drawing.Size(76, 19);
             this.telefonoTxt.TabIndex = 11;
@@ -389,9 +410,10 @@ namespace Senior_App
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(199, 1);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(359, 2);
+            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(31, 28);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -399,7 +421,8 @@ namespace Senior_App
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[] {
         "Ingrese descripcion"};
-            this.metroTextBox1.Location = new System.Drawing.Point(564, 251);
+            this.metroTextBox1.Location = new System.Drawing.Point(752, 309);
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -408,7 +431,7 @@ namespace Senior_App
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(221, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(295, 28);
             this.metroTextBox1.TabIndex = 10;
             this.metroTextBox1.Text = "Ingrese descripcion";
             this.metroTextBox1.UseSelectable = true;
@@ -420,7 +443,8 @@ namespace Senior_App
             // apellidoMaMaptxt
             // 
             this.apellidoMaMaptxt.AutoSize = true;
-            this.apellidoMaMaptxt.Location = new System.Drawing.Point(564, 188);
+            this.apellidoMaMaptxt.Location = new System.Drawing.Point(752, 231);
+            this.apellidoMaMaptxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoMaMaptxt.Name = "apellidoMaMaptxt";
             this.apellidoMaMaptxt.Size = new System.Drawing.Size(76, 19);
             this.apellidoMaMaptxt.TabIndex = 9;
@@ -430,7 +454,8 @@ namespace Senior_App
             // apellidoPaMaptxt
             // 
             this.apellidoPaMaptxt.AutoSize = true;
-            this.apellidoPaMaptxt.Location = new System.Drawing.Point(564, 159);
+            this.apellidoPaMaptxt.Location = new System.Drawing.Point(752, 196);
+            this.apellidoPaMaptxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.apellidoPaMaptxt.Name = "apellidoPaMaptxt";
             this.apellidoPaMaptxt.Size = new System.Drawing.Size(76, 19);
             this.apellidoPaMaptxt.TabIndex = 8;
@@ -441,7 +466,8 @@ namespace Senior_App
             // nombreMaptxt
             // 
             this.nombreMaptxt.AutoSize = true;
-            this.nombreMaptxt.Location = new System.Drawing.Point(564, 131);
+            this.nombreMaptxt.Location = new System.Drawing.Point(752, 161);
+            this.nombreMaptxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nombreMaptxt.Name = "nombreMaptxt";
             this.nombreMaptxt.Size = new System.Drawing.Size(76, 19);
             this.nombreMaptxt.TabIndex = 7;
@@ -452,7 +478,8 @@ namespace Senior_App
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(564, 100);
+            this.metroLabel6.Location = new System.Drawing.Point(752, 123);
+            this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(48, 19);
             this.metroLabel6.TabIndex = 6;
@@ -461,7 +488,8 @@ namespace Senior_App
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(564, 71);
+            this.metroLabel5.Location = new System.Drawing.Point(752, 87);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(60, 19);
             this.metroLabel5.TabIndex = 5;
@@ -471,7 +499,8 @@ namespace Senior_App
             // etiquetaDescripcion
             // 
             this.etiquetaDescripcion.AutoSize = true;
-            this.etiquetaDescripcion.Location = new System.Drawing.Point(633, 40);
+            this.etiquetaDescripcion.Location = new System.Drawing.Point(844, 49);
+            this.etiquetaDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.etiquetaDescripcion.Name = "etiquetaDescripcion";
             this.etiquetaDescripcion.Size = new System.Drawing.Size(76, 19);
             this.etiquetaDescripcion.TabIndex = 4;
@@ -485,8 +514,8 @@ namespace Senior_App
             this.generarAlerta.BackColor = System.Drawing.SystemColors.Control;
             this.generarAlerta.Depth = 0;
             this.generarAlerta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.generarAlerta.Location = new System.Drawing.Point(603, 402);
-            this.generarAlerta.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.generarAlerta.Location = new System.Drawing.Point(804, 495);
+            this.generarAlerta.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.generarAlerta.MouseState = MaterialSkin.MouseState.HOVER;
             this.generarAlerta.Name = "generarAlerta";
             this.generarAlerta.Primary = false;
@@ -505,7 +534,8 @@ namespace Senior_App
             this.gMapa.GrayScaleMode = false;
             this.gMapa.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapa.LevelsKeepInMemory = 5;
-            this.gMapa.Location = new System.Drawing.Point(8, 14);
+            this.gMapa.Location = new System.Drawing.Point(11, 17);
+            this.gMapa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gMapa.MarkersEnabled = true;
             this.gMapa.MaxZoom = 2;
             this.gMapa.MinZoom = 2;
@@ -519,7 +549,7 @@ namespace Senior_App
             this.gMapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapa.ShowTileGridLines = false;
-            this.gMapa.Size = new System.Drawing.Size(530, 502);
+            this.gMapa.Size = new System.Drawing.Size(707, 618);
             this.gMapa.TabIndex = 2;
             this.gMapa.Zoom = 0D;
             this.gMapa.Load += new System.EventHandler(this.gMapControl1_Load);
@@ -531,8 +561,9 @@ namespace Senior_App
             this.panel1.Controls.Add(this.buttonSalir);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(842, 48);
+            this.panel1.Size = new System.Drawing.Size(1123, 59);
             this.panel1.TabIndex = 6;
             // 
             // label1
@@ -541,8 +572,9 @@ namespace Senior_App
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 48);
+            this.label1.Size = new System.Drawing.Size(412, 59);
             this.label1.TabIndex = 3;
             this.label1.Text = "Senior-App";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -554,9 +586,10 @@ namespace Senior_App
             this.buttonSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalir.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalir.ForeColor = System.Drawing.Color.White;
-            this.buttonSalir.Location = new System.Drawing.Point(737, 0);
+            this.buttonSalir.Location = new System.Drawing.Point(983, 0);
+            this.buttonSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(105, 48);
+            this.buttonSalir.Size = new System.Drawing.Size(140, 59);
             this.buttonSalir.TabIndex = 0;
             this.buttonSalir.Text = "X";
             this.buttonSalir.UseVisualStyleBackColor = true;
@@ -602,12 +635,13 @@ namespace Senior_App
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 628);
+            this.ClientSize = new System.Drawing.Size(1123, 773);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroTabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Senior-App Main Menu";

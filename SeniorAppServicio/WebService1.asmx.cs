@@ -26,7 +26,7 @@ namespace SeniorAppServicio
         {
             return "Hola a todos";
         }
-        static SqlConnection conn = new SqlConnection("Data Source=35.199.113.172;Initial Catalog=Integracion;User ID=SA;password=4dminD1234");
+        static SqlConnection conn = new SqlConnection("Data Source=192.168.0.100;Initial Catalog=Integracion;User ID=SA;password=CvC022810905C@");
         [WebMethod]
         public DataTable LoadData(string query, string[] parameter, object[] values, string table) {
             conn.Open();

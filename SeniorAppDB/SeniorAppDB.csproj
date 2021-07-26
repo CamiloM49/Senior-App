@@ -58,7 +58,6 @@
     <Compile Include="comunas.cs">
       <DependentUpon>SeniorAppDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Conexion.cs" />
     <Compile Include="cuenta.cs">
       <DependentUpon>SeniorAppDB.tt</DependentUpon>
     </Compile>

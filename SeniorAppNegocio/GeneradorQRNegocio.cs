@@ -16,14 +16,14 @@ namespace SeniorAppNegocio
         static public string ResultadoQR;
         public void generaciontoken(){
             GeneradorQRNegocio genqr = new GeneradorQRNegocio();
-            string url = "https://localhost:44393/api/Token";
+            string url = "http://192.168.0.100:8080/api/Token";
             TokenDTO objt = new TokenDTO();
             GeneradorQRNegocio genqr2 = new GeneradorQRNegocio();
             TokenAleatorioNegocio tokeng = new TokenAleatorioNegocio();
             tokeng.tokenfinal();
             objt.Token_id = tokeng.tokenf;
-            objt.Id_portador = LoginNegocio.Idporta;
             objt.Valido = true;
+            objt.Id_portador = LoginNegocio.Idporta;
             string resultado = genqr2.Send<TokenDTO>(url, objt, "POST");
             ResultadoQR = tokeng.tokenf;
         }
@@ -44,13 +44,15 @@ namespace SeniorAppNegocio
                 //headers
                 request.Method = method;
                 request.PreAuthenticate = true;
-                request.ContentType = "application/json;charset=utf-8'";
+                request.ContentType = "application/json";
                 request.Timeout = 10000; //esto es opcional
 
                 using (var streamWriter = new StreamWriter(request.GetRequestStream()))
                 {
                     streamWriter.Write(json);
                     streamWriter.Flush();
+                   
+                    
                 }
 
                 var httpResponse = (HttpWebResponse)request.GetResponse();

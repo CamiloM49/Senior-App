@@ -30,12 +30,12 @@ namespace Senior_App
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -67,13 +67,6 @@ namespace Senior_App
             this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.gMapa = new GMap.NET.WindowsForms.GMapControl();
-            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cuentaTableAdapter = new Senior_App.TodoTableAdapters.cuentaTableAdapter();
-            this.portadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.portadorTableAdapter = new Senior_App.TodoTableAdapters.portadorTableAdapter();
-            this.portadorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,15 +87,22 @@ namespace Senior_App
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.etiquetaDescripcion = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.telefonoTxt = new MetroFramework.Controls.MetroLabel();
-            this.apellidoPaMaptxt = new MetroFramework.Controls.MetroLabel();
-            this.apellidoMaMaptxt = new MetroFramework.Controls.MetroLabel();
-            this.nombreMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.telefonoTxt = new MetroFramework.Controls.MetroLabel();
+            this.apellidoMaMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.apellidoPaMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.nombreMaptxt = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.etiquetaDescripcion = new MetroFramework.Controls.MetroLabel();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.gMapa = new GMap.NET.WindowsForms.GMapControl();
+            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuentaTableAdapter = new Senior_App.TodoTableAdapters.cuentaTableAdapter();
+            this.portadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.portadorTableAdapter = new Senior_App.TodoTableAdapters.portadorTableAdapter();
+            this.portadorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -112,11 +112,11 @@ namespace Senior_App
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.metroTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -167,7 +167,7 @@ namespace Senior_App
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 51);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(826, 538);
             this.metroTabControl1.TabIndex = 8;
             this.metroTabControl1.UseSelectable = true;
@@ -200,14 +200,14 @@ namespace Senior_App
             this.gridConsulta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridConsulta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridConsulta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridConsulta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridConsulta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idportadorDataGridViewTextBoxColumn,
@@ -227,14 +227,14 @@ namespace Senior_App
             this.contactoemergenciaDataGridViewTextBoxColumn,
             this.idapoderadoDataGridViewTextBoxColumn});
             this.gridConsulta.DataSource = this.portadorBindingSource2;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridConsulta.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridConsulta.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridConsulta.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gridConsulta.EnableHeadersVisualStyles = false;
             this.gridConsulta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -243,14 +243,14 @@ namespace Senior_App
             this.gridConsulta.Name = "gridConsulta";
             this.gridConsulta.ReadOnly = true;
             this.gridConsulta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridConsulta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridConsulta.Size = new System.Drawing.Size(818, 414);
@@ -476,79 +476,6 @@ namespace Senior_App
             this.metroTabPage3.VerticalScrollbarSize = 10;
             this.metroTabPage3.Click += new System.EventHandler(this.metroTabPage3_Click);
             // 
-            // metroTabPage4
-            // 
-            this.metroTabPage4.Controls.Add(this.metroLabel3);
-            this.metroTabPage4.Controls.Add(this.telefonoTxt);
-            this.metroTabPage4.Controls.Add(this.apellidoMaMaptxt);
-            this.metroTabPage4.Controls.Add(this.apellidoPaMaptxt);
-            this.metroTabPage4.Controls.Add(this.nombreMaptxt);
-            this.metroTabPage4.Controls.Add(this.metroLabel6);
-            this.metroTabPage4.Controls.Add(this.metroLabel5);
-            this.metroTabPage4.Controls.Add(this.etiquetaDescripcion);
-            this.metroTabPage4.Controls.Add(this.metroButton2);
-            this.metroTabPage4.Controls.Add(this.gMapa);
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(818, 496);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "Mapa";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
-            // 
-            // gMapa
-            // 
-            this.gMapa.Bearing = 0F;
-            this.gMapa.CanDragMap = true;
-            this.gMapa.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gMapa.GrayScaleMode = false;
-            this.gMapa.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapa.LevelsKeepInMemory = 5;
-            this.gMapa.Location = new System.Drawing.Point(8, 16);
-            this.gMapa.MarkersEnabled = true;
-            this.gMapa.MaxZoom = 2;
-            this.gMapa.MinZoom = 2;
-            this.gMapa.MouseWheelZoomEnabled = true;
-            this.gMapa.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapa.Name = "gMapa";
-            this.gMapa.NegativeMode = false;
-            this.gMapa.PolygonsEnabled = true;
-            this.gMapa.RetryLoadTile = 0;
-            this.gMapa.RoutesEnabled = true;
-            this.gMapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gMapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gMapa.ShowTileGridLines = false;
-            this.gMapa.Size = new System.Drawing.Size(553, 472);
-            this.gMapa.TabIndex = 2;
-            this.gMapa.Zoom = 0D;
-            // 
-            // cuentaBindingSource
-            // 
-            this.cuentaBindingSource.DataMember = "cuenta";
-            this.cuentaBindingSource.DataSource = this.todo;
-            // 
-            // cuentaTableAdapter
-            // 
-            this.cuentaTableAdapter.ClearBeforeFill = true;
-            // 
-            // portadorBindingSource
-            // 
-            this.portadorBindingSource.DataMember = "portador";
-            this.portadorBindingSource.DataSource = this.todo;
-            // 
-            // portadorTableAdapter
-            // 
-            this.portadorTableAdapter.ClearBeforeFill = true;
-            // 
-            // portadorBindingSource1
-            // 
-            this.portadorBindingSource1.DataMember = "portador";
-            this.portadorBindingSource1.DataSource = this.todo;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -559,14 +486,14 @@ namespace Senior_App
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -586,14 +513,14 @@ namespace Senior_App
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
             this.dataGridView1.DataSource = this.portadorBindingSource2;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -602,14 +529,14 @@ namespace Senior_App
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(818, 414);
@@ -765,6 +692,107 @@ namespace Senior_App
             this.metroLabel2.Text = "Seleccionar portador";
             this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
+            // metroTabPage4
+            // 
+            this.metroTabPage4.Controls.Add(this.metroLabel3);
+            this.metroTabPage4.Controls.Add(this.telefonoTxt);
+            this.metroTabPage4.Controls.Add(this.apellidoMaMaptxt);
+            this.metroTabPage4.Controls.Add(this.apellidoPaMaptxt);
+            this.metroTabPage4.Controls.Add(this.nombreMaptxt);
+            this.metroTabPage4.Controls.Add(this.metroLabel6);
+            this.metroTabPage4.Controls.Add(this.metroLabel5);
+            this.metroTabPage4.Controls.Add(this.etiquetaDescripcion);
+            this.metroTabPage4.Controls.Add(this.metroButton2);
+            this.metroTabPage4.Controls.Add(this.gMapa);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(818, 496);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "Mapa";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(598, 281);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(76, 19);
+            this.metroLabel3.TabIndex = 20;
+            this.metroLabel3.Text = "Descripcion";
+            this.metroLabel3.Visible = false;
+            // 
+            // telefonoTxt
+            // 
+            this.telefonoTxt.AutoSize = true;
+            this.telefonoTxt.Location = new System.Drawing.Point(598, 251);
+            this.telefonoTxt.Name = "telefonoTxt";
+            this.telefonoTxt.Size = new System.Drawing.Size(76, 19);
+            this.telefonoTxt.TabIndex = 19;
+            this.telefonoTxt.Text = "Descripcion";
+            this.telefonoTxt.Visible = false;
+            // 
+            // apellidoMaMaptxt
+            // 
+            this.apellidoMaMaptxt.AutoSize = true;
+            this.apellidoMaMaptxt.Location = new System.Drawing.Point(598, 221);
+            this.apellidoMaMaptxt.Name = "apellidoMaMaptxt";
+            this.apellidoMaMaptxt.Size = new System.Drawing.Size(76, 19);
+            this.apellidoMaMaptxt.TabIndex = 17;
+            this.apellidoMaMaptxt.Text = "Descripcion";
+            this.apellidoMaMaptxt.Visible = false;
+            // 
+            // apellidoPaMaptxt
+            // 
+            this.apellidoPaMaptxt.AutoSize = true;
+            this.apellidoPaMaptxt.Location = new System.Drawing.Point(598, 192);
+            this.apellidoPaMaptxt.Name = "apellidoPaMaptxt";
+            this.apellidoPaMaptxt.Size = new System.Drawing.Size(76, 19);
+            this.apellidoPaMaptxt.TabIndex = 16;
+            this.apellidoPaMaptxt.Text = "Descripcion";
+            this.apellidoPaMaptxt.Visible = false;
+            // 
+            // nombreMaptxt
+            // 
+            this.nombreMaptxt.AutoSize = true;
+            this.nombreMaptxt.Location = new System.Drawing.Point(598, 164);
+            this.nombreMaptxt.Name = "nombreMaptxt";
+            this.nombreMaptxt.Size = new System.Drawing.Size(76, 19);
+            this.nombreMaptxt.TabIndex = 15;
+            this.nombreMaptxt.Text = "Descripcion";
+            this.nombreMaptxt.Visible = false;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(598, 133);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel6.TabIndex = 14;
+            this.metroLabel6.Text = "Latitud";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(598, 104);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel5.TabIndex = 13;
+            this.metroLabel5.Text = "Longitud";
+            // 
+            // etiquetaDescripcion
+            // 
+            this.etiquetaDescripcion.AutoSize = true;
+            this.etiquetaDescripcion.Location = new System.Drawing.Point(667, 73);
+            this.etiquetaDescripcion.Name = "etiquetaDescripcion";
+            this.etiquetaDescripcion.Size = new System.Drawing.Size(76, 19);
+            this.etiquetaDescripcion.TabIndex = 12;
+            this.etiquetaDescripcion.Text = "Descripcion";
+            // 
             // metroButton2
             // 
             this.metroButton2.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -781,82 +809,54 @@ namespace Senior_App
             this.metroButton2.UseWaitCursor = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
-            // etiquetaDescripcion
+            // gMapa
             // 
-            this.etiquetaDescripcion.AutoSize = true;
-            this.etiquetaDescripcion.Location = new System.Drawing.Point(667, 73);
-            this.etiquetaDescripcion.Name = "etiquetaDescripcion";
-            this.etiquetaDescripcion.Size = new System.Drawing.Size(76, 19);
-            this.etiquetaDescripcion.TabIndex = 12;
-            this.etiquetaDescripcion.Text = "Descripcion";
+            this.gMapa.Bearing = 0F;
+            this.gMapa.CanDragMap = true;
+            this.gMapa.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gMapa.GrayScaleMode = false;
+            this.gMapa.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gMapa.LevelsKeepInMemory = 5;
+            this.gMapa.Location = new System.Drawing.Point(8, 16);
+            this.gMapa.MarkersEnabled = true;
+            this.gMapa.MaxZoom = 2;
+            this.gMapa.MinZoom = 2;
+            this.gMapa.MouseWheelZoomEnabled = true;
+            this.gMapa.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gMapa.Name = "gMapa";
+            this.gMapa.NegativeMode = false;
+            this.gMapa.PolygonsEnabled = true;
+            this.gMapa.RetryLoadTile = 0;
+            this.gMapa.RoutesEnabled = true;
+            this.gMapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gMapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gMapa.ShowTileGridLines = false;
+            this.gMapa.Size = new System.Drawing.Size(553, 472);
+            this.gMapa.TabIndex = 2;
+            this.gMapa.Zoom = 0D;
             // 
-            // metroLabel5
+            // cuentaBindingSource
             // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(598, 104);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(60, 19);
-            this.metroLabel5.TabIndex = 13;
-            this.metroLabel5.Text = "Longitud";
+            this.cuentaBindingSource.DataMember = "cuenta";
+            this.cuentaBindingSource.DataSource = this.todo;
             // 
-            // metroLabel6
+            // cuentaTableAdapter
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(598, 133);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel6.TabIndex = 14;
-            this.metroLabel6.Text = "Latitud";
+            this.cuentaTableAdapter.ClearBeforeFill = true;
             // 
-            // telefonoTxt
+            // portadorBindingSource
             // 
-            this.telefonoTxt.AutoSize = true;
-            this.telefonoTxt.Location = new System.Drawing.Point(598, 251);
-            this.telefonoTxt.Name = "telefonoTxt";
-            this.telefonoTxt.Size = new System.Drawing.Size(76, 19);
-            this.telefonoTxt.TabIndex = 19;
-            this.telefonoTxt.Text = "Descripcion";
-            this.telefonoTxt.Visible = false;
+            this.portadorBindingSource.DataMember = "portador";
+            this.portadorBindingSource.DataSource = this.todo;
             // 
-            // apellidoPaMaptxt
+            // portadorTableAdapter
             // 
-            this.apellidoPaMaptxt.AutoSize = true;
-            this.apellidoPaMaptxt.Location = new System.Drawing.Point(598, 192);
-            this.apellidoPaMaptxt.Name = "apellidoPaMaptxt";
-            this.apellidoPaMaptxt.Size = new System.Drawing.Size(76, 19);
-            this.apellidoPaMaptxt.TabIndex = 16;
-            this.apellidoPaMaptxt.Text = "Descripcion";
-            this.apellidoPaMaptxt.Visible = false;
+            this.portadorTableAdapter.ClearBeforeFill = true;
             // 
-            // apellidoMaMaptxt
+            // portadorBindingSource1
             // 
-            this.apellidoMaMaptxt.AutoSize = true;
-            this.apellidoMaMaptxt.Location = new System.Drawing.Point(598, 221);
-            this.apellidoMaMaptxt.Name = "apellidoMaMaptxt";
-            this.apellidoMaMaptxt.Size = new System.Drawing.Size(76, 19);
-            this.apellidoMaMaptxt.TabIndex = 17;
-            this.apellidoMaMaptxt.Text = "Descripcion";
-            this.apellidoMaMaptxt.Visible = false;
-            // 
-            // nombreMaptxt
-            // 
-            this.nombreMaptxt.AutoSize = true;
-            this.nombreMaptxt.Location = new System.Drawing.Point(598, 164);
-            this.nombreMaptxt.Name = "nombreMaptxt";
-            this.nombreMaptxt.Size = new System.Drawing.Size(76, 19);
-            this.nombreMaptxt.TabIndex = 15;
-            this.nombreMaptxt.Text = "Descripcion";
-            this.nombreMaptxt.Visible = false;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(598, 281);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(76, 19);
-            this.metroLabel3.TabIndex = 20;
-            this.metroLabel3.Text = "Descripcion";
-            this.metroLabel3.Visible = false;
+            this.portadorBindingSource1.DataMember = "portador";
+            this.portadorBindingSource1.DataSource = this.todo;
             // 
             // Form3
             // 
@@ -878,12 +878,12 @@ namespace Senior_App
             this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.metroTabPage4.ResumeLayout(false);
             this.metroTabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portadorBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

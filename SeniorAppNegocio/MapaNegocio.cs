@@ -15,8 +15,8 @@ namespace SeniorAppNegocio
 {
     public class MapaNegocio
     {
-        GMapMarker marker;
-        GMapOverlay mapOverlay;
+       // GMapMarker marker;
+        //GMapOverlay mapOverlay;
 
     }
 }
